@@ -193,7 +193,7 @@ class OpenAICompatibleLLM:
                         "{\n"
                         '  "system_1_impulse": {\n'
                         '    "thought": "The person\'s first reaction and gut instinct after seeing the trigger event (50-100 words)",\n'
-                        '    "emotion": "Primary emotion (Chinese + English, e.g. 极度焦虑 (Anxiety))",\n'
+                        '    "emotion": "Primary emotion (e.g. Anxiety)",\n'
                         '    "citation": "Which memories were triggered (cite memory IDs and brief description)"\n'
                         "  },\n"
                         '  "system_2_rational": {\n'

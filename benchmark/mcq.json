@@ -21655,8 +21655,7 @@
           "is_correct": true,
           "source_character": "CHAR_01"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_02_SCN_ENTERING_ADULT_WORLD_7",
@@ -21692,8 +21691,7 @@
           "source_character": "CHAR_01",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_05_SCN_MIDLIFE_TRANSITION_3",
@@ -21729,8 +21727,7 @@
           "is_correct": true,
           "source_character": "CHAR_05"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_06_SCN_ENTERING_ADULT_WORLD_7",
@@ -21766,8 +21763,7 @@
           "source_character": "CHAR_02",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_09_SCN_MIDLIFE_TRANSITION_3",
@@ -21803,8 +21799,7 @@
           "is_correct": true,
           "source_character": "CHAR_09"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_11_SCN_ENTERING_ADULT_WORLD_7",
@@ -21840,8 +21835,7 @@
           "is_correct": true,
           "source_character": "CHAR_11"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_05_SCN_SETTLING_DOWN_4",
@@ -21877,8 +21871,7 @@
           "is_correct": true,
           "source_character": "CHAR_05"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_10_SCN_EARLY_ADULT_TRANSITION_3",
@@ -21914,8 +21907,7 @@
           "source_character": "CHAR_09",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_10_SCN_ENTERING_ADULT_WORLD_7",
@@ -21951,8 +21943,7 @@
           "is_correct": true,
           "source_character": "CHAR_10"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_07_SCN_ENTERING_ADULT_WORLD_7",
@@ -21988,8 +21979,7 @@
           "source_character": "CHAR_02",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_01_SCN_EARLY_ADULT_TRANSITION_3",
@@ -22025,8 +22015,7 @@
           "is_correct": true,
           "source_character": "CHAR_01"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_05_SCN_ENTERING_ADULT_WORLD_7",
@@ -22062,8 +22051,7 @@
           "is_correct": true,
           "source_character": "CHAR_05"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_10_SCN_MIDLIFE_TRANSITION_6",
@@ -22099,8 +22087,7 @@
           "source_character": "CHAR_02",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_03_SCN_ENTERING_ADULT_WORLD_7",
@@ -22136,8 +22123,7 @@
           "source_character": "CHAR_01",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_11_SCN_SCHOOL_AGE_1",
@@ -22173,8 +22159,7 @@
           "source_character": "CHAR_03",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_10_SCN_MIDLIFE_TRANSITION_7",
@@ -22210,8 +22195,7 @@
           "source_character": "CHAR_09",
           "is_generated": true
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_07_SCN_ENTERING_ADULT_WORLD_3",
@@ -22247,8 +22231,7 @@
           "is_correct": true,
           "source_character": "CHAR_07"
         }
-      ],
-      "generated_completion": true
+      ]
     },
     {
       "question_id": "Q_CHAR_09_SCN_ENTERING_ADULT_WORLD_7",
@@ -22284,8 +22267,7 @@
           "is_correct": true,
           "source_character": "CHAR_09"
         }
-      ],
-      "generated_completion": true
+      ]
     }
   ]
 }

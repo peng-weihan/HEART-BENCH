@@ -88,7 +88,7 @@ SYSTEM_PROMPT = (
     "{\n"
     '  "system_1_impulse": {\n'
     '    "thought": "First, instinctive reaction after seeing the trigger event (50-100 words)",\n'
-    '    "emotion": "Primary emotion (Chinese + English, e.g. 极度焦虑 (Anxiety))",\n'
+    '    "emotion": "Primary emotion (e.g. Anxiety)",\n'
     '    "citation": "Which memories were activated (cite memory IDs and brief descriptions)"\n'
     "  },\n"
     '  "system_2_rational": {\n'
