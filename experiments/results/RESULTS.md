@@ -2,7 +2,7 @@
 
 > Dataset: `data/annotations/mcq_dataset.json` (11 characters × ~64 scenarios = **673 questions**, 4 options each)
 > Experiment period: 2026-04 ~ 2026-05
-> Gateway: `https://llm-sjtu.multiego.me/v1`
+> Gateway: `<YOUR_LLM_GATEWAY>/v1` (configured via `API_BASE` env var)
 > Common parameters: `temperature=0.7`, `workers=8~24`
 
 ---

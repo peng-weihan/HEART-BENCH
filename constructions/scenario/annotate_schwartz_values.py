@@ -4,8 +4,8 @@ tensions as one or more independent 1v1 pairs (no 2v2 / 2v1 / 1v2 composite pole
 
 Example: pairs [{value_a, value_b, summary_a, summary_b}, ...]; contradiction_label "A vs B; C vs D"
 
-API (OpenAI-compatible): default base https://llm-sjtu.multiego.me/v1 → POST .../chat/completions
-(same as curl https://llm-sjtu.multiego.me/v1/chat/completions). Set ANNOTATE_API_KEY / SCHWARTZ_API_KEY in .env.
+API (OpenAI-compatible): set API_BASE in .env (e.g. ``API_BASE=<YOUR_LLM_GATEWAY>/v1``)
+→ POST {API_BASE}/chat/completions. Set ANNOTATE_API_KEY / SCHWARTZ_API_KEY in .env.
 
 Default model: ``SCHWARTZ_MODEL`` only, default ``claude-sonnet-4-6`` (no fallback to ANNOTATE_GT_MODEL / TRANSLATE_MODEL).
 Default concurrency: 8 workers (override with SCHWARTZ_WORKERS or --workers).
@@ -68,8 +68,13 @@ def _resolve_api_base() -> str:
         or os.getenv("TRANSLATE_API_BASE")
         or os.getenv("API_BASE")
         or os.getenv("ANNOTATE_API_BASE")
-        or "https://llm-sjtu.multiego.me"
+        or ""
     )
+    if not raw:
+        raise SystemExit(
+            "API base is not set. Set one of SCHWARTZ_API_BASE / TRANSLATE_API_BASE / "
+            "API_BASE / ANNOTATE_API_BASE in .env."
+        )
     raw = raw.rstrip("/")
     if raw.endswith("/v1"):
         return raw

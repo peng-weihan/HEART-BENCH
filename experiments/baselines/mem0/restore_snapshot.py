@@ -48,7 +48,9 @@ def _require(name: str) -> str:
 
 
 LLM_KEY = _require("API_KEY")
-LLM_BASE = os.environ.get("API_BASE", "https://llm-sjtu.multiego.me/v1")
+LLM_BASE = os.environ.get("API_BASE", "")
+if not LLM_BASE:
+    sys.exit("API_BASE is not set in .env")
 LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-5.4-mini")
 EMBED_KEY = _require("AIHUBMIX_API_KEY")
 EMBED_BASE = os.environ.get("AIHUBMIX_API_BASE", "https://aihubmix.com/v1")

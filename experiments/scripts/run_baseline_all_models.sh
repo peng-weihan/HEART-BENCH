@@ -21,9 +21,10 @@ MODELS=(
   "qwen3.5-35b-a3b"
 )
 
-# Use the SJTU gateway from .env
-export API_KEY="${API_KEY:-REMOVED_LEAKED_KEY}"
-export API_BASE="${API_BASE:-https://llm-sjtu.multiego.me/v1}"
+# Read credentials from environment (.env or shell). API_KEY is required.
+: "${API_KEY:?API_KEY env var is required (do not hardcode keys in this file)}"
+export API_KEY
+export API_BASE="${API_BASE:?API_BASE env var is required}"
 export TIMEOUT="${TIMEOUT:-180}"
 
 echo "====================================================="

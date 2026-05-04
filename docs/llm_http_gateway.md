@@ -1,4 +1,4 @@
-# How the benchmark calls the LLM (and multiego / 403 troubleshooting)
+# How the benchmark calls the LLM (and 403 troubleshooting)
 
 ## Call chain
 
@@ -18,24 +18,24 @@
 
 4. **Implementation detail**: uses the stdlib **`urllib.request`**, **not** `requests` or the official OpenAI SDK.
 
-## Why multiego sometimes returns 403 (error code 1010)
+## Why an OpenAI-compatible gateway sometimes returns 403 (error code 1010)
 
-Common reasons (verify against multiego ops / docs):
+Common reasons (verify against your gateway's ops / docs):
 
 | Possible cause | Notes |
 |----------------|-------|
 | **Default User-Agent** | The old code only sent `Python-urllib/3.x`; some CDNs (Cloudflare) reject this with **403** outright. The default is now a **browser-style User-Agent**, and you can still override via **`LLM_USER_AGENT`**. |
-| **Egress IP** | Data-centre / overseas / non-campus IPs are blocked; "the same key works from my laptop but fails from CI / cloud" usually falls in this bucket. |
+| **Egress IP** | Data-centre / overseas / off-allowlist IPs are blocked; "the same key works from my laptop but fails from CI / cloud" usually falls in this bucket. |
 | **Key or permission** | Invalid key or no access to the model; some gateways return a generic 403 in either case. |
 | **Extra headers / mTLS** | A handful of intranet gateways require `CF-Access-*`, `Referer`, etc.; if their docs demand it, extend `openai_compat_http.py` (or file a request). |
 
-## Recommended setup (multiego only)
+## Recommended setup
 
 Write these explicitly in `.env` (so you never accidentally hit a different fallback):
 
 ```env
-API_KEY=your_multiego_key
-API_BASE=https://llm-sjtu.multiego.me/v1
+API_KEY=your_gateway_key
+API_BASE=<YOUR_LLM_GATEWAY>/v1
 MODEL_NAME=gpt-5.4-mini
 # optional: custom UA
 # LLM_USER_AGENT=Mozilla/5.0 ...

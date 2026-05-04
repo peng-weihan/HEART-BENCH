@@ -1,12 +1,13 @@
-"""Mem0 quickstart chat — gpt-5.4-mini (SJTU proxy) + qwen3-embedding-4b (aihubmix).
+"""Mem0 quickstart chat — OpenAI-compatible LLM gateway + qwen3-embedding-4b (aihubmix).
 
 Usage:
     source .venv/bin/activate
-    cp .env.example .env  # then edit .env to fill in API_KEY and AIHUBMIX_API_KEY
+    cp .env.example .env  # then edit .env to fill in API_KEY, API_BASE, AIHUBMIX_API_KEY
     python chat.py
 """
 
 import os
+import sys
 from pathlib import Path
 
 # ---- Load .env (no extra dependency) ---------------------------------------
@@ -30,7 +31,9 @@ def _require(name: str) -> str:
 
 
 LLM_KEY = _require("API_KEY")
-LLM_BASE = os.environ.get("API_BASE", "https://llm-sjtu.multiego.me/v1")
+LLM_BASE = os.environ.get("API_BASE", "")
+if not LLM_BASE:
+    sys.exit("API_BASE is not set in .env")
 LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-5.4-mini")
 
 EMBED_KEY = _require("AIHUBMIX_API_KEY")

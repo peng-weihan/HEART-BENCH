@@ -66,8 +66,13 @@ def _resolve_api_base() -> str:
         or os.getenv("TRANSLATE_API_BASE")
         or os.getenv("API_BASE")
         or os.getenv("ANNOTATE_API_BASE")
-        or "https://llm-sjtu.multiego.me"
+        or ""
     )
+    if not raw:
+        raise SystemExit(
+            "API base is not set. Set one of DIAMONDS_API_BASE / SCHWARTZ_API_BASE / "
+            "TRANSLATE_API_BASE / API_BASE / ANNOTATE_API_BASE in .env."
+        )
     raw = raw.rstrip("/")
     if raw.endswith("/v1"):
         return raw
