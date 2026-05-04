@@ -1,0 +1,120 @@
+{
+  "experiment": "baseline_model_only",
+  "model": "gemini-3-flash-preview",
+  "api_base": "https://llm-sjtu.multiego.me/v1",
+  "workers": 16,
+  "temperature": 0.7,
+  "total_questions": 673,
+  "ok": 673,
+  "correct": 170,
+  "accuracy_overall": 0.2526002971768202,
+  "accuracy_on_ok": 0.2526002971768202,
+  "per_character": {
+    "CHAR_01": {
+      "total": 55,
+      "ok": 55,
+      "correct": 10
+    },
+    "CHAR_02": {
+      "total": 63,
+      "ok": 63,
+      "correct": 14
+    },
+    "CHAR_03": {
+      "total": 64,
+      "ok": 64,
+      "correct": 25
+    },
+    "CHAR_04": {
+      "total": 60,
+      "ok": 60,
+      "correct": 14
+    },
+    "CHAR_05": {
+      "total": 63,
+      "ok": 63,
+      "correct": 10
+    },
+    "CHAR_06": {
+      "total": 61,
+      "ok": 61,
+      "correct": 9
+    },
+    "CHAR_07": {
+      "total": 61,
+      "ok": 61,
+      "correct": 25
+    },
+    "CHAR_08": {
+      "total": 62,
+      "ok": 62,
+      "correct": 10
+    },
+    "CHAR_09": {
+      "total": 59,
+      "ok": 59,
+      "correct": 20
+    },
+    "CHAR_10": {
+      "total": 62,
+      "ok": 62,
+      "correct": 7
+    },
+    "CHAR_11": {
+      "total": 63,
+      "ok": 63,
+      "correct": 26
+    }
+  },
+  "per_stage": {
+    "midlife_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 23
+    },
+    "age_30_transition": {
+      "total": 85,
+      "ok": 85,
+      "correct": 21
+    },
+    "entering_midlife": {
+      "total": 81,
+      "ok": 81,
+      "correct": 22
+    },
+    "entering_adult_world": {
+      "total": 85,
+      "ok": 85,
+      "correct": 16
+    },
+    "early_adult_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 23
+    },
+    "adolescence": {
+      "total": 84,
+      "ok": 84,
+      "correct": 20
+    },
+    "school_age": {
+      "total": 85,
+      "ok": 85,
+      "correct": 24
+    },
+    "settling_down": {
+      "total": 81,
+      "ok": 81,
+      "correct": 21
+    }
+  },
+  "letter_distribution": {
+    "A": 104,
+    "B": 148,
+    "C": 181,
+    "D": 240,
+    "None": 0
+  },
+  "predictions_file": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/experiments/results/baseline_model_only/gemini-3-flash-preview/predictions_baseline.json",
+  "generated_at_utc": "2026-05-01T16:26:30Z"
+}

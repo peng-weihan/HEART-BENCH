@@ -1,0 +1,35 @@
+{
+  "experiment": "mem0",
+  "model": "gpt-5.4-mini",
+  "api_base": "https://llm-sjtu.multiego.me/v1",
+  "top_k": 5,
+  "workers": 2,
+  "temperature": 0.7,
+  "retrieval_source": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/data/mem0/retrieval_all.jsonl",
+  "total_questions": 2,
+  "ok": 2,
+  "correct": 0,
+  "accuracy_overall": 0.0,
+  "accuracy_on_ok": 0.0,
+  "per_character": {
+    "CHAR_01": {
+      "total": 2,
+      "ok": 2,
+      "correct": 0
+    }
+  },
+  "per_stage": {
+    "early_adult_transition": {
+      "total": 1,
+      "ok": 1,
+      "correct": 0
+    },
+    "age_30_transition": {
+      "total": 1,
+      "ok": 1,
+      "correct": 0
+    }
+  },
+  "predictions_file": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/experiments/results/mem0/gpt-5.4-mini/predictions_top5.json",
+  "generated_at_utc": "2026-04-30T14:09:35Z"
+}

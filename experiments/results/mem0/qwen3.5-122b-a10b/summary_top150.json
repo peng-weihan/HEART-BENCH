@@ -1,0 +1,115 @@
+{
+  "experiment": "mem0",
+  "model": "qwen3.5-122b-a10b",
+  "api_base": "https://llm-sjtu.multiego.me/v1",
+  "top_k": 150,
+  "workers": 32,
+  "temperature": 0.7,
+  "retrieval_source": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/data/mem0/retrieval_all.jsonl",
+  "total_questions": 673,
+  "ok": 673,
+  "correct": 265,
+  "accuracy_overall": 0.3937592867756315,
+  "accuracy_on_ok": 0.3937592867756315,
+  "per_character": {
+    "CHAR_02": {
+      "total": 63,
+      "ok": 63,
+      "correct": 24
+    },
+    "CHAR_01": {
+      "total": 55,
+      "ok": 55,
+      "correct": 18
+    },
+    "CHAR_03": {
+      "total": 64,
+      "ok": 64,
+      "correct": 36
+    },
+    "CHAR_05": {
+      "total": 63,
+      "ok": 63,
+      "correct": 24
+    },
+    "CHAR_04": {
+      "total": 60,
+      "ok": 60,
+      "correct": 18
+    },
+    "CHAR_06": {
+      "total": 61,
+      "ok": 61,
+      "correct": 18
+    },
+    "CHAR_07": {
+      "total": 61,
+      "ok": 61,
+      "correct": 31
+    },
+    "CHAR_08": {
+      "total": 62,
+      "ok": 62,
+      "correct": 33
+    },
+    "CHAR_09": {
+      "total": 59,
+      "ok": 59,
+      "correct": 29
+    },
+    "CHAR_10": {
+      "total": 62,
+      "ok": 62,
+      "correct": 10
+    },
+    "CHAR_11": {
+      "total": 63,
+      "ok": 63,
+      "correct": 24
+    }
+  },
+  "per_stage": {
+    "age_30_transition": {
+      "total": 85,
+      "ok": 85,
+      "correct": 28
+    },
+    "midlife_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 33
+    },
+    "adolescence": {
+      "total": 84,
+      "ok": 84,
+      "correct": 34
+    },
+    "school_age": {
+      "total": 85,
+      "ok": 85,
+      "correct": 40
+    },
+    "early_adult_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 36
+    },
+    "settling_down": {
+      "total": 81,
+      "ok": 81,
+      "correct": 32
+    },
+    "entering_adult_world": {
+      "total": 85,
+      "ok": 85,
+      "correct": 32
+    },
+    "entering_midlife": {
+      "total": 81,
+      "ok": 81,
+      "correct": 30
+    }
+  },
+  "predictions_file": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/experiments/results/mem0/qwen3.5-122b-a10b/predictions_top150.json",
+  "generated_at_utc": "2026-04-30T14:42:36Z"
+}

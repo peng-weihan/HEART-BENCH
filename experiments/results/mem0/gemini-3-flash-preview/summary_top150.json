@@ -1,0 +1,115 @@
+{
+  "experiment": "mem0",
+  "model": "gemini-3-flash-preview",
+  "api_base": "https://llm-sjtu.multiego.me/v1",
+  "top_k": 150,
+  "workers": 32,
+  "temperature": 0.7,
+  "retrieval_source": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/data/mem0/retrieval_all.jsonl",
+  "total_questions": 673,
+  "ok": 673,
+  "correct": 364,
+  "accuracy_overall": 0.5408618127786032,
+  "accuracy_on_ok": 0.5408618127786032,
+  "per_character": {
+    "CHAR_02": {
+      "total": 63,
+      "ok": 63,
+      "correct": 38
+    },
+    "CHAR_01": {
+      "total": 55,
+      "ok": 55,
+      "correct": 27
+    },
+    "CHAR_03": {
+      "total": 64,
+      "ok": 64,
+      "correct": 39
+    },
+    "CHAR_04": {
+      "total": 60,
+      "ok": 60,
+      "correct": 22
+    },
+    "CHAR_05": {
+      "total": 63,
+      "ok": 63,
+      "correct": 35
+    },
+    "CHAR_06": {
+      "total": 61,
+      "ok": 61,
+      "correct": 35
+    },
+    "CHAR_07": {
+      "total": 61,
+      "ok": 61,
+      "correct": 35
+    },
+    "CHAR_08": {
+      "total": 62,
+      "ok": 62,
+      "correct": 42
+    },
+    "CHAR_09": {
+      "total": 59,
+      "ok": 59,
+      "correct": 37
+    },
+    "CHAR_10": {
+      "total": 62,
+      "ok": 62,
+      "correct": 27
+    },
+    "CHAR_11": {
+      "total": 63,
+      "ok": 63,
+      "correct": 27
+    }
+  },
+  "per_stage": {
+    "adolescence": {
+      "total": 84,
+      "ok": 84,
+      "correct": 45
+    },
+    "settling_down": {
+      "total": 81,
+      "ok": 81,
+      "correct": 49
+    },
+    "age_30_transition": {
+      "total": 85,
+      "ok": 85,
+      "correct": 44
+    },
+    "early_adult_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 41
+    },
+    "school_age": {
+      "total": 85,
+      "ok": 85,
+      "correct": 53
+    },
+    "entering_midlife": {
+      "total": 81,
+      "ok": 81,
+      "correct": 39
+    },
+    "midlife_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 46
+    },
+    "entering_adult_world": {
+      "total": 85,
+      "ok": 85,
+      "correct": 47
+    }
+  },
+  "predictions_file": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/experiments/results/mem0/gemini-3-flash-preview/predictions_top150.json",
+  "generated_at_utc": "2026-04-30T14:59:18Z"
+}

@@ -1,0 +1,9 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+
+# mem0 local stores (qdrant / sqlite history etc.)
+.mem0/
+history.db

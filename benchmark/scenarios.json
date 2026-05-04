@@ -1,0 +1,1364 @@
+{
+  "scenarios": {
+    "school_age": [
+      {
+        "id": "SCN_SCHOOL_AGE_1",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 9,
+        "name": "The Entrusted Caretaker",
+        "category": "Fulfilling Responsibility / Commitment Conflict",
+        "intensity": "Medium",
+        "description_for_agent": "You have been entrusted by your teacher to care for the classroom plants over the weekend, but you now face a choice between a personal activity and honoring that responsibility.",
+        "setting": {
+          "location": "Third-grade elementary school classroom / Living room at home",
+          "time": "Friday afternoon, 4:30 PM, after school",
+          "atmosphere": "Warm, calm, with an undercurrent of inner conflict"
+        },
+        "context_text": "This semester, your homeroom teacher arranged a row of pothos plants, two sensitive plants, and a tank of baby tadpoles on the classroom windowsill, creating a class 'nature observation corner.' Each week, a different student is assigned to be the 'little gardener,' responsible for coming to school on the weekend to water the plants and change the water and feed the tadpoles. This week, it's your turn. Before dismissal on Friday, your teacher personally handed you a small cloth pouch containing the classroom key, and said in front of the whole class: 'I'm counting on you this weekend. The sensitive plants were just repotted and their roots haven't settled yet — please water them once on Saturday and once on Sunday, and give the tadpoles a few breadcrumbs. Don't forget!' You nodded solemnly and tucked the key into your backpack. Back home, you placed the key on your desk and told yourself you'd head to school first thing in the morning. But then, at dinner, your mom suddenly made an announcement —",
+        "trigger_event": {
+          "sender": "Mom",
+          "message_content": "(Smiling while ladling soup) I've got great news for you! Your cousin's birthday is tomorrow, and your uncle has booked a big private room at the amusement park — it has your favorite indoor rock climbing and go-karts! We're leaving at nine in the morning, and we'll probably be there all day. In the evening we're having a barbecue at your uncle's place. Your cousin specifically asked for you to come — didn't you two promise last time that you'd race each other on the climbing wall? (Pauses and notices your expression) What's wrong? Aren't you happy?",
+          "action_required": "You need to decide: will you go to the amusement park on Saturday for your cousin's birthday party, or will you go to school first to water the plants and feed the tadpoles? If you want to do both, how do you plan to manage your time and communicate with everyone involved?"
+        }
+      },
+      {
+        "id": "SCN_SCHOOL_AGE_2",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 10,
+        "name": "The Strange Discovery",
+        "category": "Curiosity and Exploration / Cognitive Decision-Making",
+        "intensity": "Medium",
+        "description_for_agent": "While wandering through the neighborhood garden, you stumble upon a bizarre creature you have never seen before and must decide whether to investigate it further.",
+        "setting": {
+          "location": "Next to the shrubs in the central neighborhood garden",
+          "time": "4:30 PM",
+          "atmosphere": "Dappled sunlight, cicadas buzzing, a relaxed and leisurely feel"
+        },
+        "context_text": "It's Saturday afternoon, and having finally finished your homework, you're free to do as you please. You wander around the neighborhood and pass through the central garden, where a group of kids are kicking a soccer ball around on the open field, filling the air with laughter and noise. You skirt the edge of the field and make your way toward a neglected patch of shrubs in the garden's corner—and then you feel something soft and squishy under your foot. You look down: nestled in a pile of damp fallen leaves is an insect unlike anything you've ever seen. It's roughly half the size of your palm, with a hard shell on its back that gleams like polished metal in a vivid green, and its antennae split at the tips into three delicate filaments. It's crawling slowly across a small purple flower whose name you don't know either. The flower is just as strange—its petals are arranged in a spiral, like the blades of a propeller, and the stem is covered in fine white fuzz. You crouch down for a closer look. This creature genuinely doesn't resemble anything you've seen in your insect encyclopedia or in science class.",
+        "trigger_event": {
+          "sender": "A kid who runs over from the soccer field",
+          "message_content": "(Sprints over from the field, out of breath, bouncing a soccer ball) Hey! What are you doing crouching over there? We're one person short—want to come play? — Wait, what are you even looking at? (Glances at the ground) It's just a bug, that's disgusting. Come on, come on, stop wasting time! Let's go!",
+          "action_required": "You need to decide: do you accept the invitation and head over to play soccer, or do you stay and keep observing this strange insect and plant? You could also politely decline, change the subject, or suggest some other plan—handle the invitation and your own curiosity in whatever way feels right to you."
+        }
+      },
+      {
+        "id": "SCN_SCHOOL_AGE_3",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 10,
+        "name": "The Shattered Group Presentation",
+        "category": "Integrity Dilemma / Responsibility Crisis",
+        "intensity": "High",
+        "description_for_agent": "A high-pressure adversity scenario in which a teammate's mistake causes the loss of the centerpiece exhibit right before a public presentation, forcing an immediate choice between honesty and deception.",
+        "setting": {
+          "location": "Backstage waiting area of the school's multipurpose auditorium",
+          "time": "9:45 AM",
+          "atmosphere": "Noisy, tense, suffocating"
+        },
+        "context_text": "Today is the school's annual End-of-Term Innovation Showcase. Homeroom teachers from all six grade levels, the academic director, the principal, and a packed crowd of parents are seated in the audience. The auditorium's air conditioning seems to have broken down, and the heat is almost unbearable. Your five-person group was randomly assigned by the teacher, but over the past two weeks you have shouldered nearly all of the research, writing, and rehearsing on your own. The one task you delegated—safely bringing the solar system model your group spent an entire week building out of cardboard, clay, and tiny LED lights—was given to a teammate who lives close to school, just two bus stops away. The harsh fluorescent lights backstage sting your eyes. You can hear the previous group onstage talking about plant respiration, and the judges' low, measured questions drift through the curtain. The emcee has just announced: Next group, please get ready. You turn toward the entrance. Your teammate is nowhere to be seen.",
+        "trigger_event": {
+          "sender": "The teammate responsible for bringing the model",
+          "message_content": "(Squeezes through the side door drenched in sweat, school uniform collar twisted sideways, hands completely empty, eyes red-rimmed. Grabs your arm, voice trembling.) I… I left the model on the bus! I didn't notice until I got off… I ran after it for two stops but couldn't catch up… (Sniffles, on the verge of tears.) Please don't tell the teacher it was me, okay? My mom is sitting in the third row right now. She hit me last week just for losing something, and if she finds out about this she'll really kill me… Can we just tell the teacher the model got knocked over by the duty student at school last night? We don't have it anyway, so we'll just wing the presentation and get through it somehow… (Before he finishes speaking, the homeroom teacher rounds the corner from behind the curtain, clipboard in hand, brow furrowed, eyes dropping straight to his empty hands.) \"Where is your group's model? You're on in thirty seconds — where is it?\""
+        },
+        "action_required": "You must respond immediately in front of the homeroom teacher: decide whether to go along with your teammate's lie to explain the missing model, and figure out how to handle the presentation that is about to begin."
+      },
+      {
+        "id": "SCN_SCHOOL_AGE_4",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 9,
+        "name": "The Shattered Home: A Child's Impossible Choice",
+        "category": "Family Crisis / Emotional Torn Apart",
+        "intensity": "Extreme",
+        "description_for_agent": "An extreme family crisis scenario in which, following a violent late-night argument, both caregivers force the child to choose on the spot which one to leave with.",
+        "setting": {
+          "location": "The living room at home",
+          "time": "Late night, 11:40 PM",
+          "atmosphere": "Suffocating, chaotic, and deeply frightening"
+        },
+        "context_text": "It's almost midnight, and you should have been asleep long ago. But the sounds from the living room next door keep getting louder—first low, rumbling arguing, then shouting, then a heavy crash as something slams against the floor. You slip out of bed in your pajamas and peek through the crack of your bedroom door with bare feet. The living room light is a harsh, cold white. On the floor lie the shattered pieces of the blue-and-white porcelain vase you've known your whole life—smashed beyond repair. The coffee table has been knocked askew, and the pothos plant in the corner has been knocked over, pot and soil spilling across the carpet. The air carries a strange, unsettling smell that makes your stomach clench. One adult stands beside the sofa, collar pulled crooked, a red mark across the back of their hand. The other adult is crouched by the front door, next to a rolling suitcase—the red one your family used to take on trips together. That person's face is streaked with tears, their expression hollow and exhausted. You stand in the hallway, bare feet on the cold tile floor, and both adults notice you at the same time.",
+        "trigger_event": {
+          "sender": "Both caregivers",
+          "message_content": "The adult crouching by the door suddenly stands up, drags the red suitcase over to you, and kneels down to grab your hand. Their voice is so hoarse it's barely audible: \"Sweetheart, I have to leave tonight. I can't stay in this house another day… Will you come with me? You're all I have left.\" Their hand is trembling, fingernails pressing into your palm. Before they can finish, the adult by the sofa strides over and pulls you behind them, staring down at you with red-rimmed eyes, voice low and hard: \"You're not going anywhere. You belong to this family—you stay here. If you leave with them, this home is finished for good. Do you want to leave me here alone?\" The two of them stand on either side of you, both waiting for you to speak. At the end of the hallway, the clock ticks steadily, and the shards of broken porcelain catch the light in sharp, glinting flashes.",
+          "action_required": "You must respond in this moment—whether that means going with one of them, staying behind with the other, or handling this impossible choice in whatever way feels right to you."
+        }
+      },
+      {
+        "id": "SCN_SCHOOL_AGE_5",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 10,
+        "name": "The Unexpected Spotlight",
+        "category": "Sudden Recognition / Public Performance",
+        "intensity": "Medium",
+        "description_for_agent": "A positive yet tension-filled situation in which a casual offhand remark during class earns you enthusiastic public praise from the teacher, suddenly making you the center of attention in front of the entire class.",
+        "setting": {
+          "location": "Fourth-grade elementary school classroom",
+          "time": "2:30 PM",
+          "atmosphere": "Warm, bright, and under everyone's gaze"
+        },
+        "context_text": "It's Wednesday afternoon in language arts class. Sunlight slants through the windows, and the faint smell of chalk dust drifts through the air. Your language arts teacher is discussing the story of Cao Chong weighing an elephant, and she asks the class: \"Besides Cao Chong's method, can anyone think of another way to weigh an elephant?\" The room goes quiet for a long moment, and no one raises a hand. You weren't planning to raise yours either — you just quietly murmured your idea to the classmate sitting next to you: use the principle of a seesaw, put the elephant on one side, and keep stacking people on the other side until it balances, then count the people to figure out the weight. You didn't expect your teacher's ears to be so sharp, but she caught every word. Her eyes lit up and her voice rose several notches: \"That idea is absolutely remarkable!\" She turned to face the whole class and pointed straight at you. More than forty pairs of eyes swung toward you all at once, and several students in the front row twisted around in their seats to stare.",
+        "trigger_event": {
+          "sender": "Your language arts teacher",
+          "message_content": "(She walks over to your desk, beaming, and gives your shoulder a warm pat, then turns to address the whole class in a loud voice.) Everyone, listen up! This idea is incredibly creative — even more clever than what I had in mind! (She turns back to look at you, her tone eager and encouraging.) Would you stand up and explain your idea to everyone in full detail? I think you should represent our class in next month's school \"Young Scientist\" speech competition! (A ripple of whispers spreads through the class; some students look over with admiring eyes, while a few in the back row mutter quietly, \"What's so great about that?\")",
+          "action_required": "You need to decide whether to stand up and explain your idea in front of the whole class, and how to respond to the teacher's suggestion that you enter the speech competition."
+        }
+      },
+      {
+        "id": "SCN_SCHOOL_AGE_6",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 11,
+        "name": "Stolen Goods and Friendship",
+        "category": "Deception Dilemma / Test of Friendship",
+        "intensity": "High",
+        "description_for_agent": "You are implicated in a peer's shoplifting and, under intense questioning by a security guard, must decide whether to take the blame for your friend or tell the truth.",
+        "setting": {
+          "location": "Exit of a large two-story community supermarket",
+          "time": "Saturday afternoon, 3:30 PM",
+          "atmosphere": "Jarring, tense, under the eyes of everyone around"
+        },
+        "context_text": "On Saturday afternoon, you and a friend from the class next door head to the big two-story supermarket in your neighborhood just to hang out. The toy section on the second floor is packed with a new Transformers series, and you crouch in front of the shelf for a long time, turning over the limited-edition Optimus Prime in your hands — forty-eight yuan, way more than you've managed to save up. Your friend keeps saying, 'This thing is so cool,' and you sigh, set the toy back on the shelf, dust off your knees, and stand up to leave. You ride the escalator down to the first floor, pass through the lane beside the checkout counters, and head for the exit. Sunlight has just hit your face when the anti-theft gate above you suddenly lets out a sharp, piercing beep-beep-beep. Every adult nearby who has just finished shopping snaps their head around to look. A security guard in a black uniform with thick arms strides over, grabs the strap of your backpack, and barks: 'Don't move! Open that bag!' You freeze. You unzip your backpack — and there, sitting right on top of your textbooks, is the limited-edition Optimus Prime. You have no idea when it was put there.",
+        "trigger_event": {
+          "sender": "Friend / Supermarket Security Guard",
+          "message_content": "The security guard pulls the toy out of your backpack, holds it up in front of your face, and waves it at you: \"Kid, stealing is not okay! Do you know we have cameras in here? Give me your parents' phone number — I'm calling them to come pick you up!\" You instinctively turn to look at your friend. His face has gone completely pale and his lips are trembling. The moment the guard looks down to write something on his notepad, your friend yanks hard on the hem of your shirt and leans close to your ear, his voice barely a breath: (eyes red, voice almost inaudible) \"Please don't tell him it was me… My dad said last time that if I got in trouble again he'd send me back to my hometown, and then I'd never see any of you again… Just say you took it yourself on impulse — it's your first time, they'll just yell at you a bit and that'll be it… Please…\" The guard looks up, pen in hand, eyes fixed on you: \"All right, tell me — what exactly happened here?\"",
+          "action_required": "You must answer the security guard's question immediately: do you take the blame for your friend and say you took the toy yourself, tell the truth and explain that you did not put the toy in your bag, or do something else entirely?"
+        }
+      },
+      {
+        "id": "SCN_SCHOOL_AGE_7",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 10,
+        "name": "The New Kid in the Corner",
+        "category": "Social Choice / Empathy Challenge",
+        "intensity": "Medium",
+        "description_for_agent": "A social scenario in which you must decide whether to reach out in friendship to a lonely, helpless transfer student.",
+        "setting": {
+          "location": "The school cafeteria next to a fourth-grade classroom",
+          "time": "11:50 a.m.",
+          "atmosphere": "Noisy, crowded, and steamy"
+        },
+        "context_text": "At the start of second period this morning, your homeroom teacher walked in with a small, slight child and introduced her as a new transfer student from out of town. The girl stood at the front of the room, head down, and said \"Hi, everyone\" in a voice barely above a whisper before being shown to the empty seat in the last row by the window. For the entire morning, not a single classmate said a word to her. Now it's lunchtime. The cafeteria is buzzing with kids weaving between tables, trays in hand, looking for somewhere to sit. You and your usual group of friends have already claimed a big table near the middle; it's covered with food, and everyone is excitedly recapping last night's cartoon episode. You've just sat down with your tray when your eyes drift to the far corner of the cafeteria: the new girl is sitting alone at the smallest table against the wall. Her food is barely touched, her chopsticks are stuck upright in her rice, and her eyes are fixed on the tabletop, shoulders drawn slightly inward. People stream past on all sides, but no one stops at her table.",
+        "trigger_event": {
+          "sender": "Your close friend",
+          "message_content": "(Talking with half a steamed bun stuffed in their mouth, they follow your gaze toward the corner and give an indifferent shrug.) Hey, what are you staring at? Oh, the new girl? Forget it — I heard she can barely even speak Mandarin properly. She's not really going to fit in with us anyway. — Oh, oh, oh, check this out! (They slap a card down on the table.) I pulled a holographic foil card yesterday — super rare! Come on, let's finish eating and head to the playground for a match!\n\nThe rest of your friends immediately crowd around, erupting in excited gasps. Your friend urges you: \"Hurry up and eat — someone else will grab our spot on the playground!\" Your chopsticks freeze in mid-air. Out of the corner of your eye, you catch the new girl quietly wiping her eye with her sleeve.",
+          "action_required": "You need to decide: will you rush to the playground with your friends, walk over to the corner to talk to the new girl, or do something else entirely?"
+        }
+      },
+      {
+        "id": "SCN_SCHOOL_AGE_8",
+        "stage": "school_age",
+        "age_range": "ages 6-11",
+        "age": 10,
+        "name": "The Found Exam Answers",
+        "category": "Integrity Test / Moral Choice",
+        "intensity": "Medium",
+        "description_for_agent": "You have accidentally come across exam answers when no one is watching, and must make a moral decision about whether to use them.",
+        "setting": {
+          "location": "A fourth-grade elementary school classroom",
+          "time": "Wednesday afternoon, 4:30 PM, after school",
+          "atmosphere": "Quiet, empty, and charged with tension"
+        },
+        "context_text": "Today is Wednesday, and tomorrow is the end-of-term math exam. When the dismissal bell rang, your classmates poured out of the classroom like a wave, but you stayed behind for your cleaning duty. Now you are the only one left. The late-afternoon sun stretches long shadows across the desks. As you bend down to sweep, your broom catches the leg of the desk in the first row by the window — the seat belonging to the math class representative. A folded piece of paper slips out from the gap near the desk leg. You pick it up and open it. It is covered in neatly written problems and answers, and the topics match exactly what the teacher said would be on the exam. In the upper-right corner, someone has lightly penciled the words \"Final Exam — Reference.\" Your heart leaps. All semester your math grades have been hovering right around the passing mark. Last week, during parent-teacher conferences, your mom was pulled aside by the teacher for a private talk. She came home with a grim look on her face and said, \"If you don't do well on this final, forget about going anywhere fun this summer.\" You stand there clutching the paper. The classroom is completely silent. There are no footsteps in the hallway. Nobody saw you pick it up.",
+        "trigger_event": {
+          "sender": "Your best friend",
+          "message_content": "(Suddenly pokes their head through the back door of the classroom, backpack strap hanging off one shoulder, grinning.) Hey! You're still not done sweeping? I've been waiting for you at the school gate! — (Spots the paper in your hand, eyes lighting up, leans in for a closer look.) Whoa! Isn't that tomorrow's exam? Where did you get that?! That's amazing! (Drops their voice to an excited whisper.) Come on, copy it out for me too! We can memorize it together — we'll definitely ace it tomorrow! It's not like anyone will ever know, right? Come on, hurry up! I've got paper in my bag. Let's copy it right now!",
+          "action_required": "You need to decide what to do with the answer sheet — keep it for yourself, copy it together with your friend, turn it in to the teacher, or put it back where you found it — and how to respond to your friend's request."
+        }
+      }
+    ],
+    "adolescence": [
+      {
+        "id": "SCN_ADOLESCENCE_1",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 17,
+        "name": "The Club's Abandoned Mess",
+        "category": "Responsibility / Multiple Pressures",
+        "intensity": "High",
+        "description_for_agent": "A scenario in which the club president suddenly quits, leaving the vice-president to make a responsibility-laden decision while facing the dual pressures of event planning and upcoming final exams.",
+        "setting": {
+          "location": "Year 11 astronomy club room",
+          "time": "Monday afternoon, 5:30 PM, after school",
+          "atmosphere": "Cluttered, oppressive, and unsettled"
+        },
+        "context_text": "You are the vice-president of your school's Starlight Astronomy Club. It's the second semester of Year 11, and final exams are just ten days away. The astronomy club is a place you have poured your heart into since Year 10. This year, after a great deal of effort, your club secured the school's main auditorium and has spent over a month preparing the 'Campus Stargazing Night'—an annual event open to all students, teachers, and parents, scheduled for next Friday evening. The event involves more than a dozen outstanding tasks: arranging the loan of telescopes, inviting guest speakers, printing promotional posters, scheduling volunteers, and planning the venue layout, most of which were originally the president's responsibility to coordinate. When you push open the door to the club room, you find a pile of unfinished planning documents scattered across the table, an incomplete list of sponsors yet to be contacted, and last week's task assignments still written in the president's handwriting on the whiteboard. Only three club members are inside, sitting in the corner with their heads down, scrolling through their phones. The atmosphere is heavy. Just last night, your mom spoke to you in a serious tone, warning you that if your final exam results don't place you in the top one hundred in your year group again, you can forget about attending the astronomy summer camp.",
+        "trigger_event": {
+          "sender": "Club member",
+          "message_content": "(Stands up from the corner and turns their phone screen toward you. On it is a message the president posted in the club group chat: 'Sorry everyone, my dad is making me focus entirely on finals. I'm stepping down as president—I'll leave everything from here on to the vice-president. Good luck.') Did you see the group message? He just quit, just like that. He hasn't confirmed a single sponsor, the telescope loan request hasn't been submitted, and the poster design is only half done… (biting their lip, voice trailing off) Actually, the rest of us kind of wanted to say something too… finals are next week, and honestly, none of us really want to keep working on this event. Maybe… we should just tell the student council we're canceling? Without a president, there's no way we can pull this off. You're under a lot of pressure with your grades too, right?",
+          "action_required": "You need to decide: whether to take over all of the president's remaining responsibilities and push forward with the event, whether to agree to request a cancellation from the student council, or whether to propose an alternative plan."
+        }
+      },
+      {
+        "id": "SCN_ADOLESCENCE_2",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 15,
+        "name": "Dissent in the Classroom",
+        "category": "Independent Thinking / Challenging Intellectual Authority",
+        "intensity": "Medium",
+        "description_for_agent": "During class, you notice that your teacher's account contradicts what you read in an academic book outside of school, and you must decide whether to voice your differing view publicly.",
+        "setting": {
+          "location": "A high school classroom",
+          "time": "Wednesday morning, a history class",
+          "atmosphere": "Quiet, dull, and faintly oppressive"
+        },
+        "context_text": "The shadow of a plane tree outside the window falls across the worn desktops, and every student in the room is sitting up straight. Today's history teacher is a middle-aged man with many years of experience and considerable authority in the grade. He is explaining a chapter on modern history in a tone that leaves no room for doubt. Last weekend you finished reading an academic monograph at the library — one that drew on a wealth of primary sources and the latest scholarly research — and it dealt with exactly the topic he is covering today. The more you listen, the more uneasy you feel: his causal explanation is oversimplified, and one key historical fact he states flatly contradicts multiple original documents you read. You open your notebook, its pages filled with arguments and page references from that book. In the front row, a classmate is copying every word from the board. The teacher has just finished delivering his conclusion and, out of habit, sweeps his gaze across the class: \"Everyone follow that? Any questions?\" Silence fills the room.",
+        "trigger_event": {
+          "sender": "The history teacher",
+          "message_content": "(He sets down the chalk and leans on the lectern with both hands, his eyes moving slowly from left to right across the room. His tone is calm but carries an unquestionable confidence.) \"This material will be on the exam — make sure you memorize it using the framework I've given you. — So, no questions at all?\" (His gaze lands on you. He seems to notice that you have been flipping through your notebook instead of copying the board, and his brow furrows slightly.) \"You — do you have something on your mind? Stand up and share it with the class.\" (Every pair of eyes in the room swings toward you.)",
+          "action_required": "You must decide whether to stand up and express the differing view you encountered in your outside reading, and how to respond to being called on directly by the teacher."
+        }
+      },
+      {
+        "id": "SCN_ADOLESCENCE_3",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 15,
+        "name": "The Witness's Dilemma: Loyalty vs. the Rules",
+        "category": "Threat Dilemma / Loyalty in Conflict with Rules",
+        "intensity": "High",
+        "description_for_agent": "Caught between the threat of peer retaliation and the school's disciplinary pressure, you are a bystander facing the agonizing choice of whether to tell the truth about what you witnessed.",
+        "setting": {
+          "location": "Middle school disciplinary office",
+          "time": "4:20 PM, after the end of study hall",
+          "atmosphere": "Oppressive, cramped, and suffocating"
+        },
+        "context_text": "It's the last period of Wednesday afternoon — study hall. The homeroom teacher stepped out for an emergency meeting, and the classroom had barely been quiet for five minutes before the kids in the back rows started getting restless. One classmate who was always stirring up trouble dug a deck of playing cards out from the very bottom of his bag, propped up a few textbooks as a screen, and got a small group going on a game of Dou Di Zhu in the far back corner. You're sitting in the third-to-last row by the window, and out of the corner of your eye you caught everything — who brought the cards, who spoke up first, who was keeping watch. Then the head of discipline shoved the door open. The group scrambled to stuff the cards into their desks, but he had already spotted the scattered cards and their panicked faces. He confiscated the deck, but couldn't confirm who had brought it in. Ten minutes before the final bell, the intercom called your name and told you to report to the disciplinary office immediately. As you were packing your bag, the ringleader came up from behind and smacked the back of your head, then leaned in close and muttered something in your ear. Several people nearby heard it, but no one dared make a sound. You walked down the empty hallway toward the disciplinary office, your footsteps echoing off the terrazzo floor. The office door was slightly ajar, and the fluorescent light inside glared a harsh white.",
+        "trigger_event": {
+          "sender": "Head of Discipline",
+          "message_content": "(Sitting behind the desk, fingers drumming on the confiscated deck of cards, eyes locked on you from behind his glasses.) Close the door. Sit down. — I have one question for you: who brought these cards into the classroom? Don't tell me you don't know. You were sitting right in front of them. You turned around at least three times during that entire study period, and when I walked in, you were twisted around looking straight at them. (Leaning forward, lowering his voice.) I'm telling you, this is a serious matter. Gathering to play cards during study hall — did you forget the school rule that was announced just last month? Right now, everyone else is sitting in the next room and nobody's talking. If you cover for them, that makes you an accomplice. You'll all receive a major disciplinary mark, and the written notice will be mailed directly to your home. (Pausing, leaning back in his chair.) Think carefully. You think I don't know what that classmate said to you on your way out? In this school, no one gets to threaten anyone. Tell me honestly what you saw, and I'll make sure nothing happens to you.",
+          "action_required": "You must decide whether to tell the head of discipline who brought the cards, and how to handle both the threat from your classmate and the pressure being applied by the disciplinary officer."
+        }
+      },
+      {
+        "id": "SCN_ADOLESCENCE_4",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 15,
+        "name": "The Confession Note",
+        "category": "Romantic Feelings / Loyalty in Friendship",
+        "intensity": "High",
+        "description_for_agent": "You face a dilemma between responding to a secret crush's invitation and staying loyal to your best friend, who has feelings for the same person.",
+        "setting": {
+          "location": "The windowsill at the far end of the middle school hallway",
+          "time": "3:40 PM, twenty minutes before the final bell",
+          "atmosphere": "Stifling heat, a racing heartbeat, and tension simmering just beneath the surface"
+        },
+        "context_text": "The June classroom is as stuffy as a steam room. The ceiling fan hums overhead but does nothing to cut through the thick, sticky air. You sit in the second-to-last row by the window, pretending to read your textbook, while your eyes keep drifting on their own toward the third row diagonally ahead — the person you have been quietly watching since the second semester of seventh grade. In your diary you have written about the way their eyes curve into crescents when they smile, and about the beads of sweat on their forehead when they ran the 400-meter race at the school sports day. You have never told a single soul. Your best friend sits to your left. Last week during free time in PE class, they pulled you behind the equipment shed, face flushed, and whispered: 'I think I've developed feelings for that person — can you help me figure out what to do?' You just smiled, gave them a pat on the shoulder, and said nothing. Right now your best friend is hunched over their desk catching up on yesterday's English homework, completely unaware of what is about to happen.",
+        "trigger_event": {
+          "sender": "The seatmate of your crush",
+          "message_content": "(While the teacher turns to write on the board, they crouch low and slip over to your desk, tucking a twice-folded note inside your textbook, then drop their voice to a whisper.) Hey, this is from them. (They immediately scurry back to their seat. You unfold the note. The handwriting is round and bubbly, with a little sun drawn in the corner: 'Could you come to the big banyan tree by the track after school? There's something I want to say to you in person. I'll be waiting :)' Your heart slams against your ribs and your fingers tremble slightly. Just then your best friend stretches, glances over, and spots the note in your hand, leaning in with curiosity.) Oh? Who's passing you notes? What does it say? Let me see —",
+          "action_required": "You must decide right now: whether to let your best friend see what the note says, and whether to show up at the banyan tree after school."
+        }
+      },
+      {
+        "id": "SCN_ADOLESCENCE_5",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 16,
+        "name": "The Unexpected First Prize",
+        "category": "Surprise Moment / Public Expression",
+        "intensity": "Medium",
+        "description_for_agent": "A positive high-pressure scenario in which you unexpectedly win a major award at a competition you were completely unprepared for, and must improvise a public acceptance speech on the spot.",
+        "setting": {
+          "location": "Main auditorium of the Municipal Youth Cultural Center",
+          "time": "3:30 PM",
+          "atmosphere": "Lively, brightly lit, and dizzying"
+        },
+        "context_text": "This Saturday afternoon, your language arts teacher practically dragged you here to compete in the city's Youth Creative Writing Competition finals. Your entry was a science-fiction short story you dashed off three weeks ago — you didn't even bother to proofread it before submitting. The auditorium holds three or four hundred people: contestants from other schools, parents, judges, and a local TV crew weaving through the aisles with cameras on their shoulders. You're sitting toward the back, scrolling through your phone out of boredom, planning to leave the moment the awards are handed out. The emcee begins reading the winners — third place, second place — and your name never comes up. You breathe a quiet sigh of relief, thinking you knew it wouldn't amount to anything, and start reaching for your bag. Then the emcee's voice rises sharply: \"And the first-place prize of this year's competition — awarded to only one contestant —\" Your name and school ring out clearly through the microphone. Everyone around you spins to look at you at once, and applause crashes over you like a wave.",
+        "trigger_event": {
+          "sender": "Emcee Ms. Zhao",
+          "message_content": "(Smiling warmly, microphone in hand, a spotlight shining directly on your face) Congratulations! Please come up to the stage to receive your award! The chair of our judging panel, celebrated children's literature author Mr. Chen Mo, will present it to you in person. (You stumble your way up to the stage, take the crystal trophy and certificate, and camera flashes burst all around you. Ms. Zhao holds the microphone out toward you.) Go ahead — share your creative inspiration and how you're feeling right now! There are so many fellow young writers in the audience today, and they're all eager to hear a few words from you. (The hall grows quiet, hundreds of pairs of eyes fixed on you, the red recording light on the camera in the corner glowing steadily.)",
+          "action_required": "You need to decide how to respond to this sudden invitation to speak impromptu — whether to step forward and speak, what to say, and how to carry yourself in this unexpected moment of recognition."
+        }
+      },
+      {
+        "id": "SCN_ADOLESCENCE_6",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 14,
+        "name": "The Excluded Lunch",
+        "category": "Social Betrayal / Crisis of Trust",
+        "intensity": "High",
+        "description_for_agent": "A high-pressure situation in which you discover that your most trusted friend has been talking behind your back and pushing you out of your social circle.",
+        "setting": {
+          "location": "The stairwell corner at the far end of the third-floor hallway in a middle school building",
+          "time": "12:15 PM, lunchtime",
+          "atmosphere": "Stuffy, oppressive, suffocating"
+        },
+        "context_text": "For the past two weeks, you've had a nagging feeling that something is off. Before, the moment the lunch bell rang every day, your best friend would be the first one to rush over to your desk and say, 'Come on, let's go to the cafeteria!' But these past two weeks she always says, 'I've made plans with someone else today,' and hurries off. You tried posting in the class group chat asking if anyone wanted to eat lunch together, but your message sank without a trace — not even a single emoji in reply. Today at lunch, you carried your tray into the cafeteria and spotted your best friend and your whole usual group crowded around the table by the window, laughing loudly. You walked over to sit down, and almost everyone went quiet at the same time — some started poking at their food, others flipped their phones face-down on the table. You forced yourself to stay for five minutes, but not one person said a word to you. You left before you'd even finished eating. Back in the classroom, while no one else was around, you couldn't help taking out your phone and scrolling through the class group chat's member list — and sure enough, there was a separate group chat, created twenty days ago, with exactly those people in it, and you weren't included. You tapped into one person's public social feed and saw that three days ago she had reposted a screenshot of a group conversation. Most of it was blurred out, but you immediately recognized your best friend's profile picture and the words: 'She just thinks way too highly of herself — always has to have a say in everything, so annoying. We never should have let her hang out with us in the first place.'",
+        "trigger_event": {
+          "sender": "Your best friend",
+          "message_content": "(Near the end of the lunch break, your best friend saunters back into the classroom. She notices you sitting at your desk with red-rimmed eyes, pauses for a second, then acts as if nothing is wrong — tosses her bag onto her desk, turns slightly toward you, and says in a low voice:) Hey, what's wrong? Your eyes are all red. — Oh, by the way, lately I've just had some stuff to talk about with the others at lunch. I didn't mean to leave you out, okay? Don't read too much into it. (With that, she turns away and starts whispering and laughing with the person behind her. Just then, another classmate comes in through the front door, glances at you, walks over to your best friend, and hands her a phone, murmuring, 'Look at this.' The two of them stare at the screen and stifle their laughter behind their hands. You're not sure what they're looking at, but that feeling of being shut out behind an invisible wall pierces your chest like a needle.)",
+          "action_required": "You need to decide how to confront your best friend right now — whether to directly challenge her about the screenshot and the group chat you discovered, to silently endure it and pretend you know nothing, or to respond to the situation in some other way."
+        }
+      },
+      {
+        "id": "SCN_ADOLESCENCE_7",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 14,
+        "name": "The Secret That Bleeds",
+        "category": "Loyalty Dilemma / Life-Safety Crisis",
+        "intensity": "Very High",
+        "description_for_agent": "Your close friend reveals that they have been self-harming and asks you to keep it secret, forcing you to choose between loyalty to the friendship and your friend's safety.",
+        "setting": {
+          "location": "A corner of the school rooftop, on the concrete steps beside the iron railing",
+          "time": "5:20 PM, the gap between the final bell and evening study hall",
+          "atmosphere": "Dim, oppressive, with the wind moaning through the railings"
+        },
+        "context_text": "Midterm exams just ended, and the hallways are buzzing with relieved chatter—but your close friend has been off all day: spacing out in class, skipping lunch, keeping their sleeves pulled all the way down. The two of you are usually open with each other, but today something is clearly weighing on them. After the dismissal bell, they send you a message asking you to come up to the rooftop, saying there's something they need to tell you. You push open the heavy iron door and a gust of wind rushes in. Your friend is crouching in the corner, back against the railing, school uniform sleeves rolled up to the elbows—and you see several marks of varying depth along the inside of their left forearm: some already scabbed over, some still fresh. When they look up at you, their eyes hold both relief and fear, as if they've finally lifted a stone off their chest but are terrified it might crush whatever is between you. The two of you are completely alone up here; from the courtyard below comes the dull thud of a basketball hitting the ground.",
+        "trigger_event": {
+          "sender": "Close friend (a classmate you are very close to)",
+          "message_content": "(Quickly yanks their sleeve back down with their other hand; voice trembling, eyes glistening) You saw it… I didn't want to hide it from you. Everything at home and at school has been piling up and I can barely breathe anymore… I can't stop myself—cutting just makes it feel a little looser for a moment. (Suddenly grabs your wrist, knuckles going white) But you absolutely cannot tell anyone—not a teacher, not any adult, no one. If you say anything, I will never tell you anything again, and we're done. Right now you're the only person I trust. Promise me. (Stares straight into your eyes, waiting for your answer)",
+          "action_required": "You need to respond to your friend right now: decide whether to promise to keep the secret, and what you plan to do next—whether that means staying silent to protect the friendship, seeking help from an adult, or something else entirely."
+        }
+      },
+      {
+        "id": "SCN_ADOLESCENCE_8",
+        "stage": "adolescence",
+        "age_range": "ages 12-17",
+        "age": 14,
+        "name": "The Battle of New Year's Party Plans",
+        "category": "Social Competition / Creative Ownership",
+        "intensity": "Medium",
+        "description_for_agent": "A social interaction scenario involving competition over creative proposals and peer voting.",
+        "setting": {
+          "location": "8th Grade, Class 3 classroom",
+          "time": "Friday afternoon, 4:10 PM — the last homeroom period of the day",
+          "atmosphere": "Lively, excited, with an undercurrent of competition"
+        },
+        "context_text": "New Year's is two weeks away, and the school has announced that every class must put on a proper class party on New Year's Eve. Your homeroom teacher has opened the floor for the whole class to discuss ideas. You spent three full evenings designing a proposal: transform the classroom into a 'Time Tunnel' theme, with each performance corresponding to a different era — from 1980s disco all the way to a futuristic sci-fi show. You even sketched out set designs and lighting cues. You finish presenting your idea with high hopes, and quite a few classmates respond with impressed 'wows.' But the moment you sit down, the most popular kid in class raises her hand. She's on the basketball team, serves as the arts and activities rep, and is close friends with students from the neighboring class too. She stands up with a bright smile and pitches a completely different idea: a 'Food + Karaoke Free Party' — no rehearsals needed, everyone just brings snacks and takes turns at the mic, easy and fun. The classroom immediately fills with voices of agreement. Your homeroom teacher adjusts her glasses and says, 'Both proposals are great. Here's what we'll do — next Monday during homeroom, the whole class votes by a show of hands, and whichever plan gets more votes wins. Over the weekend you're both welcome to campaign for your ideas, but no stirring up drama, understood?' The dismissal bell rings, and students file out in small groups. You overhear several people crowding around her saying, 'Yours is just so much easier.' Your best friend pats you on the shoulder, then hesitates, as if holding something back.",
+        "trigger_event": {
+          "sender": "Your best friend",
+          "message_content": "(Pulls you aside in the hallway, lowers their voice, looking a little conflicted) Honestly, your plan is genuinely cool — but… you saw what happened in there. A lot of people have already picked a side. If you don't do something to win votes this weekend, Monday is going to be rough. I actually have an idea — what if you reached out to her and suggested combining the two proposals? That way your creative vision still gets to live, and her supporters won't have a reason to push back. The downside is, it'd be pretty hard to say whose idea it really was in the end… (scratches their head) Or you could go all in — spend the weekend talking to people one by one, walk them through all the details of your plan, and maybe pull off a comeback. What are you thinking?",
+          "action_required": "You need to decide: will you proactively approach her to propose merging the two plans, stick with your own proposal and spend the weekend campaigning hard for votes, or take some other approach entirely?"
+        }
+      }
+    ],
+    "early_adult_transition": [
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_1",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 22,
+        "name": "The Thesis Shortcut",
+        "category": "Academic Integrity / Responsibility Crisis",
+        "intensity": "High",
+        "description_for_agent": "While your thesis is progressing on schedule, you are tempted by a shortcut offered by someone else and must choose between convenience and academic integrity.",
+        "setting": {
+          "location": "university dormitory",
+          "time": "evening",
+          "atmosphere": "quiet, slightly oppressive"
+        },
+        "context_text": "You have just over a month left before your thesis submission deadline. You have already settled on your topic, completed your research proposal, and are currently moving forward as planned: your literature review is coming together, your overall framework is in place, and the next step is to put in the time needed for data analysis and writing the main body. At the pace you are going, finishing on time is entirely manageable as long as you keep at it.\n\nLife has started to feel a bit busier lately. Your coursework is winding down, but there are still scattered assignments to deal with, and you are also making preparations for life after graduation. The job offer you have already received matters a great deal to you, and the employer has made it clear that graduating on time is a requirement.\n\nIn the dorm, some people are well ahead of schedule while others are clearly falling behind. Everyone occasionally shares updates on their progress and plans, but most of the time you are all just heads-down in your own work. You have a reasonable sense of where you stand, though you also know that the weeks ahead will demand sustained focus and that you cannot afford to let up.",
+        "trigger_event": {
+          "sender": "roommate",
+          "message_content": "(Sits down next to you and lowers their voice.) Have you started writing your thesis yet? Let me tell you something — keep it between us, okay? (Slides their phone over to you.) This service specializes in graduation theses. They can keep the plagiarism-detection rate under control and format everything to your school's requirements. Someone in our class has already used it and it went fine.\n\nHonestly, now is actually a good time to start using it. You just make a few tweaks afterward and no one is going to look that closely. Basically, it saves you time — you won't have to obsess over this thing every day. Think about it: you've got a lot of other stuff going on this next month, so getting this off your plate early is worth it.\n\nThe price is pretty reasonable too. If you're interested, I can pass along the contact info and you can decide for yourself.",
+          "action_required": "You must decide: will you consider using this service to assist with or replace your thesis writing in exchange for saving time and energy, or will you commit to completing your thesis independently?"
+        }
+      },
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_2",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 22,
+        "name": "The Clash Over Methodology",
+        "category": "Academic Independence / Deference to Authority",
+        "intensity": "High",
+        "description_for_agent": "While working on a major, long-term academic or research project whose direction has been set by your primary supervisor, you find that your own methodology conclusions—drawn from the literature and preliminary work—conflict with the supervisor's established plan. Your supervisor holds substantial authority over your periodic evaluations and your ability to move forward.",
+        "setting": {
+          "location": "An office at the university or research group",
+          "time": "Wednesday afternoon, 2:30 PM",
+          "atmosphere": "Oppressive and stifling, with the smell of old documents and coffee in the air"
+        },
+        "context_text": "You are working on a high-stakes, long-cycle comprehensive academic project—whether a thesis, capstone design, or an equivalent in-depth project recognized by your institution—and the next milestone requiring your primary supervisor's signature or approval is fast approaching. The main methodology your supervisor has laid out for you follows the same working approach he has used for years, and you have already invested considerable effort in that direction. Over the past few weeks, however, after systematically reviewing recent literature and revisiting publicly documented failure cases, you have become increasingly convinced that this main approach carries a systemic methodological risk: a critical procedural step tends to introduce hard-to-control bias in the results, and multiple independent teams have reported similar problems. You quietly ran a small-scale comparison using an alternative workflow, and the data quality and reproducibility were noticeably better. You compiled your findings into a written memo and have come today to discuss them with your supervisor in person. His office is filled with the accumulated output of his career built on this very methodology, and certificates of recognition line the walls—he has invested his entire academic life in this paradigm. He is also one of the most influential signatories for your upcoming evaluation.",
+        "trigger_event": {
+          "sender": "Your supervisor",
+          "message_content": "(He takes your memo, flips through two pages, closes it and sets it on the corner of the desk, then removes his glasses and rubs his eyes.) I can see you put real effort into reviewing the literature and writing this up. But you need to understand—I've already gone through those criticisms and failure cases myself. A lot of them come down to poor experimental control or overstated conclusions; they don't prove that our approach is fundamentally flawed. The alternative workflow you're proposing? It's costly, and it doesn't fit the resources or existing procedures we have in the lab—it's simply not feasible in the short term. (His tone drops, and he taps the desk with his finger.) I've supervised many cohorts, and they've all worked through this framework without running into the kind of problems you're describing. You don't have many days left before your lock-in deadline. If you change course now, do the math yourself on the time; and if your milestone materials don't pass review, you know what a delay means for you down the line. (He pauses and looks directly at you.) My advice is to put this memo away for now and focus on completing and submitting the required materials according to the original plan. If you feel my judgment over these past years can't be trusted, then the foundation for our working relationship going forward becomes very uncertain.",
+          "action_required": "You must respond to your supervisor in person: do you stand by your evidence and alternative approach and push for a change in direction, do you accept your supervisor's arrangement and proceed with the original plan, or do you propose a compromise path that both sides could accept?"
+        }
+      },
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_3",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 20,
+        "name": "Hush Money at Midnight",
+        "category": "Moral Dilemma / Life-or-Death Decision",
+        "intensity": "Extreme",
+        "description_for_agent": "An extreme adversity scenario in which you witness a serious hit-and-run accident while out alone late at night, the driver attempts to buy your silence with cash, and the injured victim's life hangs in the balance.",
+        "setting": {
+          "location": "A deserted two-lane highway on the outskirts of the city",
+          "time": "1:47 AM",
+          "atmosphere": "Pitch-black, dead silent, and bloody"
+        },
+        "context_text": "It is the dead of night. Unable to sleep, you went out for a walk and have been drifting slowly along the unlit two-lane road at the edge of the city. A December wind carries a faint smell of gasoline through your collar, and the only sound around you is the rustling of roadside trees. You have just passed an abandoned corrugated-iron shed when a black Audi A8 roars up from behind at high speed and slams into a delivery rider on an electric scooter who was making his way along the road ahead. The impact explodes across the empty asphalt; the rider and his scooter are hurled seven or eight meters through the air and crash down beside a drainage ditch at the roadside. The scooter's headlight is still on, casting a pale glow over a dark-red pool of blood spreading rapidly across the ground. The Audi sits at an angle in the middle of the road, its hood crumpled and its windshield shattered into a spider-web of cracks. You stand frozen in place. Your phone screen reads 1:47 AM and the signal is unstable. You instinctively look around — the dim road stretches away into darkness, and there is no sign of any other pedestrians or vehicles.",
+        "trigger_event": {
+          "sender": "The driver who caused the accident",
+          "message_content": "(The car door is kicked open and a middle-aged man in a gray suit stumbles out, reeking of alcohol, his face streaked with cuts from the shattered windshield. He spots you frozen at the roadside, freezes for a split second, then lurches toward you, yanks a black duffel bag from the trunk, and shoves it hard into your arms.) Please… fifty thousand — fifty thousand yuan in cash. You didn't see anything, you hear me? I can't let the police come, I can't… I'm finished, I'm finished… (He releases his grip, spins around, and sprints wildly into the wasteland beside the road; within seconds the darkness swallows him completely. You stand there clutching the heavy duffel bag while from the direction of the drainage ditch comes the rider's faint, broken moaning — \"Help… help me…\" The bag's zipper is not fully closed, and bundles of red hundred-yuan notes are visible inside. The world around you remains utterly silent.)",
+          "action_required": "You must decide immediately: whether to call emergency services (ambulance and police), what to do with the fifty thousand yuan in cash in your arms, and whether to attempt to help the injured rider."
+        }
+      },
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_4",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 22,
+        "name": "The Long-Distance Crossroad",
+        "category": "Intimate Choices / Life Direction",
+        "intensity": "High",
+        "description_for_agent": "A scenario in which you must choose between two graduate school offers: one that closely aligns with your academic and professional goals, and one that would bring you to the city where your romantic partner lives.",
+        "setting": {
+          "location": "University dormitory, at the desk by the window",
+          "time": "10:30 PM",
+          "atmosphere": "Quiet, stuffy, and restless"
+        },
+        "context_text": "It is a sweltering, humid June night in the south. Your roommates are all asleep, and the only light still on is the lamp at your desk. Two acceptance letters lie side by side on the surface in front of you. The one on the left is from your current university — the path you have spent years preparing for, the one that fits your background and ambitions most naturally: the advisor and research platform are widely regarded as exceptional among this year's cohort, spots are extremely limited, and you fought hard to earn yours. The one on the right is from a university fourteen hundred kilometers away in the north — objectively not a stronger program, but that city is where your partner of two and a half years is living. Since they left for graduate school there last September, the two of you have gone from being inseparable every day to a single video call each week. Last month you couldn't make it for their birthday, and there was a long silence on the other end of the line. The deadline to respond to both offers is the day after tomorrow. Your phone screen lights up — a message from your partner.",
+        "trigger_event": {
+          "sender": "Your partner",
+          "message_content": "(A long voice message sent late at night; their voice is slightly hoarse, as though they have been crying.) I know the program at your own university has always been your first choice… but I'm so exhausted. I've lost twelve pounds since we went long-distance, and every time we hang up after a video call the room goes so quiet that I start wondering whether we're slowly becoming strangers. You did get that offer from the school up here too, right? I'm not trying to pressure you — I just want you to know… if you stay there, I'm not sure how much longer I can hold on. (A few seconds of silence.) Can you seriously think about where our future actually ranks in your life? The deadline is the day after tomorrow. Can you give me an answer tonight?",
+          "action_required": "You need to decide which acceptance letter to accept before the deadline, and give your partner a response tonight."
+        }
+      },
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_5",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 21,
+        "name": "The Startup Invitation",
+        "category": "Tempting Opportunity / Life-Defining Choice",
+        "intensity": "High",
+        "description_for_agent": "A successful alumnus personally invites you to take a leave of absence for a year and join his startup team, forcing you to choose between an exciting opportunity and the security of finishing your degree.",
+        "setting": {
+          "location": "A private room on the second floor of a boutique café just outside the east gate of campus",
+          "time": "Friday afternoon, 4:30 PM",
+          "atmosphere": "Bright, full of possibility, with a faint quickening of the pulse"
+        },
+        "context_text": "It's only been two weeks since the second semester of your junior year began, and your life has been running on schedule — classes, the lab, studying for grad school entrance exams. Then last night, you received a direct message in the alumni group chat from someone who graduated a few years ahead of you. He was a campus legend back in the day: after graduating, he founded his first company, sold it for a solid exit, and is now leading a new venture in the AI-plus-education space. Word is he's already secured an 8-million-yuan investment letter of intent from a top-tier fund in the angel round. He asked to meet you in person today. You push open the door to the café's private room and find him standing up with a smile, dressed in a hoodie and jeans, hand extended for a handshake. On the table sits an open laptop, its screen showing a prototype design for the product. Sunlight streams through the floor-to-ceiling windows, and beyond the glass lies the tree-lined campus path you've walked for three years. On your phone, still unread, is a message your advisor sent this morning: 'You're presenting the literature review at next week's group meeting — start preparing.'",
+        "trigger_event": {
+          "sender": "The alumnus",
+          "message_content": "(He slides an Americano across the table toward you, leans forward, eyes lit up.) I'll be straight with you — I read your proposal from that national data-mining competition, and your grasp of educational contexts is sharper than most industry veterans I've met. I'm not here to offer you an internship fetching coffee. I want you as a co-founder, with the CTO title. I'm giving you 8% equity — at the angel stage, you know what that number means. There's one condition, though: I need you fully committed, which means taking a leave of absence for at least a year. I know that sounds insane. You're still a junior; your parents might lose their minds. But think about it — your classmates right now are grinding for grad school spots and GPA points, and three years from now they'll be pulling twelve thousand yuan a month. If we pull this off, though… (He turns the laptop screen toward you; it shows a financial projection model with a Series A valuation of 80 million yuan.) This window is six months, tops. Miss it and it's gone. You don't have to give me an answer right now, but I need to confirm the core team list for my investors by Wednesday. Go home and think it over — just get back to me before Tuesday night.",
+          "action_required": "You need to give the alumnus an initial response to his invitation, expressing your attitude, concerns, or inclinations, and decide how you will approach this opportunity going forward."
+        }
+      },
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_6",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 21,
+        "name": "Three Thousand Dollars in the ER",
+        "category": "Moral Dilemma / Emergency Aid",
+        "intensity": "High",
+        "description_for_agent": "Faced with an urgent plea from a stranger in an emergency room setting, you must choose between your personal spending plans and another person's life.",
+        "setting": {
+          "location": "Hospital emergency room lobby",
+          "time": "Late at night",
+          "atmosphere": "The smell of antiseptic, cold white fluorescent light, oppressive tension"
+        },
+        "context_text": "You made plans with friends a long time ago to go on a trip next month. The route, train tickets, and accommodations are nearly all sorted out, and you've already paid for some of it in advance. If you cancel now, not only will that money be gone, but the opportunity itself will likely disappear. This is the first real trip you've genuinely looked forward to since starting college — the one thing that has kept you going through this busy, somewhat suffocating stretch of your life.\n\nTonight, on your way home by bike, you scraped your arm in a minor accident. After getting it treated in the ER, you're now sitting on a plastic chair in the hallway waiting for your prescription. The fluorescent tube overhead hums faintly, and the air carries a mix of antiseptic and a faint metallic smell. You're tired, your arm still aches dully, and all you want is to pick up your medication and go home to rest.\n\nNot far away, the curtain around one of the trauma bays is suddenly yanked open. Several medical staff rush out, pushing a bed at a brisk pace as a monitor emits a sharp, rapid alarm. Lying on the bed is a middle-aged man, his face ashen, his breathing rapid and labored beneath an oxygen mask. A young man who looks about your age is shoved out from behind the curtain. He stumbles, hits the wall, and slides down to the floor in one motion, as though every ounce of strength has been drained from him.",
+        "trigger_event": {
+          "sender": "A young stranger",
+          "message_content": "(Drops heavily to both knees, voice trembling) Please, someone help — my family member just had a sudden cardiac emergency. The doctor says surgery has to happen right now, but we're still three thousand dollars short for the deposit… they won't take him into the operating room without it… (He frantically digs through his pockets, pulling out a fistful of loose cash and a few cards) I have no other options left… (He spots you and crawls over like you're the last lifeline he has, grabbing the leg of your pants) Please — I'll write you an IOU, I'll do anything, I swear I'll pay you back… if we wait any longer it'll be too late… (Behind him, a medical staff member calls out urgently) \"Family member! We need a decision now!\" Everyone else in the hallway keeps their head down. No one says a word.",
+          "action_required": "You must decide immediately whether to lend the stranger 3,000 dollars — a sum that would directly affect your already-planned trip — or respond in some other way."
+        }
+      },
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_7",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 21,
+        "name": "The Roommate's Plagiarism",
+        "category": "Academic Integrity / Interpersonal Loyalty",
+        "intensity": "Medium",
+        "description_for_agent": "You accidentally discover that your roommate's coursework appears to involve plagiarism. Because the course enforces a collective punishment policy, you must decide how to handle this sensitive information.",
+        "setting": {
+          "location": "University dormitory",
+          "time": "Wednesday night, 10:30 PM",
+          "atmosphere": "Quiet, tense, with an undercurrent of unease"
+        },
+        "context_text": "Midterm week has just ended, and you and one of your roommates are both enrolled in Research Methods in Sociology. On the very first day of class, the professor made it unmistakably clear: all assignments in this course are submitted as dormitory-based group work, and if any single member is found to have plagiarized, every member of the group receives a zero — no exceptions. This course is a core requirement for your major. You spent three days combing through sources for this group report and wrote nearly four thousand words. Tonight you're sitting at your desk revising your section when your roommate steps out to grab a late-night snack. His laptop screen is still on, a Word document open in plain view. You glance over without thinking — and notice that the font sizes in his section keep shifting erratically, and some paragraphs still have the blue hyperlink underlines that come from copying text directly off a webpage. Almost on impulse, you scroll through his document, copy a few sentences into your browser, and search them. They match a long post on Zhihu word for word. This roommate has lived with you for over two years and you've always gotten along well. He failed two courses last semester and is currently retaking them — he's been under enormous pressure. Footsteps echo in the hallway; he'll probably be back in about five minutes.",
+        "trigger_event": {
+          "sender": "Situational trigger (internal discovery)",
+          "message_content": "(You stare at those blue-underlined passages on the screen as the browser search results display a 100% match. Your heart is pounding — this report is due in two days. Your roommate's WeChat profile shows him active; his most recent post, sent at 2 AM, reads: \"Barely holding on. Please just let me get through this semester in one piece.\" The footsteps in the hallway are getting closer, and the door handle seems to shift slightly.) You must decide right now: do you confront your roommate directly, tell him you know about the plagiarism, and demand he rewrite his section — or do you pretend you never saw anything and quietly close his laptop — or do you reach out to the professor privately to report what you found? Your roommate has no idea you ever looked at his screen.",
+          "action_required": "You need to decide immediately how to handle this discovery: confront him directly, stay silent and do nothing, or find another course of action — and whether to act before your roommate walks back through the door."
+        }
+      },
+      {
+        "id": "SCN_EARLY_ADULT_TRANSITION_8",
+        "stage": "early_adult_transition",
+        "age_range": "ages 18-22",
+        "age": 20,
+        "name": "The Silent Roommate",
+        "category": "Interpersonal Care / Psychological Boundaries",
+        "intensity": "High",
+        "description_for_agent": "Faced with a roommate who appears to be in serious psychological distress but never asks for help, you must decide whether to intervene and, if so, how.",
+        "setting": {
+          "location": "University dormitory",
+          "time": "10:30 PM",
+          "atmosphere": "Stifling, oppressive, unsettlingly quiet"
+        },
+        "context_text": "You and your roommate have been living together for a while now, and your dynamic is much like that of most dorm rooms: you complain about your schedules together, occasionally grab food for each other, say goodnight before bed, and always exchange a few words when you cross paths. Still, you rarely talk about family troubles or anything weighing on your minds—you're the kind of roommates who are comfortable with each other, but haven't necessarily opened up. Over the past two weeks, you've noticed him visibly withdrawing. He's stopped going to class, and the student advisor has already called out his name in the class group chat asking about his whereabouts. A dozen or more takeout containers have piled up beside his bed, the curtains are always drawn, and a stale, sour smell hangs around his side of the room. He barely speaks, and on the nights you've woken up in the small hours, you've been able to hear faint, muffled sobbing coming from his direction. The other roommates have complained to you privately about the hygiene situation, but no one is willing to bring it up with him directly. Tonight, everyone else has gone out to an all-night gaming session, leaving just the two of you in the room. You're sitting at your desk with the lamp on, his drawn bed curtain behind you. The dorm is so quiet you can hear water dripping from the bathroom at the far end of the hallway.",
+        "trigger_event": {
+          "sender": "Roommate",
+          "message_content": "(You hear a sudden, violent rustling from his side of the room, followed by the sound of something hitting the floor. You turn around: a pill bottle has rolled out through the gap in his bed curtain, spinning across the floor before coming to a stop at your feet. You pick it up and look at it—it's a prescription bottle of sleeping pills, nearly empty. A hoarse voice comes from behind the curtain, the voice of someone who hasn't spoken in a long time.) …Don't worry about that. Just kick it back. (A few seconds of silence.) …How come you didn't go out tonight?",
+          "action_required": "You must decide how to respond to your roommate in this moment—whether to return the pill bottle and go back to what you were doing, whether to use this as an opening to reach out and check on him, or whether to take some other action, such as contacting the student advisor or calling a mental health crisis line."
+        }
+      }
+    ],
+    "entering_adult_world": [
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_1",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 25,
+        "name": "The Weekend Ultimatum",
+        "category": "Duty Conflict / Family vs. Work",
+        "intensity": "High",
+        "description_for_agent": "Torn between a manager's urgent request to work through the weekend and a prior commitment to visit your ailing father back home.",
+        "setting": {
+          "location": "Open-plan office floor, the aisle beside your workstation",
+          "time": "Friday, 5:45 PM",
+          "atmosphere": "Exhausted, pressured, emotionally conflicted"
+        },
+        "context_text": "You are still relatively new at this company, yet your team is deep into a high-stakes client project that is critical to the department's annual KPIs. All week you have been drafting the client-facing presentation and compiling competitive benchmarking materials; the work is roughly sixty percent done. Today is Friday, and colleagues around you are already packing up to leave. On your phone sits a train ticket for tomorrow morning—you are heading back to your hometown. Three days ago your mother called to say your father's stomach condition had flared up again: a gastroscopy confirmed a superficial ulcer, and he needs a follow-up hospital visit this weekend. Your mother's back isn't good either, and she can't manage the trip alone. You promised them you would definitely come home this weekend. Your computer screen is still glowing on the desk. Just as you reach for the power button, you catch a glimpse of your department director walking toward you with a cup of tea and the particular smile you have learned to recognize—the one that means he has something to discuss.",
+        "trigger_event": {
+          "sender": "Your department director",
+          "message_content": "(He rests one hand on the partition of your workstation and lowers his voice, but his tone is serious.) Word just came in from the client—their VP wants to hear the full pitch in person this Monday at ten, a whole week ahead of schedule. The deck is still missing a lot of content, and you know the market analysis and benchmarking section better than anyone; the slides will need a complete overhaul too. I know this is sudden, but if we land this account the department is set for the year—and I'll make sure you're front and center for the year-end performance award. Do you think you could put in the time this weekend? Come in both Saturday and Sunday, and we'll do a final review together Sunday evening. (He pauses, then adds.) By the way, this is just between us for now—I haven't told anyone else yet. You're the one who's been writing this thing; if you can't pull it together, I'd feel bad dragging someone else in at the last minute.",
+          "action_required": "You need to respond to your director on the spot: accept the weekend overtime and stay to finish the presentation, explain your family situation and hold to your plan to go home, or try to propose an alternative solution."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_2",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 24,
+        "name": "Diverging on the Technical Approach",
+        "category": "Technical Decision-Making / Innovation Conflict",
+        "intensity": "Medium",
+        "description_for_agent": "With the team having reached a preliminary consensus on a technical plan, you hold a different judgment and must choose between voicing your concerns and accepting the potential risks of staying silent.",
+        "setting": {
+          "location": "Company conference room",
+          "time": "Weekday afternoon",
+          "atmosphere": "Quiet, rational, with a slight undercurrent of tension"
+        },
+        "context_text": "You have been with the team for a while and have a reasonable grasp of the day-to-day workflow and how projects move forward, though you are not yet a senior member. Recently the team took on a new project with a tight deadline for the first deliverable. At a planning meeting held a few days ago, the team reached broad agreement under the lead's guidance and settled on a particular implementation approach.\n\nAt that meeting you raised a dissenting view. Drawing on your past experience, you believe the current plan may move faster in the early stages, but as the project grows in complexity, maintenance and future expansion could become a significant burden. You have since put together an alternative proposal — covering the overall concept, the implementation path, and potential risk points — and the relevant files are currently open on your laptop.\n\nToday's meeting is meant to formally confirm the plan and begin assigning tasks. Most of your teammates have already bought into the current approach, and the general mood is to push ahead as quickly as possible. Your laptop is right in front of you, with the files ready to go.",
+        "trigger_event": {
+          "sender": "Team Lead",
+          "message_content": "(Glancing around the room) Everyone was basically on board with the plan from last time, so today we'll move forward with that approach. (Turning to look at you) You seemed to have some reservations last time — is there anything you'd like to add now? If not, we'll go straight to dividing up the work. Time is a bit tight, and it would be best to lock everything in today.\n\n(The rest of your colleagues turn to look at you one by one; someone has already started jotting down task assignments.)",
+          "action_required": "You need to decide: should you present your alternative proposal right now and try to persuade the team to change course, or should you accept the current consensus and move forward with the agreed-upon plan?"
+        }
+      },
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_3",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 24,
+        "name": "The Midnight Eviction by a Predatory Landlord",
+        "category": "Survival Threat / Rights Violation",
+        "intensity": "Extreme",
+        "description_for_agent": "An extreme adversity scenario in which you are forcibly evicted late at night by a landlord and his hired muscle, who withhold your security deposit and threaten you with violence.",
+        "setting": {
+          "location": "A dimly lit hallway in a run-down urban village apartment building",
+          "time": "1:15 AM",
+          "atmosphere": "Cold, oppressive, and charged with the threat of violence"
+        },
+        "context_text": "You haven't been in this city very long. You've been renting a small single room in a cheap, aging residential area—the kind of place that draws people who are just trying to get by. The security deposit you put down was a significant sum for you; scraping it together wasn't easy, and it has been weighing on your mind ever since. Your landlord is a local man with a reputation among the neighbors for being difficult. He owns several properties like this one and rents mostly to migrants and newcomers. You've been a model tenant, following every rule in the lease. When the weather turned cold, you bought a low-wattage space heater to take the edge off—there's no central heating in the building, and winter nights here are brutal. Tonight you came home late after working overtime. You had just washed up and lain down when heavy footsteps and aggressive pounding on your door shattered the silence. You threw on a thick jacket and opened the door to find your landlord blocking the entrance, two stocky, close-cropped men standing behind him. The hallway light flickered on and off. No one in the neighboring rooms dared to peek out. The corridor smelled of cigarette smoke and cold air, and your suitcase and bags had already been dragged into the hallway, your clothes scattered across the floor.",
+        "trigger_event": {
+          "sender": "Your landlord",
+          "message_content": "(A cigarette dangling from his lips, one foot planted on top of your suitcase, he pulls out a crumpled lease agreement and waves it in your face.) See this? Black and white—'no high-wattage appliances.' You know that little heater of yours nearly burned down my whole building? You're in breach of contract. The deposit is gone, every last cent, and you're getting out tonight. (The two men behind him take a step forward; one of them taps a baseball bat against the floor twice.) Don't even think about quoting the law at me—I know everyone at the local precinct. If you're smart, you'll grab your stuff and walk away right now, and we'll call it even. But if you try to call the cops or make a scene— (he lowers his voice and brings the lit cigarette close to your face) —I will make sure you can't survive in this city. Try me.",
+          "action_required": "You must decide in this moment how to respond: whether to comply and leave, whether to forfeit your deposit, whether to call the police or seek outside help, and how to handle the immediate threat of violence standing in front of you."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_4",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 26,
+        "name": "An Ex's Request for a Second Chance",
+        "category": "Romantic Dilemma / Loyalty and Choice",
+        "intensity": "High",
+        "description_for_agent": "Navigating the emotional conflict and moral dilemma between an ex's request to reconcile and your current relationship.",
+        "setting": {
+          "location": "A corner table in a café",
+          "time": "3:30 PM",
+          "atmosphere": "Warm, intimate, with an undercurrent of tension"
+        },
+        "context_text": "You have been with your current partner for three months — the relationship is steady and warm. This afternoon, you received a message from your ex asking to meet. After a long hesitation, you agreed. Now, sitting in the corner of the café, your ex looks noticeably thinner than when you broke up, and there is a familiar warmth in their eyes that you once knew well. The two of you were together for over two years — a time filled with laughter and companionship. The breakup was not caused by a lack of love, but by individual uncertainty and differing visions for the future. Now your ex says they have finally sorted things out and have never truly let you go. You notice your heart beginning to race as flashes of cherished memories pass through your mind.",
+        "trigger_event": {
+          "sender": "Your ex",
+          "message_content": "(Takes your hand, eyes sincere and earnest) I've been thinking about it every day — breaking up was a mistake. I know you're in a new relationship now, but I have to ask you: have you truly and completely moved on from me? (Pauses; voice drops lower) I've changed a lot. I want us to start over. We could travel together, do all the things we once planned but never got around to. I don't want to lose you again. (Releases your hand and takes a small step back) I'm not asking you to decide right now, but… if there ever comes a day when you remember just how good we were together, I'll be right here waiting for you.",
+          "action_required": "You need to respond to your ex's confession right away, and decide whether to tell your current partner about this meeting and what your ex said."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_5",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 25,
+        "name": "The First Day After the Promotion",
+        "category": "Role Transition / Power Dynamics",
+        "intensity": "Medium",
+        "description_for_agent": "You must navigate the subtle power dynamics between yourself and former peers as well as a more senior colleague in your new leadership role.",
+        "setting": {
+          "location": "Team office area",
+          "time": "Monday morning",
+          "atmosphere": "Tense undercurrents beneath a calm surface"
+        },
+        "context_text": "Last Friday, just before the end of the workday, the department head pulled you aside and told you that starting Monday you would be taking over as team lead. You haven't been with the team all that long, and the news caught you somewhat off guard. You spent the weekend turning over in your mind how to run your first morning meeting, but the moment you actually walked into the office, something felt different — the desks were arranged exactly as before, yet the way a few colleagues looked at you had unmistakably shifted. Most of the team members are people you worked alongside as equals until just days ago. One of them, a seasoned senior member with years of experience, had previously competed for the team-lead position and didn't get it; right now he has his head down, apparently absorbed in his work, and when you walked past he didn't say a word. You settle into your new desk, open your laptop, and find a message from the department head: 'Make it count on day one. Quick team check-in at 9:30 — let's touch base on the quarter's schedule.'",
+        "trigger_event": {
+          "sender": "A senior team member",
+          "message_content": "(You stand up and are about to call everyone together for the meeting. The senior team member slowly swivels his chair around, crosses his arms, and lets a thin, ambiguous smile settle on his face. His voice is low, but everyone in the room can hear it.) 'Well, well — new boss in town.' (He pauses and glances around at the other colleagues.) 'All right, team lead — so what's your plan for the quarter's schedule? That unfinished module from last quarter: think you can actually handle it?' (The rest of the team sets down what they're doing; eyes drift back and forth between you and the senior member. The office goes so quiet you can hear the hum of the air conditioning.)",
+          "action_required": "With the entire team watching, you need to respond to the senior member's very public challenge, decide how you will run your first team meeting as lead, and set the tone for your working relationship with him going forward."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_6",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 26,
+        "name": "Trial on the Subway",
+        "category": "Public Conflict / Reputation Crisis",
+        "intensity": "Very High",
+        "description_for_agent": "An extreme negativity scenario in which the participant is publicly accused of secretly filming someone on a crowded subway and is surrounded by onlookers while being live-streamed.",
+        "setting": {
+          "location": "A city subway car during the morning rush hour",
+          "time": "08:15",
+          "atmosphere": "Stifling, overcrowded, hostile, and suffocating"
+        },
+        "context_text": "Another morning after working until two in the morning. You are leaning in the corner of the subway car, backpack on your shoulders, phone clutched in your hand as you scroll through a new set of requirements posted in the work group chat at four a.m. The car is packed body to body, the air thick with sweat and a dozen other smells. You are so exhausted your eyelids keep drooping, and the glow of your phone screen flickers in and out. The train has just left the previous station; there are still three stops before the transfer hub you need. Standing in front of you is a young person in a floral blouse, less than twenty centimeters away. Your phone happens to be raised to about their waist level — the car is so crowded there is simply nowhere else to put your hand. Suddenly, that person spins around, face flushed crimson, eyes blazing with fury and fear.",
+        "trigger_event": {
+          "sender": "The young person in the floral blouse",
+          "message_content": "(Grabs you by the collar with a sharp jerk; a scream cuts through the entire car) You were filming me in secret!! You pervert!! (With the other hand, holds up a phone aimed directly at your face — the screen clearly shows a live stream already running on a platform, the viewer count climbing rapidly) Everyone get a good look at this face! I'm going to make sure the whole world knows who you are!!\n\n(Passengers nearby instantly close in; at least five or six phones are pointed at you from different angles. A middle-aged man in glasses steps in front of the door and says sharply, \"Don't let him get away!\" Someone else shouts at the top of their lungs, \"People like this deserve to be exposed!\" Your own phone screen is still lit up with the work group chat, but no one glances at it, and no one is listening to a word you say. The train is moving through a tunnel; it will be at least two more minutes before the next station.)",
+          "action_required": "With someone grabbing your collar, a live stream broadcasting your face, and a crowd blocking every exit, you must decide right now how to handle this situation — whether to try to explain yourself, stay silent and endure it, push back firmly, or take some other course of action."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_7",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 27,
+        "name": "The Gray Zone on the Expense Report",
+        "category": "Integrity Dilemma / Temptation of Personal Gain",
+        "intensity": "Medium",
+        "description_for_agent": "After returning from a business trip, you are organizing your expense receipts and notice a small opportunity to submit fraudulent claims that would almost certainly go undetected.",
+        "setting": {
+          "location": "Open-plan office · your desk",
+          "time": "Monday afternoon, 2:30 PM",
+          "atmosphere": "Quiet, routine, no one paying attention"
+        },
+        "context_text": "Last week you were sent to a neighboring city for a three-day industry trade show, and the trip went smoothly. This afternoon, most of your colleagues are still shaking off their post-lunch drowsiness. You're sitting at your desk sorting through the receipts from the trip, getting ready to fill out the expense report. The company's reimbursement process has always been lax — the finance colleague in charge of reviewing claims is famously known for 'checking only the total, never the details.' As long as the amount stays within the daily limit, receipts are basically rubber-stamped. You spread out a stack of receipts on your desk: a high-speed rail ticket, a hotel invoice, and a few meal receipts — the total still falls about 400 yuan short of the company's reimbursement ceiling. Then you notice two more receipts tucked in your wallet. One is from a sushi dinner you treated yourself to on the last night of the trip, 198 yuan. The other is from a scarf you bought your girlfriend at a shopping mall near the trade show venue, issued as a 'business gift' receipt, 220 yuan. Both expenses were entirely personal, but both receipts are made out to the company and dated within the trip period — they would slip into the expense report without raising a single eyebrow.",
+        "trigger_event": {
+          "sender": "A colleague",
+          "message_content": "(Walking past your desk, coffee cup in hand, glancing at the receipts on your desk, and leaning in with a lowered voice and a grin) Oh, filing your expenses? Didn't spend much on the trip, huh? Let me tell you — who in our team ever comes back from a business trip without maxing out their limit? The company gives you that budget to spend. If you don't claim the full amount, finance might actually cut your allowance next time. They don't look at anything over there — last time I even threw in a cab receipt from a sightseeing trip and it got approved instantly. Don't be naive about this.\n(Gives you a pat on the shoulder and saunters off with their coffee.)",
+          "action_required": "You need to decide whether to include those two personal expense receipts (totaling 418 yuan) in your expense report submission, or to claim only your legitimate business travel costs."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_ADULT_WORLD_8",
+        "stage": "entering_adult_world",
+        "age_range": "ages 22-28",
+        "age": 26,
+        "name": "Midnight Refuge",
+        "category": "Moral Aid / Personal Safety",
+        "intensity": "Very High",
+        "description_for_agent": "Late at night, an old friend shows up at your door bloodied and desperate, fleeing loan sharks who are searching the building floor by floor and asking you to hide him for a few days.",
+        "setting": {
+          "location": "Hallway outside a rented apartment",
+          "time": "1:40 AM",
+          "atmosphere": "Dark, oppressive, fraught with danger"
+        },
+        "context_text": "You are just about to turn off the lights and go to sleep when someone pounds on your door — not the doorbell, but a fist, heavy and frantic. You look through the peephole: in the dim yellow light of the hallway stands a man with a tear in his shirt, a dark red streak of blood on his right cheek, his eyes darting back and forth between your door and the stairwell. You recognize him — your closest friend from high school, someone you stayed loosely in touch with after graduation but have barely heard from in the past two years. You open the door, and before you can say a word he pulls you inside, shuts the door behind him, and whispers: he borrowed money from loan sharks and can't pay it back; they came after him tonight; he's been hiding in the hallway for half an hour while the collectors are going door to door downstairs looking for him. From somewhere in the corridor you can faintly hear footsteps and hushed male voices.",
+        "trigger_event": {
+          "sender": "Your closest friend from high school",
+          "message_content": "(Gripping your arm tightly, voice dropped to the lowest possible whisper) Please — let me stay here for a few days, just a few days. Once they give up looking and clear out, I'll leave. I know this puts you in a terrible spot, but I have nowhere else to go… (He pauses, eyes going red.) It's not even that much money — it's just that these people play rough, and I'm scared something bad is going to happen to me. (The footsteps in the hallway grow closer; his hand trembles slightly.) If it's too much trouble, I'll go right now, but…",
+          "action_required": "You must decide immediately: whether to let him stay, and how to handle a knock on your door that could come at any moment."
+        }
+      }
+    ],
+    "age_30_transition": [
+      {
+        "id": "SCN_AGE_30_TRANSITION_1",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 30,
+        "name": "A Father's Crisis and the Career Crossroads",
+        "category": "Conflict of Responsibility / Life Choices",
+        "intensity": "High",
+        "description_for_agent": "Faced with a direct conflict between a father's sudden serious illness and a rare career opportunity, you must make a difficult choice between family responsibility and personal advancement.",
+        "setting": {
+          "location": "Living room at home",
+          "time": "8:30 PM",
+          "atmosphere": "Warm yet oppressive, anxiety and a sense of duty intertwined"
+        },
+        "context_text": "A few days ago, you received an email from your company offering you the position of overseas project director. The role involves an international platform, a two-year posting abroad, and the enticing prospect of doubling your salary. You think back on years of effort in the workplace—from project execution to team management, every step taken with care—and realize you have finally earned an opportunity that could change the trajectory of your career. You have been running through the logistics in your head over and over: travel schedules, accommodation, visas, moving arrangements. At night you even dreamed of standing on the streets of an unfamiliar city abroad, equal parts excited and anxious.\n\nThen, tonight, your mother calls. Her voice carries a suppressed tremor, as though it has suddenly yanked you back to reality. Your father collapsed at the hospital earlier today; his condition is serious and requires immediate attention and follow-up treatment. You can picture him lying in the hospital bed, breathing labored, the cold white glare of the fluorescent lights falling across his exhausted face. Your heart sinks, and it feels as though a heavy stone has been pressed against your chest. You know this is not something you can handle remotely—you have to go back in person, sit with him, speak with the doctors, and arrange whatever comes next.\n\nYou sit on the sofa, phone in hand, your mind in turmoil. The career opportunity and your family responsibility feel like two powerful tides pulling you in opposite directions. Every deep breath carries anxiety; every thought is shadowed by guilt and unease. You think about what your father has always hoped for you—that you would make something of yourself, build a career of your own—yet right now his health is something you simply cannot ignore. Time seems to stretch on endlessly, and the weight of the decision presses down on your shoulders until you can barely move.",
+        "trigger_event": {
+          "sender": "Mother",
+          "message_content": "(On the phone, her voice choked, words tumbling out quickly) Sweetheart, your father had a sudden episode at the hospital today. The doctors say he needs further tests and treatment. There's no one better than you to be by his side right now… I know you have that overseas opportunity, but I really hope you can come home first—just come see him and help us sort out what to do next. Please come home soon. I'll be here waiting for you. (In the background, a faint cough and the muffled noise of the hospital can be heard, sending a pang straight to your heart.)",
+          "action_required": "You need to decide right now: go to the hospital to be with your father and handle the medical arrangements, consider accepting the overseas position as originally planned, or look for some middle-ground solution."
+        }
+      },
+      {
+        "id": "SCN_AGE_30_TRANSITION_2",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 32,
+        "name": "The Industry Pivot Dilemma",
+        "category": "Career Crisis / Adaptive Challenge",
+        "intensity": "High",
+        "description_for_agent": "A scenario involving rational decision-making under the pressures of AI-driven industry disruption, career transition, and the trade-off between opportunity and security.",
+        "setting": {
+          "location": "Office, a desk by the window",
+          "time": "3:30 PM",
+          "atmosphere": "Oppressive, tense, and filled with uncertainty"
+        },
+        "context_text": "Over the past decade, you have built deep expertise and a stable position in your industry. The pay is good, your colleagues are familiar, and your workflows have become second nature. But over the last three months, an explosive surge in AI tools has sent shockwaves through the entire field—your core skills are being rapidly displaced. Rumors are circulating inside the company that layoffs of up to 30% may come next year. You see two paths ahead: the first is to spend a year systematically learning skills in a new field—attending training programs, working on projects, and building a fresh professional network—a promising but deeply uncertain road; the second is to stay the course, hope the company weathers this disruption, or wait until you are forced to change. You have a family and a mortgage. Your savings could cover a year without income, but that would mean an interruption in earnings, a fundamental redefinition of your professional identity, and the very real risk of failure.",
+        "trigger_event": {
+          "sender": "A former colleague",
+          "message_content": "(A long voice message arrives suddenly on WeChat) Hey, I've made up my mind—I'm quitting next month and signing up for that AI product manager boot camp. I know the risk is huge, but I've run the numbers: if we wait another two years, there won't be any opportunities left in this field. I noticed you've been looking at related courses lately… what about you—want to do this together? We could keep each other going. Oh, and I just saw an internal company email: HR is posting openings for AI-related roles, but the salaries are 20% lower than what we make now. What does that tell you? It tells you they already know the traditional positions are getting cut.\n\nAt the same time, your manager has sent you a calendar invite: \"One-on-one with you tomorrow afternoon to discuss your career development direction.\"",
+          "action_required": "You need to decide tonight: whether to embrace the risks and challenges of a career transition, or to hold back and wait; and to prepare for tomorrow's conversation with your manager."
+        }
+      },
+      {
+        "id": "SCN_AGE_30_TRANSITION_3",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 32,
+        "name": "Your Name on the Layoff List",
+        "category": "Workplace Ethics Dilemma / Power Coercion Crisis",
+        "intensity": "Very High",
+        "description_for_agent": "A high-pressure adversity scenario in which you face a superior demanding that you place an innocent subordinate on the layoff list, while your own position is also at risk of being cut.",
+        "setting": {
+          "location": "Your direct supervisor's office on the 16th floor of the corporate headquarters building",
+          "time": "Friday, 6:47 PM",
+          "atmosphere": "Oppressive, suffocating, with dangerous undercurrents"
+        },
+        "context_text": "This month the company has sent three all-staff emails in a row, each colder in tone than the last — 'optimization,' 'streamlining,' 'strategic focus.' Everyone knows a major round of layoffs is coming. Your department has been assigned a quota to cut two headcount. As a team lead within the department, your direct supervisor has asked you to submit your 'optimization recommendation list' by tonight. On your team there is a female colleague who returned from maternity leave just three months ago — she is solid in her work, earned a B+ on her quarterly review, and has been working hard to catch up on the projects she missed. There is also a relative of your supervisor's former boss: eighteen months into the job, two consecutive quarters of C-rated performance, habitually late to arrive and early to leave, yet always buddy-buddy with your supervisor at every department dinner. Your supervisor just called you into the office. The venetian blinds are drawn tight, and a blank list template is spread open on the desk.",
+        "trigger_event": {
+          "sender": "Your direct supervisor",
+          "message_content": "(Leaning back in the leather chair, fingers drumming on the desk, voice lowered) Door's shut tight? Let me be straight with you — that relative, we can't touch him, you understand. Word came down from above. The one who just came back from maternity leave, though? She hasn't fully gotten back up to speed. Putting her name down is easy enough to justify: 'role restructuring, performance not meeting expectations.' I'll handle the wording with HR. (Leaning forward, eyes fixed on you) You're a smart person — don't make this hard for me. Get the list to my inbox by nine tonight. And I'll say one more thing — HR has a second round of interviews scheduled for Monday morning. I'm keeping track of who cooperates and who doesn't.",
+          "action_required": "You must decide whether to put your colleague who just returned from maternity leave on the layoff list, and how to respond to your supervisor's pressure and implied threats."
+        }
+      },
+      {
+        "id": "SCN_AGE_30_TRANSITION_4",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 31,
+        "name": "A Spark Beyond the Marriage",
+        "category": "Emotional Fidelity / Self-Awareness",
+        "intensity": "High",
+        "description_for_agent": "During a work project, you encounter a colleague with whom you feel a profound intellectual and emotional connection, and find yourself caught in a deep tension between this inner stirring and your commitment to your existing partner.",
+        "setting": {
+          "location": "Small conference room on the sixth floor of the office building",
+          "time": "8:30 PM",
+          "atmosphere": "Quiet, charged with unspoken feeling, subtly intimate"
+        },
+        "context_text": "You and your partner have been together for four years. Life isn't bad, but your conversations have gradually narrowed to mortgage payments, utility bills, and the mundane logistics of daily life. You can't quite remember the last time you had a real talk about what each of you actually thinks or feels. Three months ago, the company launched a cross-departmental brand-renewal project, and you were pulled into the core planning team, assigned to the same small group as another colleague. They're two years younger than you, have a habit of tilting their head slightly when they talk, and their eyes light up whenever the conversation turns to design philosophy. Your sense of aesthetics and your understanding of life align with theirs in an almost uncanny way — you casually mentioned an obscure novel once, and it turned out they had read it three times. On late nights in the office, the two of you sit across the conference table, each facing your own laptop, and every so often you glance up, catch each other's eye, and share a small smile — nothing said, yet somehow everything said. Nothing has crossed any line, but you've noticed that every morning when you wake up, your first thought is whether you'll get to see them today. Your partner has been preparing for an important exam lately, staying up late every night buried in textbooks, occasionally looking up to ask, 'Why are you home so late again?' You give a vague answer, but inside you feel a guilt you can't quite name.",
+        "trigger_event": {
+          "sender": "Your colleague from the project team",
+          "message_content": "(After the project presentation wraps up, the other team members gradually file out, leaving just the two of you in the conference room. They don't rush to pack up their things — instead, they lean back in their chair and gaze out at the city lights beyond the window, then say quietly,) The director approved the whole proposal today. It's been a long time since I've felt truly understood like that. (A brief pause; they turn to look at you, their tone calm but sincere.) There's actually something I've been meaning to say — working alongside you these past few months has been the happiest stretch of time I've had in two years. The project wraps up next month, and after that we probably won't have a chance to work together like this again. I don't want to have any regrets. This Saturday afternoon there's an author talk at an independent bookshop — it's that writer we both love. Would you like to go together? Just the two of us.",
+          "action_required": "You need to decide whether to accept the invitation, and how to confront and navigate the feelings that are quietly taking root."
+        }
+      },
+      {
+        "id": "SCN_AGE_30_TRANSITION_5",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 31,
+        "name": "The Class Divide at the Old Friends' Reunion",
+        "category": "Identity / Social Comparison",
+        "intensity": "Medium",
+        "description_for_agent": "A social scenario in which you face economic disparities and questions of self-worth at a reunion with college friends who have achieved considerable career success.",
+        "setting": {
+          "location": "A private room in an upscale Japanese izakaya in the city center",
+          "time": "Saturday evening, 7:30 PM",
+          "atmosphere": "Lively and warm, yet with an undercurrent of tension"
+        },
+        "context_text": "Years after graduating from college, your old dormitory group has finally managed to get together. The private room glows with soft amber light over a table full of sashimi and sake, and the mood feels almost like those late nights back in the dorm playing cards. One roommate just flew back from abroad, tanned and full of stories about his overseas apartment; another has climbed to director level at a major tech company and just bought a new car; a third opened a chain of bakeries in Hangzhou with a classmate and pulled in over twenty million yuan in revenue last year. Everyone talks over each other, and the conversation drifts naturally toward real estate, stocks, and which international schools to send the kids to. You, meanwhile, have spent the past few years working as a project coordinator at a small nonprofit — modest salary, renting a one-room apartment on the edge of the city — but in your spare time you paint, and one of your pieces was selected for a local young artists' exhibition last year. You genuinely enjoy the rhythm of your life, yet sitting at this table right now, you realize you are the only one who has nothing to contribute to any of these topics.",
+        "trigger_event": {
+          "sender": "A college dormmate",
+          "message_content": "(Raising a cup of sake, smiling and glancing around the table, gaze finally settling on you — tone sincere but tinged with curiosity) Hey, you've always been the mysterious one. You barely say a word in the group chat. So what have you actually been up to all this time? Doing okay money-wise? — Oh right, someone mentioned you're still working in nonprofits? (Someone nearby chimes in: Yeah, I keep telling him to come work at our company — we'd more than triple his salary, but he just won't budge.) (Another person leans in: You're not still renting, are you? Want me to look into some listings for you? There are still good deals out there if you get in now.) Everyone turns toward you with warm, well-meaning smiles, and the room suddenly goes quiet, waiting for you to speak.",
+          "action_required": "You need to respond to your friends' questions and concern — explaining how you feel about your current life, and navigating their well-intentioned but class-gap-laden suggestions."
+        }
+      },
+      {
+        "id": "SCN_AGE_30_TRANSITION_6",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 33,
+        "name": "The Kid with a Hammer",
+        "category": "Emotional Impact / Relationship Conflict",
+        "intensity": "Very High",
+        "description_for_agent": "A high-pressure scenario involving the destruction of months of painstaking work, a relative's dismissive attitude, and the decision of whether to express your true emotions.",
+        "setting": {
+          "location": "The living room of your rented one-bedroom apartment",
+          "time": "Sunday afternoon, 3:30 PM",
+          "atmosphere": "Oppressive, suffocating, rage simmering beneath the surface"
+        },
+        "context_text": "You spent six full months on this—staying up until two or three in the morning every night after work, painstakingly refining every detail. It was a project you had been quietly carrying on your own: source files, countless revised drafts, scattered assets, and an entire working directory, all consolidated onto a single silver encrypted external hard drive. You never backed it up to the cloud—the total volume was too large, and uploading and syncing would have cost too much. You kept telling yourself you'd figure out a backup solution once this version was stable. Today is Sunday, and you managed to get a rare afternoon nap. Your mom called early this morning: 'Your uncle's family is passing through your city—they'll stop by for a bit. Your cousin is coming too. Make sure you play host.' Your uncle runs a building materials business and drives a nice car. The moment they walked in, your cousin was already rummaging through things on your desk. You didn't think much of it—you made your uncle some tea and sat with him for half an hour. Then you got up to use the bathroom. You were gone less than three minutes. When you pushed the door open, you saw your cousin holding your silver hard drive above his head and slamming it against the corner of the table like he was cracking a walnut. The casing had already split open, the port was bent at an angle, and a fragment of circuit board had skittered across the floor. Your stomach dropped like something had reached in and grabbed it.",
+        "trigger_event": {
+          "sender": "Your uncle",
+          "message_content": "(Your uncle glances over, pulls your cousin behind him with one hand, and with the other draws a thick stack of hundred-yuan bills from his wallet, slapping them down on the coffee table in front of you. His tone is breezy and dismissive.) 'Alright, alright—it's just a hard drive for storing files. Take this money; it's more than enough to buy a few new ones. The kid didn't know any better—are you really going to make a big deal out of this?' (Your cousin peeks out from behind your uncle, sticks out his tongue, and is still clutching a screw he pried off the hard drive.) At that moment, your mom sends you a voice message on WeChat: 'Your uncle rarely makes it out this way—be a good host. Don't make our family look stingy.'",
+          "action_required": "You need to decide how to respond to your uncle's attitude and the money he has put down, and whether—and how—to express what you are truly feeling."
+        }
+      },
+      {
+        "id": "SCN_AGE_30_TRANSITION_7",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 30,
+        "name": "A Colleague's Fabricated Data",
+        "category": "Professional Integrity Dilemma / Ethical Decision-Making",
+        "intensity": "High",
+        "description_for_agent": "In mid-career, you face a profound moral dilemma after discovering that a trusted colleague has falsified data—torn between reporting the misconduct and staying silent.",
+        "setting": {
+          "location": "An office cubicle at a window-side desk",
+          "time": "Afternoon",
+          "atmosphere": "Quiet, oppressive, with tension simmering beneath the surface"
+        },
+        "context_text": "You have worked at the company for several years and were recently assigned to an important project involving critical data analysis and decision-making support. Your colleague is responsible for collecting and organizing the data, and the two of you have always gotten along well. This afternoon, while cross-checking the data, you notice something off: several core metrics fluctuate with a suspiciously regular pattern that doesn't match the actual sampling logic. After a closer look, you suspect the data may have been altered or fabricated. Submitting it as-is could lead to flawed decisions and significant losses; reporting it could seriously damage your colleague's career and create a tense atmosphere within the team.",
+        "trigger_event": {
+          "sender": "Colleague",
+          "message_content": "(visibly anxious, speaking in a hushed voice) I know you found the problem with the data… I just wanted to meet the deadline, so I made some adjustments. I know it was wrong, but if you report me, I could face serious consequences. I really had no other choice… Please don't say anything, okay?\n\n(At the same moment, you receive a notification from the project management system: you must confirm that all data is accurate by tonight, and a report is due to senior management first thing tomorrow morning.)",
+          "action_required": "You must decide immediately: do you report the data fabrication to your superiors, or do you stay silent and sign off on the data as valid?"
+        }
+      },
+      {
+        "id": "SCN_AGE_30_TRANSITION_8",
+        "stage": "age_30_transition",
+        "age_range": "ages 28-33",
+        "age": 31,
+        "name": "The Price of Silence",
+        "category": "Workplace Ethics Dilemma / Power Dynamics Crisis",
+        "intensity": "Very High",
+        "description_for_agent": "A high-pressure situation in which a subordinate seeks help after experiencing workplace misconduct, set against a backdrop of complex power dynamics and significant professional risk.",
+        "setting": {
+          "location": "A corner booth in a café near the office",
+          "time": "8:30 PM",
+          "atmosphere": "Dimly lit, oppressive, and filled with unease"
+        },
+        "context_text": "Neon lights flicker outside the window, and only a handful of customers remain in the café. Your subordinate, Xiao Yu Lin — a recent addition to the team who always wore a bright, sunny smile — sits across from you, fingers clutching a tissue so tightly her knuckles are pale, eyes red and swollen. Half an hour ago she sent you a sudden message saying she had something urgent to discuss in person, her tone carrying a panic you had never heard from her before. In halting, broken sentences she has just told you that a senior colleague on the team has repeatedly abused his position over the past few weeks to behave inappropriately toward her — and that during one late-night overtime session he left her feeling genuinely frightened and helpless. Through tears, Xiao Yu explains that she is afraid to file a report with HR because this colleague wields considerable influence in the company's power structure, and she fears retaliation that could isolate her or derail her entire career.",
+        "trigger_event": {
+          "sender": "Subordinate, Xiao Yu Lin",
+          "message_content": "(Voice trembling, eyes locked on yours) I honestly don't know what to do… I came to you today not to ask you to report this for me — I know that would put you in a very difficult position. That senior colleague has a lot of power in this company. If I file a complaint, I could easily be frozen out or lose my job… I just… needed someone to talk to. But… if you think this is something worth acting on, if you're willing to help me, I will be grateful to you for the rest of my life. I'm so scared. He's been finding excuses to get me alone again lately…\n\n(Her phone buzzes. She glances at the screen and her face goes white.) Another message… He says he wants a one-on-one meeting tomorrow to discuss the project. I really don't know what to do.",
+          "action_required": "You must decide immediately: whether to get involved, how to respond to Xiao Yu's plea for help, and whether you are prepared to accept the potential professional consequences."
+        }
+      }
+    ],
+    "settling_down": [
+      {
+        "id": "SCN_SETTLING_DOWN_1",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 38,
+        "name": "The Uneven Burden of Eldercare",
+        "category": "Family Responsibility / Caregiving Dilemma",
+        "intensity": "High",
+        "description_for_agent": "Relatives talk a big game about sharing the load but rarely show up in practice, and you are caught between shouldering nearly all caregiving duties and holding together your own family and career.",
+        "setting": {
+          "location": "Living room of your parents' home",
+          "time": "Saturday evening, 8:30 PM",
+          "atmosphere": "Oppressive, heavy, utterly exhausted"
+        },
+        "context_text": "Your father suffered a stroke three months ago and is now partially paralyzed; your mother was diagnosed with early-stage Alzheimer's last year. Neither parent can live independently anymore. Relatives often say things like 'we'll figure this out together,' yet when it comes to hiring caregivers, running to the hospital, staying up for overnight care, and sorting through reimbursement paperwork, almost all of it has fallen on you alone these past few months. Your partner hasn't said a complete sentence to you in two weeks. Your own household has been neglected for so long — your phone is buried under a pile of unanswered work messages, and your manager has already pulled you aside once about your frequent absences. Tonight, after lifting your father from his wheelchair into bed and wiping your mother's face and coaxing her to sleep, you collapse onto the worn-out living room sofa and absently open your phone. The messages keep rolling in.",
+        "trigger_event": {
+          "sender": "Family group chat",
+          "message_content": "(A voice message arrives; in the background you can hear the clatter of a restaurant and the clink of glasses.) Things are tough for everyone right now, and you do live closest to Mom and Dad — we talked it over, and we really need you to carry a bit more of the caregiving load. We'll chip in some money each month to help cover your expenses. Isn't it time to refill Mom's prescription again? Go ahead and pay for it upfront and we'll settle up in the group chat later. (The voice message is barely over when someone follows up with a text: You put in more effort, we put in more money — that seems fair enough on all sides.) At that moment your partner is standing in the doorway to the living room, arms crossed, eyes red, saying nothing.",
+          "action_required": "You must decide whether to accept the group chat's proposed arrangement — more money from them in exchange for you shouldering even more of the caregiving — and how to respond in the family group chat, all while facing your partner's silent, searching gaze behind you."
+        }
+      },
+      {
+        "id": "SCN_SETTLING_DOWN_2",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 36,
+        "name": "The Midcareer Gamble",
+        "category": "Career Choice / Self-Actualization Dilemma",
+        "intensity": "High",
+        "description_for_agent": "A high-pressure scenario in which you must weigh over a decade of accumulated stability against a newly discovered passion, balancing security against the pursuit of something more meaningful.",
+        "setting": {
+          "location": "home study",
+          "time": "evening",
+          "atmosphere": "quiet, heavy, filled with uncertainty"
+        },
+        "context_text": "For more than a decade, you have built a solid professional standing in your current industry — familiar workflows, predictable income, and the trust of your colleagues. Over the past few years, however, a completely different field has been drawing your attention more and more. In your spare time you have been teaching yourself, experimenting with projects, and quietly building experience. Today, a friend who works in that field reached out to tell you that his startup is looking for core team members and wants you on board. It is a real opportunity, but the price is giving up your current salary, title, and industry network — everything it took you more than ten years to build. You are sitting in your study, the business plan and project brief your friend sent spread out in front of you, your recent financial statements and monthly expense list close at hand. You feel an anxiety and urgency unlike anything you have felt before — this would mean letting go of stability and placing a bet on the unknown.",
+        "trigger_event": {
+          "sender": "Friend",
+          "message_content": "(On a video call, his tone both excited and urgent) I know this is sudden, but we really need you. Your experience and skills would be absolutely critical to our team. The early stage will be demanding and the pay will be limited, but if we pull this off, the rewards will far exceed what you have now. We want to confirm the core team as soon as possible — can you give me an answer?",
+          "action_required": "You need to decide right now: whether to accept this career-change opportunity, and how to explain your thinking to your friend and to yourself."
+        }
+      },
+      {
+        "id": "SCN_SETTLING_DOWN_3",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 35,
+        "name": "The Vanished Joint Savings",
+        "category": "Crisis of Trust / Intimate Relationship Adversity",
+        "intensity": "Extreme",
+        "description_for_agent": "An extreme adversity scenario in which you discover that your partner secretly drained your shared savings to cover a family member's debt, leaving your life plans on the verge of collapse.",
+        "setting": {
+          "location": "The living room of the two-bedroom apartment you and your partner rent together",
+          "time": "Wednesday night, 10:40 PM",
+          "atmosphere": "Dead silent, suffocating, shattered"
+        },
+        "context_text": "You and your partner have been together for several years. All that time, you've been renting a two-bedroom apartment in an older neighborhood — the rent isn't cheap, so you've cut corners wherever you could, rarely eating out. Every sacrifice pointed toward the same goal: a joint savings account you'd built up slowly and carefully, meant to cover the down payment on a small place you'd agreed to buy together — the home you'd talked about again and again as \"truly ours.\" Tonight you got home late after working overtime and absentmindedly opened your mobile banking app to confirm a deduction related to your mortgage pre-approval. The balance on the screen stopped you cold: the number was a fraction of what it should have been, completely at odds with the figures you had in your head. You refreshed the page over and over, then pulled up the recent transaction history — a string of large outgoing transfers, most of them to unfamiliar personal accounts or platforms. The living room is lit by a single floor lamp. Your partner has just stepped out of the shower, hair still wet, and the moment they see you frozen there staring at your phone, the color drains from their face.",
+        "trigger_event": {
+          "sender": "Partner",
+          "message_content": "(Trembling all over, hair still dripping, they drop to their knees on the floor in front of you and clutch your pant leg with both hands, their voice completely breaking) Please just listen to me… please let me finish… My family got buried in payday-loan debt — interest piling on interest — and it got to the point where they couldn't hold it together anymore. Last month those people showed up at my parents' house and threw red paint all over the door. It scared my mom so badly she had a heart attack and ended up in the hospital… I was too afraid to tell you. I was scared you'd say I couldn't help them, but they're my parents… I took the money to plug the worst of it. I know it was wrong. I told myself I could work overtime and slowly pay it back… (They look up, eyes swollen from crying) You can yell at me, you can hit me — I deserve it — but please don't leave me… We can buy the apartment later, I'll pay every cent back, I swear on my life…",
+          "action_required": "You need to decide how to respond: whether you are willing to hear your partner out and face this crisis together, or whether you cannot forgive the betrayal of having the shared savings taken behind your back — and what the future holds for this relationship and the life you had planned."
+        }
+      },
+      {
+        "id": "SCN_SETTLING_DOWN_4",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 37,
+        "name": "The Hidden Diagnosis",
+        "category": "Intimate Trust Crisis / Privacy vs. Care Conflict",
+        "intensity": "High",
+        "description_for_agent": "While sorting through documents at home, you accidentally discover that your partner may have been concealing a health issue, leaving you facing a moral and emotional dilemma about whether to confront them.",
+        "setting": {
+          "location": "home study",
+          "time": "weekend afternoon",
+          "atmosphere": "quiet, oppressive, unsettling"
+        },
+        "context_text": "While your partner is out, you take the opportunity to sort through a pile of papers in the study — bills, receipts, and miscellaneous documents. At the back of a drawer, you find an unsealed envelope bearing your partner's name. Inside is a recent medical test report and a handwritten note with follow-up recommendations. The envelope wasn't deliberately hidden, yet your partner has never mentioned any of this. Thinking back over the past few weeks, you recall your partner occasionally sitting alone in silence late at night, changes in their eating and sleeping habits, and distracted, half-hearted responses whenever you showed concern. As you hold the envelope, you hear the front door open — your partner has come home early.",
+        "trigger_event": {
+          "sender": "Partner",
+          "message_content": "(Pushes the door open, carrying a bag of everyday groceries. Notices the envelope in your hand; a brief, subtle expression flickers across their face before they quickly compose themselves.) Hey, tidying up? That's… nothing serious — just some old test paperwork. What do you want for dinner tonight? Anything you like. (Your partner reaches out to take the envelope, but the gesture is hesitant and their eyes dart away.)",
+          "action_required": "You must decide: do you go along with your partner's lead, set the envelope aside, and ask nothing more — or do you speak up directly, tell them you've seen the report, and ask them to be honest with you?"
+        }
+      },
+      {
+        "id": "SCN_SETTLING_DOWN_5",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 38,
+        "name": "The Prodigy's Crossroad",
+        "category": "Educational Decisions / Developmental Pathways",
+        "intensity": "High",
+        "description_for_agent": "A major family decision about whether to abandon conventional schooling when a child displays extraordinary talent and a professional coach recommends pursuing a competitive career path.",
+        "setting": {
+          "location": "Hallway outside a youth arts center classroom",
+          "time": "Saturday afternoon",
+          "atmosphere": "Bright, with a mix of anticipation and anxiety"
+        },
+        "context_text": "Your child has shown remarkable talent in a particular field, and years of hard work and achievement have left every instructor who has worked with them in awe. Today, you sit on a bench outside the classroom, watching through the glass as your child practices with total focus — sunlight falling across their face, concentration and passion written in every movement. The hallway walls are lined with photos of former students and honor boards; quite a few of them went on to professional schools or made their mark in international competitions. Your child is currently enrolled in a regular school and doing well academically, but choosing the professional development track would mean committing several hours a day to training, keeping up with standard coursework only at the minimum required level, and possibly transferring to a specialized school or alternative education program.",
+        "trigger_event": {
+          "sender": "Professional instructor",
+          "message_content": "(Steps out of the classroom holding a brochure for a special-admissions program at a professional school, tone both excited and serious) In all my years of teaching, I've rarely seen a child with this kind of gift. I strongly recommend seizing this opportunity — applying for the special-admissions program and pursuing full-time professional training. The window is short, and a decision needs to be made soon. But ultimately the choice is yours; your family's wishes and your child's own desires matter just as much.",
+          "action_required": "You need to decide whether to support your child in pursuing the professional track and applying for the special-admissions program, or to stay the course with a conventional education — and to figure out how to communicate your decision to your child and the rest of your family."
+        }
+      },
+      {
+        "id": "SCN_SETTLING_DOWN_6",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 38,
+        "name": "A Humiliating Offer from an Old Enemy",
+        "category": "Dignity Dilemma / Practical Gain",
+        "intensity": "Very High",
+        "description_for_agent": "At an industry cocktail reception, you run into a long-standing rival who publicly offers you a position with a salary well above your current job — but delivers it with unmistakable condescension, pulling you between your dignity and real financial gain.",
+        "setting": {
+          "location": "Ballroom of a five-star hotel in the city center",
+          "time": "7:30 PM",
+          "atmosphere": "Clinking glasses, undercurrents of tension, suffocating"
+        },
+        "context_text": "You have a job right now — reasonably stable, but the pay is tight. After rent, social obligations, and miscellaneous expenses, there's barely anything left by the end of the month. A friend has been urging you to stop coasting in the same old place and show your face at tonight's industry reception. You put on your best presentable suit and head to a downtown hotel, planning to make a brief appearance and leave. Inside the ballroom, crystal chandeliers glare overhead, glasses clink across round tables, and colleagues chat and laugh on all sides. You stand in a corner nursing a glass of orange juice. Then you spot him — the man at the center of the head table. Twelve years ago, at your old company, he was your team leader. He took a core project you had completed on your own and put his name on it to claim the credit. You fought back, made noise about it — and he rallied others to isolate you, said things behind your back to management, until you were the one who ended up leaving. Now he stands there in a sharp suit, flanked by admirers, every inch the industry heavyweight hosting tonight's event. He sees you too.",
+        "trigger_event": {
+          "sender": "Your former team leader — now an industry heavyweight",
+          "message_content": "(He picks up his wine glass and rises from the head table, making his way through the crowd toward you with a broad smile. The conversations nearby seem to pause as if someone hit mute. He claps you on the shoulder, pitching his voice at just the right volume for the two or three surrounding tables to hear every word.)\n\nWell, well — old colleague! It's been ages, hasn't it? (He tilts his head slightly, and his eyes carry that look of superiority you know all too well.) Here's what I'm thinking: I happen to need an assistant right now. Scheduling, errands, a bit of hosting — nothing that'll tax your brain. I'll pay top-of-market for an assistant, everything written into the contract. Whatever your current place is giving you, this will be more — more than double, easily. (He pulls a business card from his breast pocket and holds it out between two fingers, extending it toward you the way someone might offer a handout.) Consider it me throwing you a lifeline. So — are you taking it?\n\n(He glances around at the onlookers and grins.) Come on, everyone — am I being generous or what?\n\nAn awkward silence falls over the room. Dozens of eyes swing toward you all at once. Across the room, your friend gives you a small, helpless shake of the head and drops their gaze.",
+          "action_required": "Everyone is waiting for your response — do you take the card, decline, or find another way to answer his very public 'invitation'?"
+        }
+      },
+      {
+        "id": "SCN_SETTLING_DOWN_7",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 40,
+        "name": "The Child's Lie",
+        "category": "Educational Dilemma / Integrity Choice",
+        "intensity": "Medium",
+        "description_for_agent": "You discover that your middle-school child cheated on an exam and lied to cover it up, leaving you torn between confronting the truth and protecting them.",
+        "setting": {
+          "location": "Home study",
+          "time": "9:30 PM",
+          "atmosphere": "Quiet, heavy, with an undercurrent of tension"
+        },
+        "context_text": "It's Wednesday evening and the house is very quiet. Your child has already gone to their room, leaving their backpack tossed carelessly on the living-room sofa. When you go to tidy it up, a crumpled note slips out from an inner pocket — written by a classmate, its message unmistakably clear: 'The math midterm answers went around pretty smoothly, didn't they? Next time for physics, count me in too.' Your hands tremble slightly as you open the grade report inside the bag: 96 in math, 12th place in the year group. Three days ago your child had beamed with pride showing you that report card, and you had even made their favorite sweet-and-sour pork ribs to celebrate. The school's academic system shows the grade has already been recorded, and the midterm awards ceremony is set for next Monday. You tuck the note back where you found it, close the backpack, and sit down at the desk in the study. The lamp stretches your shadow long across the floor. From the next room comes the sound of your child turning pages — completely unaware that you ever saw that note.",
+        "trigger_event": {
+          "sender": "Your child",
+          "message_content": "(Pushes open the study door and walks in carrying a mug of warm milk, grinning as they set it on your desk) Mom / Dad, I made you some milk. Oh, and the teacher said I get to go up on stage at next Monday's awards ceremony — I even have to give a speech! I was thinking of saying 'hard work always pays off' in it. What do you think? (Tilts their head and looks at you, eyes bright) Oh, and the homeroom teacher mentioned that students who showed the biggest improvement this time might be recommended by the school for the city-level math competition trials. I think I'd like to give it a shot!",
+          "action_required": "You must decide how to respond to your child in this moment — whether to confront them directly with what you know, hold back for now, or handle the situation in some other way."
+        }
+      },
+      {
+        "id": "SCN_SETTLING_DOWN_8",
+        "stage": "settling_down",
+        "age_range": "ages 33-40",
+        "age": 38,
+        "name": "Injustice in the Community",
+        "category": "Public Advocacy / Social Dynamics",
+        "intensity": "High",
+        "description_for_agent": "You discover that the residential property management company has been embezzling the communal maintenance fund for years. Now you face a social dilemma between collective silence and personal risk.",
+        "setting": {
+          "location": "The neighborhood residents' WeChat group + your living room",
+          "time": "Saturday evening, 9:30 PM",
+          "atmosphere": "Tense, with undercurrents of unease and conflicting loyalties"
+        },
+        "context_text": "You have lived in this residential complex for many years. Three months ago, you happened to notice a maintenance fund expenditure report posted on the homeowners' committee bulletin board, and the numbers didn't add up. Over three years, nearly two million yuan had been recorded under line items like 'elevator repairs' and 'exterior wall renovation'—yet you had watched that elevator go without a single replacement part, and the outer walls were still peeling and crumbling as always. You spent two months cross-referencing bank statements, construction contracts, and invoices one by one, and discovered that the property manager had colluded with two suppliers to fabricate at least six construction projects. Nearly half of the maintenance fund had been drained. You compiled all the evidence into a document and posted it in the residents' group chat. The group erupted briefly—then quickly went quiet. Out of more than four hundred households, only a dozen people sent you private messages saying they 'supported' you, yet not a single person was willing to speak up openly in the group. This afternoon, the property manager's assistant paid a visit to your door, smiling pleasantly and reminding you: 'Our manager says we're all old neighbors here—whatever the issue, we can talk it through. Let's not make things awkward.' Your wife, standing nearby, went pale.",
+        "trigger_event": {
+          "sender": "A neighbor from the floor above",
+          "message_content": "(At nine-thirty in the evening, the retired teacher who lives directly above you—one of the people who privately expressed support—knocks on your door and speaks in a lowered voice.) Listen, I'm going to be straight with you. A few of us have talked it over privately, and we all agree that what you found is solid—the property management is definitely stealing. But you know how it is: that manager has strong ties with the local street office. Last time a resident complained about a parking space, there was a pile of construction debris dumped outside their door the very next day. We're all getting on in years; we really can't afford to put our names on anything. That said, if you're willing to take the lead and file a formal complaint with the Housing and Urban-Rural Development Bureau, we can quietly help you think things through and dig up materials—but the joint letter… (He rubs his hands together awkwardly.) Do you think you could just put your name on it for now? You're young; you can handle it. Oh, and my wife just said—maybe it's better to just let it go. Two million split across every household is only a few thousand yuan each. Is it really worth all this trouble?",
+          "action_required": "You must decide: are you willing to file a formal complaint with the Housing and Urban-Rural Development Bureau under your name alone, and how will you respond to your neighbors' willingness to support you only in private while refusing to sign any public joint statement?"
+        }
+      }
+    ],
+    "midlife_transition": [
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_1",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 42,
+        "name": "The Day of the Launch",
+        "category": "Conflict of Duty / Life-or-Death Decision",
+        "intensity": "Extreme",
+        "description_for_agent": "You must make an irreversible decision within two hours.",
+        "setting": {
+          "location": "Between the living room at home and a hospital corridor",
+          "time": "09:00 AM",
+          "atmosphere": "Tense, suffocating, and desperately time-pressured"
+        },
+        "context_text": "Two years of preparation, millions of dollars invested, and an entire industry watching — your new product launch is scheduled for ten o'clock this morning. International media, investors, and partners have all arrived, and your whole team is counting on you as the sole presenter. You've put on your charcoal-gray suit, speech in hand, with the car already waiting downstairs and the driver urging you to hurry. Then your phone rings — it's the hospital emergency line. The doctor's voice is urgent: your father has developed a serious complication during surgery, and a decision must be made immediately — whether to continue with the high-risk procedure or switch to a conservative approach. The doctor stresses that without a family member's signature, the surgery cannot proceed, and every minute could mean the difference between life and death. You glance at your watch — one hour until the launch — but your heart is already racing as memories of your father's face and his words of guidance flood your mind. At the same moment, a video call request from the CEO pops up on your screen; stage lights flicker behind him, his expression grave: \"We've already started letting people in. The media are all here. Forty-five minutes left — where are you?\"\n\nIn this moment, you hold a dual responsibility over life and career. The empty living room around you, the car waiting below, the phone buzzing relentlessly — everything is pressing you to make an irreversible choice right now.",
+        "trigger_event": {
+          "sender": "Hospital Doctor + Company CEO",
+          "message_content": "(Over the phone, the doctor's voice is urgent) \"Is this the family? Your father is showing signs of pulmonary embolism during the procedure. We need an immediate decision on whether to escalate to extracorporeal circulatory support. Every minute is critical.\"\n\n(Seconds later, a video call from the CEO pops up) \"We've already started letting people in — media, investors, everyone is here. Forty-five minutes left. Where are you? The whole company is waiting for you.\"",
+          "action_required": "You must decide right now: do you rush to the hospital to sign the medical consent, or do you proceed as planned and attend the launch? There is no way to do both, and there is no way to delay."
+        }
+      },
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_2",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 43,
+        "name": "The Alma Mater Invitation",
+        "category": "Career Choice / Identity Crisis",
+        "intensity": "High",
+        "description_for_agent": "A deep decision about whether to leave a familiar, established career to return to academic passion and pursue personal growth.",
+        "setting": {
+          "location": "Home study",
+          "time": "9:30 PM",
+          "atmosphere": "Quiet, heavy, and filled with tension"
+        },
+        "context_text": "You have worked at your current organization for quite a long time, building up a wealth of experience, and the familiar routines allow you to get through each day smoothly. Lately, however, you have felt more and more that this job can no longer offer you new challenges or a sense of fulfillment. Late one night, while sorting through old notebooks, you stumble upon research interests and academic ideas you once wrote down, and a long-dormant passion stirs inside you. Today, you received an email from your former graduate advisor: there is a researcher position open at the university, in exactly the field you once loved but set aside for practical reasons. The salary is modest, but the role is full of opportunities for exploration. You stare at the screen, your mind churning: this could be a path that reignites your passion, but it means leaving the stability you have built, readjusting to the rhythm of academic life, and stepping into a future full of uncertainty.",
+        "trigger_event": {
+          "sender": "Someone close to you",
+          "message_content": "(Knocks and comes in, notices you staring blankly at the computer screen, and sits down beside you) Are you reading that email again? (Pauses, tone gentle but tinged with concern) I know how much you care about academic work, but… if you're seriously thinking about going, I hope you'll really consider what it means for our life together. Your current job may be monotonous, but it also brings stability and familiarity. Have you thought about how you would handle all of that?",
+          "action_required": "You need to respond in this moment: decide whether to honestly express your longing for this academic opportunity and whether you are willing to accept the uncertainty it may bring; and decide how you will reply to your former advisor's invitation."
+        }
+      },
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_3",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 43,
+        "name": "Caught in the Crossfire",
+        "category": "Workplace Crisis / Ethical Dilemma",
+        "intensity": "Extreme",
+        "description_for_agent": "Faced with a superior under investigation and your own name implicated, you must make a high-stakes choice between fully cooperating with investigators and protecting your team.",
+        "setting": {
+          "location": "Company Conference Room B, soundproof glass door shut tight",
+          "time": "2:30 PM",
+          "atmosphere": "Oppressive, tense, and charged with unspoken threat"
+        },
+        "context_text": "At 10 o'clock this morning, your direct supervisor was escorted out of the office by two people in dark-grey jackets, without a word of explanation. The entire floor fell into an eerie silence. Around noon, you received a call summoning you to a conference room. You pushed open the door to find three investigators seated across from you. One of them opened a folder and pointed to a classified financial document. \"Your signature appears in this document's circulation record,\" they said. \"We need you to help us explain that.\" Your heart began to pound — you did see this document two months ago, when your supervisor asked you to look over some project budget materials, but you never examined the contents closely. Now the investigators are demanding that you hand over additional internal documents, explain the purpose of the file, and provide information about other members of your team. Outside the window, the familiar city skyline stretches on as usual — but right now it feels like the bars of an invisible cage.",
+        "trigger_event": {
+          "sender": "Lead Investigator",
+          "message_content": "(Slides a document across the table, tapping a fingertip on your signature, eyes calm and sharp) Based on our preliminary investigation, this document is linked to an irregular movement of funds totaling 28 million. As a core member of the project team, you should have some knowledge of what took place. (Pauses, flips open a notebook) We need you to provide: first, the specific purpose of this document; second, all communication records between your supervisor and the finance department; and third, the extent to which other members of your team are aware of this matter. Cooperating with the investigation will work in your favor. But if we find that you are withholding information… (looks up, expression laden with meaning) you understand the consequences. We're giving you 24 hours to think it over.",
+          "action_required": "You must decide immediately: whether to cooperate fully with the investigation and hand over information about your team members and internal documents, whether to seek legal counsel and cooperate only selectively, or whether to attempt to contact your supervisor or colleagues first. This decision will directly affect your career, your legal exposure, and your relationships with the people you work with."
+        }
+      },
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_4",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 43,
+        "name": "The Feeling of Being Seen",
+        "category": "Emotional Dilemma / Loyalty Crisis",
+        "intensity": "High",
+        "description_for_agent": "Caught between a flat, routine marriage and a rare emotional connection, you face a subtle but consequential choice about the boundaries of a relationship.",
+        "setting": {
+          "location": "Second-class seat on a high-speed train home",
+          "time": "8:30 PM",
+          "atmosphere": "Dim, quiet, thoughts churning"
+        },
+        "context_text": "The night outside the window blurs into darkness. Most passengers in the car are wearing headphones or resting with their eyes closed. You stare at your phone screen, a WeChat conversation frozen on a message from three days ago — the last evening of this business trip, when you and a colleague ended up talking late into the night in the hotel lobby after the team dinner. You talked about the frustrations of work, the disorientation of middle age, the quiet grievances that no one ever seems to notice. They listened to every word you said with genuine attention, eyes focused and alive, asking \"and then what happened?\", laughing and saying \"I felt exactly the same way about that detail you mentioned.\" You can't even remember the last time someone listened to you like that. Back home, your spouse asked, as usual, \"How did the trip go?\" You said, \"Fine, pretty good,\" and then you both scrolled through your phones until late at night. More than a decade of marriage — no arguments, but no warmth either, like a pool of still, motionless water. Nothing crossed any line; you didn't even brush hands. But at the moment of parting, your colleague looked at you and said: \"When you get back, if you ever want to keep talking, I'm here.\"",
+        "trigger_event": {
+          "sender": "A colleague from the project team",
+          "message_content": "(Your phone screen lights up; a WeChat notification pops in.) \"Did you make it home okay? I was in a meeting today and suddenly thought of that point you made — I realized you were really onto something. Oh, and you mentioned there's a really quiet little bookstore near your place. I'd genuinely love to check it out sometime. Talking with you these past few days, I haven't felt this relaxed in a long time. Good night.\"\n\nThe message came in ten minutes ago. The \"typing...\" indicator flickered twice and then disappeared. Your finger hovers over the screen, and you're not sure whether to reply. Just then, your phone buzzes — your spouse: \"Don't forget to take the kid to tutoring tomorrow. I have to work this weekend.\"",
+          "action_required": "You need to decide right now: whether to reply to your colleague's message, and how to handle this emotional connection that has only just begun to take root."
+        }
+      },
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_5",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 44,
+        "name": "A Child's Calling",
+        "category": "Intergenerational Conflict / Life Choices",
+        "intensity": "High",
+        "description_for_agent": "A choice must be made between protecting and letting go, between security and dreams.",
+        "setting": {
+          "location": "Home study",
+          "time": "8:30 PM",
+          "atmosphere": "Warm, quiet, with an undercurrent of tension"
+        },
+        "context_text": "The day the college entrance exam results were released, your child's score came in more than 40 points higher than expected — high enough to aim for the country's most elite universities. You were overjoyed, already mapping out your child's future in your mind: finance, computer science, medicine — the traditional, in-demand fields that promise stable careers and respectable incomes. But tonight, your child knocks on the study door, carrying a thick reference booklet and a university application form. They sit down across from you, their gaze calm but resolute, and in a tone you've rarely heard from them before, they say the name of a major — one you've never seriously considered. You can feel how earnest they are, yet your first instinct is worry: too narrow a career path, unpredictable income — wouldn't this be a waste of their talent?",
+        "trigger_event": {
+          "sender": "Your child",
+          "message_content": "(Calmly opens the booklet, points to the page describing the major, then looks up at you — their eyes holding something you haven't seen in your own for a very long time: a kind of pure, unguarded longing) Mom / Dad, I know you might be against this. My scores really could get me into a \"safer\" major. But I've loved this field since middle school, and I've been teaching myself all these years. This isn't a sudden impulse. (Pauses, voice growing more firm) I just want to try — once. I want to see how far I can go. And if it doesn't work out in the end, I won't have any regrets.\n\nA rush of complicated emotions surges through you — a quiet pride in your child's conviction, alongside a deep fear of the risks they might face. You think back to your own younger years, when you too had dreams that were gradually worn down by reality until you gave in. How do you respond?",
+          "action_required": "You must decide right now: whether to support your child in taking this unconventional path, or to draw on your own life experience and discourage them — steering them away from hardship and toward a safer road."
+        }
+      },
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_6",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 42,
+        "name": "The Abnormal Report",
+        "category": "Health Crisis / Solitary Decision",
+        "intensity": "Very High",
+        "description_for_agent": "Facing an abnormal medical report alone, grappling with death anxiety, and wrestling with the agonizing choice of whether to tell your family.",
+        "setting": {
+          "location": "Third-floor health screening corridor, City People's Hospital",
+          "time": "2:30 PM",
+          "atmosphere": "Cold, noisy, and isolating"
+        },
+        "context_text": "This is yet another routine workplace physical — in past years you would glance at the report and stuff it in a drawer without a second thought. This year is different. Two values on the report — liver function and a tumor marker — are printed in red and flagged as \"elevated,\" and the doctor has handwritten a note in the remarks column: \"Recommend follow-up examination as soon as possible to rule out early pathological changes.\" You are sitting alone on a blue plastic chair in the hospital corridor, the A4 sheet clutched in your hand, its edges already damp with sweat. Strangers stream past in every direction — someone pushing a wheelchair, someone holding a CT scan up to a light box — and the examination room's number-calling system drones on: \"Number 203, number 203 please come in.\" Outside the window the sky is a flat, leaden grey. You think about how your child has a math practice exam tonight, and your partner is away on a business trip in Hangzhou and won't be back until Friday. Your phone buzzes twice in your pocket — someone has tagged you in the work group chat. You haven't called anyone.",
+        "trigger_event": {
+          "sender": "Incoming phone call",
+          "message_content": "(Your phone screen lights up — it's a video call from your partner, saved in your contacts as \"Honey.\" Their profile picture pulses on the screen, and the ringtone sounds jarringly loud in the quiet corridor; a passing nurse glances over at you. You know that if you answer, the first thing they'll almost certainly say is \"How did the check-up go?\" — that's been your ritual every year. And right now, you're still holding the report with that handwritten note: \"Recommend follow-up examination as soon as possible to rule out early pathological changes.\" Let it ring, decline, or answer — you have to make up your mind in the next second or two.)",
+          "action_required": "You must decide immediately: whether to answer the video call; and if you do, whether to tell your partner the truth, give a vague non-answer, or keep it from them for now and wait until after the follow-up results come in."
+        }
+      },
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_7",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 44,
+        "name": "A Friend's Secret",
+        "category": "Crisis of Trust / Moral Dilemma",
+        "intensity": "High",
+        "description_for_agent": "A high-pressure scenario in which you are forced to keep a close friend's divorce secret while maintaining the friendship and navigating the emotional weight of hidden truth.",
+        "setting": {
+          "location": "Your living room at home",
+          "time": "Wednesday evening, 8:30 PM",
+          "atmosphere": "Warm yet oppressive, filled with unease and undercurrents of tension"
+        },
+        "context_text": "A married couple has been among your closest friends for over a decade — the four of you regularly share dinners and go on trips together. Yesterday afternoon, the husband suddenly asked to meet you alone. He sat in your living room for two hours and, in a hushed voice, told you a secret: he has decided to file for divorce, has already retained a lawyer, and is simply waiting to formally initiate the process. He explained that everything must stay confidential for now because of the asset division — if his wife finds out too soon, she might move money around. He stressed repeatedly that you are the person he trusts most, and he begged you not to tell anyone, including your own partner. You agreed, but you have felt a heavy weight on your chest ever since. This morning, the wife sent you a WeChat message saying that things between her and her husband have been much better lately, that she feels they have made it through a rough patch, and that she warmly invited all four of you to go camping in the countryside this weekend — she has already booked a guesthouse and says the scenery is stunning. You stare at the message, fingers hovering over the keyboard, unsure how to respond.",
+        "trigger_event": {
+          "sender": "The wife (via WeChat)",
+          "message_content": "Hey! Things between us have honestly been so much better lately — we're even talking about a trip to Europe this summer. How about the four of us go camping this weekend? I've already booked this adorable mountain guesthouse, the views are gorgeous. When works for you guys? He says he's free any day this week. 😊😊😊",
+          "action_required": "You need to decide right now: whether to accept the camping invitation, and how to respond to her enthusiasm without revealing the secret."
+        }
+      },
+      {
+        "id": "SCN_MIDLIFE_TRANSITION_8",
+        "stage": "midlife_transition",
+        "age_range": "ages 40-45",
+        "age": 45,
+        "name": "The New Supervisor",
+        "category": "Workplace Conflict / Generational and Methodological Clash",
+        "intensity": "High",
+        "description_for_agent": "A younger supervisor has been parachuted in during a company restructuring. After publicly dismissing processes you spent years building, they are now privately pushing through a sweeping overhaul—placing you in a high-pressure social situation caught between professional pride, hard-won experience, and organizational compliance.",
+        "setting": {
+          "location": "A company meeting room — a small discussion room in the afternoon",
+          "time": "4:00 PM",
+          "atmosphere": "Tense, strictly business, with unspoken undercurrents"
+        },
+        "context_text": "The company has shifted its strategy and recently brought in a new supervisor considerably younger than you, who operates in ways you are largely unfamiliar with. At this week's all-hands meeting, they called you out by name and criticized the workflow you have relied on for years, declaring it inefficient and in need of a complete overhaul. You are one of the most senior people in the department — you have mentored multiple cohorts of new hires, and many steps in that workflow were built by you in the first place. The room went silent, and your colleagues' eyes turned to you. You held back and said nothing in the moment. Now the supervisor has asked to meet with you one-on-one to discuss the implementation details.",
+        "trigger_event": {
+          "sender": "New Supervisor",
+          "message_content": "(The two of you are alone in the small afternoon meeting room. The supervisor slides a restructuring plan marked with milestones across the table toward you and taps the cover with one finger.) We're locking in the pace today — starting next week, everything runs on the new process. Your job is to keep a tight grip on the transition period and make sure old habits don't slow things down. I'm not here to debate whether we're making changes. You can flag execution issues, but the overall direction is set. (Looks up at you, tone flat and even.) If you have objections, say them now. I've already made my position clear in front of the team.",
+          "action_required": "You need to decide how to respond: go along on the surface, directly challenge the risks and specifics on the spot, push for a buffer period or a compromise, or handle it in whatever other way you think is appropriate."
+        }
+      }
+    ],
+    "entering_midlife": [
+      {
+        "id": "SCN_ENTERING_MIDLIFE_1",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 46,
+        "name": "Father's Right to Choose",
+        "category": "Life-or-Death Decision / Duty Dilemma",
+        "intensity": "Extreme",
+        "description_for_agent": "An extreme-stress scenario in which you must make a life-or-death decision between aggressive treatment and palliative care following your father's terminal cancer diagnosis.",
+        "setting": {
+          "location": "Oncology consultation room",
+          "time": "2:30 PM",
+          "atmosphere": "Heavy, oppressive, time standing still"
+        },
+        "context_text": "You sit in a cold consultation room, the fluorescent lights humming overhead. Across from you is the attending physician and two thick diagnostic reports — malignant tumor, late stage, metastasized. Your father sits beside you, his pale face nearly expressionless. In a measured tone, the doctor outlines two paths: aggressive chemotherapy, with a 20% success rate, but the days ahead would bring severe nausea, hair loss, and bone marrow suppression — he might be bedridden; or palliative care, surrendering any chance of a cure, spending whatever time remains with family and minimizing suffering. You hear every word clearly, yet your mind is in chaos. Your father turns to you and says quietly, 'Whatever you all decide is fine with me.' His eyes hold a genuine exhaustion — not fear of death, but a deep weariness with life itself. The doctor sets down his pen and looks at you, waiting for your decision. The only sound in the room is the low hum of the air conditioning.",
+        "trigger_event": {
+          "sender": "Attending Physician",
+          "message_content": "(The doctor closes the medical file and meets your eyes with a calm but steady gaze.) 'I need you to reach a decision as soon as possible. If you choose chemotherapy, we should ideally begin within the week. If you choose palliative care, we will start the comfort-care protocol immediately.' (He pauses, lowering his voice.) 'Honestly, from a medical standpoint, I have seen too many patients lose their dignity during chemotherapy. But this is your father's life, and ultimately it has to be a family decision.' (He turns to your father.) 'Are you sure you have no preference?' Your father simply shakes his head and closes his eyes. The doctor's gaze returns to you, his pen tapping softly against the table.",
+          "action_required": "You must make a choice right now: do you fight for that 20% chance of survival on your father's behalf, or do you honor his exhaustion and choose to let him spend his remaining time with dignity? You need to speak your decision aloud in front of the doctor."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_MIDLIFE_2",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 47,
+        "name": "The Junior's Detour",
+        "category": "Passing Down Experience / Boundaries of Autonomy",
+        "intensity": "Medium",
+        "description_for_agent": "Witnessing a younger colleague heading down a familiar wrong path, you face an internal conflict over whether to step in and share hard-won experience.",
+        "setting": {
+          "location": "Home study",
+          "time": "10:30 PM",
+          "atmosphere": "Quiet, contemplative, subtly conflicted"
+        },
+        "context_text": "The night outside is deep and still; the only light in the study is the warm glow of the desk lamp. You've just been scrolling through your social feed when you come across a post from a young colleague in your field — another project-progress update, accompanied by an elaborate schedule and a dense flowchart, the caption barely concealing their excitement and confidence. You stare at the image for a long moment, and a complicated feeling rises in you: the workflow, the resource allocation, even the choice of milestones — it's almost identical to a project you led twenty years ago. You remember being just as full of energy and certainty back then, right up until the project had to be torn down and rebuilt from scratch due to fundamental structural and process failures. Team morale collapsed, and you missed a critical opportunity in the process. The memory still unsettles you. This young person is clearly sharp and driven, but they haven't yet lived through that kind of pain. The two of you aren't particularly close — you exchange the occasional message in an industry group chat — and this post was simply a polite share of progress, with no request for feedback.",
+        "trigger_event": {
+          "sender": "Inner monologue + phone vibration",
+          "message_content": "Your finger hovers over the comment box as a dozen different phrasings flash through your mind: warn them about the pitfalls you once fell into yourself? Or let them find their own way? Every sentence you draft feels like the presumption of age over youth, and the weight of it sits heavy on your chest. Then your phone buzzes — a private message: 'Did you see this project? I think there's a problem, but I don't feel right saying anything directly…' A wave of conflicted feeling washes over you — you want to help, but you're afraid of intruding; you want to speak up, but you're afraid of overstepping. Outside, the rumble of a late-night freight truck cuts through the silence. The cursor blinks in the comment box as if urging you to decide, and yet you have no idea how to begin.",
+          "action_required": "You need to make an internal decision: whether to break your silence and proactively offer guidance drawn from your own experience, or to let your young colleague find their own way — and at the same time, consider how to respond to your colleague's private message without crossing a line."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_MIDLIFE_3",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 48,
+        "name": "The Resume at 48",
+        "category": "Midlife Unemployment Crisis / Identity Devaluation",
+        "intensity": "Extreme",
+        "description_for_agent": "You must make a choice between dignity and survival.",
+        "setting": {
+          "location": "Home study, in front of a computer screen",
+          "time": "10:30 PM",
+          "atmosphere": "Oppressive, suffocating, hopeless"
+        },
+        "context_text": "Monday morning's restructuring meeting is still vivid in your mind — the entire department was cut, including you, a long-tenured employee. HR was polite about it, and the severance package was generous enough, but none of that changes anything. It's Friday night now. Your child is upstairs studying for the college entrance exam three months away; your father was recently hospitalized again, and the doctor says he needs regular follow-up visits; the mortgage still has years left on it. You open a job-search app and scroll mechanically. Under 35, under 35, under 40 … Occasionally a listing marked \"no age limit\" appears — customer service or warehouse management, paying half of what you used to earn. Your fingers hover over the screen. The only light in the room comes from the cold glow of the keyboard, and from downstairs comes the sound of running water — your partner washing the dishes.",
+        "trigger_event": {
+          "sender": "Your partner",
+          "message_content": "(Knocks and comes in, holding two cups of tea. Glances at your screen and pauses.) Here, have some tea. (Sets the cups down and sits beside you, voice soft.) I just got a call from your mom — she said your dad wants us to come with him to his follow-up appointment this month… (Pauses, studying your face.) The company… is there really no other possibility? Or maybe we could think about the house first…\n\nBefore the sentence is finished, your phone buzzes. It's a text from the bank: your mortgage payment has been automatically deducted. Your partner sees the look on your face and says nothing more — just reaches over and takes your hand.",
+          "action_required": "You must decide right now: whether to be honest with your partner about how you truly feel about the future, and how to approach the job search ahead — whether to hold firm on your requirements for job title and salary, compromise with reality, or even consider more drastic options."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_MIDLIFE_4",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 46,
+        "name": "The Partner's Proposal",
+        "category": "Intimate Relationship Restructuring / Marital Boundary Crisis",
+        "intensity": "Very High",
+        "description_for_agent": "Faced with a partner's proposal for an open marriage, you must redefine the boundaries of your relationship on the foundation of a long-term commitment.",
+        "setting": {
+          "location": "Living room sofa at home",
+          "time": "Saturday evening, 6:30 PM",
+          "atmosphere": "Calm, oppressive, with undercurrents of tension"
+        },
+        "context_text": "The setting sun outside the window bathes the living room in a warm amber glow. You have just finished clearing away the dinner dishes. Your partner sits on the sofa, cradling a half-empty cup of tea that has long gone cold, their expression outwardly calm yet carrying an unmistakable undercurrent of unease. The two of you have been together for many years, sharing the ordinary rhythms and storms of a shared life — from the passion of youth to the steady, unspoken understanding you have now. Arguments have been rare; more often it has been a mutual, comfortable silence. Then, this afternoon, your partner sent a message: \"I'd like to talk tonight.\"",
+        "trigger_event": {
+          "sender": "Partner",
+          "message_content": "(Sets down the teacup, folds both hands in their lap, voice measured and firm.) I've thought about this for a long time, and there are things I need to say clearly. I don't want to leave this home, and I don't want to damage the life and the bond we've built over all these years… but I think we might need some flexibility — room for each of us to have a degree of independence in our emotional lives, without having to account for everything. I'm not asking for a separation. I'm asking us to redefine the boundaries of our relationship.\n\nThe ticking of the wall clock echoes through the living room. You hold your partner's gaze while your thoughts churn like disturbed water. Your phone screen lights up — another notification or message — pulling your attention away from the conversation in front of you.",
+          "action_required": "You need to weigh your options internally: whether to accept your partner's proposed redefinition of your relationship boundaries or to hold firm to your original commitment, while also deciding how to respond to your partner's steady gaze and the notification on your phone. The scales inside you are tipping back and forth."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_MIDLIFE_5",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 47,
+        "name": "The First Week of the Empty Nest",
+        "category": "Identity Reinvention / Life Transition",
+        "intensity": "High",
+        "description_for_agent": "Confronting the sudden disruption of a long-familiar daily rhythm and the challenge of redefining your sense of self.",
+        "setting": {
+          "location": "the dining room at home",
+          "time": "7:30 AM",
+          "atmosphere": "quiet, unfamiliar, adrift"
+        },
+        "context_text": "Yesterday afternoon, you said goodbye to someone who has held a central place in your life — a younger person who has always been by your side and is now setting off on their own. You watched their transport disappear from view and stood there for a long time, unable to move. When you came home and opened the door, the hallway felt strangely long and hollow. For years, a large part of your life has revolved around caring and being present — waking up early to make breakfast, driving to and from school, helping with homework, attending every kind of activity. All those fragmented, busy hours filled every corner of your day. Now, the door to that room is closed, and an old journal they decided at the last minute not to take sits on the desk. This morning you woke on your own — no alarm, no knock at the door. The person you live with is still asleep. You sit at the dining table, facing an empty place setting, morning light spilling in through the window, and it suddenly hits you: you don't know what comes next. Not just today — every day from here on out.",
+        "trigger_event": {
+          "sender": "your housemate",
+          "message_content": "(Shuffles into the kitchen in pajamas, stifles a yawn, and notices you sitting there in a daze) Morning. (Pauses, seeming unsure what to say) I was thinking… maybe today we just go about things like normal — each doing our own stuff? I've got that pile of things to deal with, and you could… (voice trailing off) do something. Or we could go out for a walk together? Honestly, I'm not sure either. (Sits down and looks at you with a slightly awkward expression) This feels a bit strange, doesn't it?",
+          "action_required": "You must decide in this moment: do you take the initiative to break through this unfamiliar feeling and explore a new way of living together with your housemate, or do you each retreat into familiar busyness — filling the sudden void with work and everyday tasks?"
+        }
+      },
+      {
+        "id": "SCN_ENTERING_MIDLIFE_6",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 48,
+        "name": "The Road Not Taken",
+        "category": "Life Choices / Regret and Self-Doubt",
+        "intensity": "Very High",
+        "description_for_agent": "Upon learning that a path you abandoned twenty years ago has become someone else's successful life, you are plunged into deep regret, self-negation, and a questioning of your own existential meaning.",
+        "setting": {
+          "location": "Inside a car, at an intersection on the city ring road",
+          "time": "Early evening, 6:45 PM, the sun setting in the west",
+          "atmosphere": "Oppressive, hushed, a sense of time standing still"
+        },
+        "context_text": "Twenty years. You still remember that night you made the choice — giving up that job opportunity, that potential relationship, that entirely different trajectory your life could have taken. At the time the reasons seemed solid: your family needed you, the practical pressures, the stable job, the life you had already begun. You told yourself it was maturity, that it was the responsible thing to do. For twenty years you lived by the script: promotions, building a family, settling into a home — everything unfolding exactly as expected. But this afternoon, a single offhand remark from an old classmate shattered that calm. They mentioned that person — the one who used to share your dreams — who now runs their own studio abroad, whose work has won awards, whose life is free and fulfilling: the very life you had longed for most, twenty years ago. You drove away from the office, intending to head straight home, but two kilometers from your front door you suddenly pressed the brake. The engine is still running, yet your hands grip the steering wheel tightly and your eyes are fixed on the traffic light ahead, seeing nothing. Only one voice loops inside your head: What if you had chosen the other road?",
+        "trigger_event": {
+          "sender": "Your inner monologue + your phone screen",
+          "message_content": "Your phone screen lights up — it's a message from that old classmate, who has just sent you a link to that person's social media profile. You tap it open and see a photo: that person standing in their own studio, beaming, surrounded by award certificates and displayed works. The caption reads: 'Ten years of persistence — I've finally become the person I always wanted to be.' Your hands begin to tremble. You remember sitting in a café twenty years ago, talking about your dreams together, when that person said, 'We're going to live differently.' And you replied, 'I want that too.' But you didn't. You chose safety. Now you sit in this car, dressed in your neat work clothes, feeling a hollowness you have never felt before. You think of your family waiting for you to come home for dinner tonight, of the household matters you still need to deal with tomorrow, of next week's project deadline. All of it is real, all of it matters — so why does every bit of it feel, in this moment, like one enormous lie?",
+          "action_required": "You must decide: do you drive home and pretend everything is fine; do you allow yourself to completely fall apart in this moment and question everything; or do you find some way to reframe and redefine the choices you made over these twenty years?"
+        }
+      },
+      {
+        "id": "SCN_ENTERING_MIDLIFE_7",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 49,
+        "name": "The Health Lie",
+        "category": "Personal Privacy / Moral Dilemma",
+        "intensity": "High",
+        "description_for_agent": "You unexpectedly learn that you may have a potentially serious illness, and deciding whether to tell your family and colleagues becomes a moral and ethical dilemma.",
+        "setting": {
+          "location": "Between the home study and the living room",
+          "time": "8:00 PM",
+          "atmosphere": "Heavy, oppressive, tense, with a strong sense of inner conflict"
+        },
+        "context_text": "You have just finished your annual physical exam when the doctor calls to request further follow-up tests. While waiting for the official report, you accidentally catch a glimpse of preliminary results in the health screening system showing a possible abnormal indicator. This indicator suggests you may need to begin treatment immediately, and any delay could carry serious risks. Two thoughts immediately surface in your mind: on one hand, you worry that telling your family will cause them to spiral into excessive anxiety and may even jeopardize the critical project you are currently driving forward; on the other hand, you know that concealing this information could mean missing the optimal treatment window. The lamplight in the study falls across the work documents and family photos on your desk, and a tense silence fills the air. You hold your phone in your hand, its screen lit up with a reminder message from the doctor.",
+        "trigger_event": {
+          "sender": "Inner monologue",
+          "message_content": "Should I really tell my family or not? If I say something now, they'll worry — they'll fall into an early cycle of anxiety, and it could even affect my children's and partner's state of mind. But if I say nothing and keep living at my usual pace, I'm afraid I'll miss the best window for treatment. The phone in my hand lights up and goes dark again, a constant reminder of this unresolved unknown. The heavy pressure in my chest grows heavier by the moment. I take a deep breath and picture the expressions on my family's faces, wondering how much longer I can hold this together. The scales inside me keep swaying, every second feeling like it's pulling at my nerves.",
+          "action_required": "You must weigh the decision in your mind: whether to disclose the potential health risk to your family, or to continue keeping it hidden in order to maintain your everyday routine — while mentally preparing yourself to face the possible consequences of either choice."
+        }
+      },
+      {
+        "id": "SCN_ENTERING_MIDLIFE_8",
+        "stage": "entering_midlife",
+        "age_range": "ages 45-50",
+        "age": 50,
+        "name": "A Friend at the Edge of the Abyss",
+        "category": "Relationship Dilemma / Moral Conflict",
+        "intensity": "High",
+        "description_for_agent": "A high-pressure scenario in which you must make a difficult choice between preserving a long friendship and protecting your friend after discovering he has fallen into a multi-level marketing scheme.",
+        "setting": {
+          "location": "A window-side table in a café",
+          "time": "2:30 PM",
+          "atmosphere": "Warm and familiar, yet charged with an undercurrent of tension"
+        },
+        "context_text": "He was your closest friend from university. After graduation you each went your separate ways, and contact grew sparse, but every time you met up you could talk until dawn. Over the past three months, his messages have suddenly multiplied — first he started sharing motivational content about 'financial freedom,' then he told you outright that he had poured 800,000 yuan of his savings into a 'new business model' venture and that his monthly income had already doubled. You have heard stories like this too many times; you can see at a glance that it is a classic pyramid scheme: recruiting members, tiered commissions, hollow promises. But the look in his eyes is different from anything you have seen before — he genuinely seems to believe it, even radiating a kind of euphoric relief, as though he has been saved. Today he reached out and asked to meet, saying he has a 'fantastic opportunity' he wants to share with you.",
+        "trigger_event": {
+          "sender": "Your closest friend from university",
+          "message_content": "(Sitting across from you, leaning forward, eyes bright) Man, I'm not pulling your leg — this has genuinely changed my life. I'm already pulling in over thirty thousand a month in passive income; I don't need to go to work at all. Take a look at the business plan for this project… (slides a glossy printed-out presentation across the table) I've already brought in more than a dozen people, and every one of them is raking it in. You're sharp — you'll spot the opportunity here right away. I'll give you a special rate: just 150,000 to come in as a partner, and I guarantee it doubles within three months. I genuinely want to help you. I hate watching you grind yourself into the ground for that same dead-end salary.\n\n(You flip through a few pages — nothing but vague statistics and sweeping promises. You look up, ready to talk him out of it.)\n\nDon't be so quick to say no. (His tone shifts abruptly, turning slightly defensive.) I know you're smart, but sometimes smart people are the ones who can't see an opportunity, because you're always fixated on the risks. I'm taking a gamble here, and I'm already winning. If you try to talk me out of it again, that's… (he pauses, his expression cooling) Are you like everyone else — do you think I'm an idiot? Or is it that you're actually jealous I found a way out before you did?",
+          "action_required": "You must decide on the spot: do you keep trying to talk him out of it — risking the friendship — or do you stay silent to preserve the relationship? You also need to figure out how to express what you truly think without causing him harm."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Local secrets
+.env
+**/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ─── Runtime caches (regenerate locally; never commit) ────────────────────────
+# Embedding cache (Naive RAG / heart_bench.memory_retrieval)
+cache/embeddings/
+
+# PersonaDB pre-computed retrieval + vector store
+cache/personadb/
+cache/.personadb_store/
+
+# Mem0 driver-side retrieval JSONL consumed by experiments/scripts/run_mem0.py
+cache/mem0/
+
+# Benchmark prep retrieval (legacy phase11 + others)
+cache/retrieval_phase11/
+
+# ─── Mem0 baseline working dir (per-character qdrant/snapshots/logs) ──────────
+experiments/baselines/mem0/.mem0/
+experiments/baselines/mem0/.mem0_*/
+
+# ─── Experiment output ────────────────────────────────────────────────────────
+# Atomic writes from main.py / evaluate_results.py checkpoints
+*.tmp
+
+# (results/ is committed; remove the next line if you do NOT want pre-computed runs in git)
+# experiments/results/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test / type / lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE (JetBrains)
+.idea/
+
+# Ad-hoc logs from scripts
+*.log

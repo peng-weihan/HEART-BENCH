@@ -1,0 +1,17 @@
+# Core LLM / API
+openai>=1.40.0
+requests>=2.28.0
+
+# Numerics & data
+numpy
+pandas
+
+# Plotting (used by scripts/plot_diamonds_likert_distribution.py)
+matplotlib
+
+# Vector / embedding (used by personadb_integration)
+sentence-transformers>=2.2.0
+
+# Optional: install per-integration extras as needed
+#   pip install -r mem0_integration/requirements-mem0.txt
+#   pip install -r personadb_integration/requirements-personadb.txt

@@ -1,0 +1,120 @@
+{
+  "experiment": "baseline_model_only",
+  "model": "claude-haiku-4-5",
+  "api_base": "https://llm-sjtu.multiego.me/v1",
+  "workers": 16,
+  "temperature": 0.7,
+  "total_questions": 673,
+  "ok": 673,
+  "correct": 165,
+  "accuracy_overall": 0.2451708766716196,
+  "accuracy_on_ok": 0.2451708766716196,
+  "per_character": {
+    "CHAR_01": {
+      "total": 55,
+      "ok": 55,
+      "correct": 5
+    },
+    "CHAR_02": {
+      "total": 63,
+      "ok": 63,
+      "correct": 19
+    },
+    "CHAR_03": {
+      "total": 64,
+      "ok": 64,
+      "correct": 27
+    },
+    "CHAR_04": {
+      "total": 60,
+      "ok": 60,
+      "correct": 8
+    },
+    "CHAR_05": {
+      "total": 63,
+      "ok": 63,
+      "correct": 13
+    },
+    "CHAR_06": {
+      "total": 61,
+      "ok": 61,
+      "correct": 8
+    },
+    "CHAR_07": {
+      "total": 61,
+      "ok": 61,
+      "correct": 25
+    },
+    "CHAR_08": {
+      "total": 62,
+      "ok": 62,
+      "correct": 10
+    },
+    "CHAR_09": {
+      "total": 59,
+      "ok": 59,
+      "correct": 19
+    },
+    "CHAR_10": {
+      "total": 62,
+      "ok": 62,
+      "correct": 7
+    },
+    "CHAR_11": {
+      "total": 63,
+      "ok": 63,
+      "correct": 24
+    }
+  },
+  "per_stage": {
+    "early_adult_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 20
+    },
+    "school_age": {
+      "total": 85,
+      "ok": 85,
+      "correct": 27
+    },
+    "adolescence": {
+      "total": 84,
+      "ok": 84,
+      "correct": 20
+    },
+    "midlife_transition": {
+      "total": 86,
+      "ok": 86,
+      "correct": 17
+    },
+    "age_30_transition": {
+      "total": 85,
+      "ok": 85,
+      "correct": 20
+    },
+    "entering_adult_world": {
+      "total": 85,
+      "ok": 85,
+      "correct": 23
+    },
+    "entering_midlife": {
+      "total": 81,
+      "ok": 81,
+      "correct": 18
+    },
+    "settling_down": {
+      "total": 81,
+      "ok": 81,
+      "correct": 20
+    }
+  },
+  "letter_distribution": {
+    "A": 118,
+    "B": 149,
+    "C": 184,
+    "D": 221,
+    "None": 1
+  },
+  "predictions_file": "/Users/raymone/Desktop/human-like/agent-personality-benchmark/experiments/results/baseline_model_only/claude-haiku-4-5/predictions_baseline.json",
+  "generated_at_utc": "2026-05-01T16:34:50Z"
+}
