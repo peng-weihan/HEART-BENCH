@@ -6,7 +6,6 @@ HEART-BENCH is a benchmark for evaluating whether LLM-based agents can act in a 
 
 ![Pipeline overview](assets/pipeline.svg)
 
-> Source files: [`assets/pipeline.svg`](assets/pipeline.svg) · [`assets/pipeline.pdf`](assets/pipeline.pdf).
 
 ## Data
 
