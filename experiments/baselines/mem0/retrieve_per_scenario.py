@@ -60,7 +60,10 @@ sys.path.insert(0, str(ROOT))
 from restore_snapshot import restore  # noqa: E402
 
 SCENARIO_FILE = Path(
-    "/Users/raymone/Desktop/human-like/annotations/scenarios_diamonds_zh_8x24_lite.json"
+    os.environ.get(
+        "DIAMONDS_SCENARIO_FILE",
+        "/path/to/scenarios_diamonds_zh_8x24_lite.json",
+    )
 )
 DEFAULT_OUT = ROOT / ".mem0" / "retrieval" / "all.jsonl"
 ALL_CHARS = [f"CHAR_{i:02d}" for i in range(1, 12)]
