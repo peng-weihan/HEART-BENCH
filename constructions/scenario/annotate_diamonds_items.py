@@ -2,10 +2,6 @@
 annotate_diamonds_items.py — Rate each scenario on 8 DIAMONDS-style dimensions using
 the official-sounding item lists (1–7 Likert per dimension).
 
-API (OpenAI-compatible): key/base same resolution as annotate_schwartz_values.py
-(DIAMONDS_API_KEY / SCHWARTZ_API_KEY / …). Model: ``DIAMONDS_MODEL`` only, default
-``claude-sonnet-4-6``.
-
 Usage:
     python scripts/annotate_diamonds_items.py --dry-run
     python scripts/annotate_diamonds_items.py --limit 2 --workers 4

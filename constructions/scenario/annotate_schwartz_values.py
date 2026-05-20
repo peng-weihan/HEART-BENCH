@@ -7,10 +7,6 @@ Example: pairs [{value_a, value_b, summary_a, summary_b}, ...]; contradiction_la
 API (OpenAI-compatible): set API_BASE in .env (e.g. ``API_BASE=<YOUR_LLM_GATEWAY>/v1``)
 → POST {API_BASE}/chat/completions. Set ANNOTATE_API_KEY / SCHWARTZ_API_KEY in .env.
 
-Default model: ``SCHWARTZ_MODEL`` only, default ``claude-sonnet-4-6`` (no fallback to ANNOTATE_GT_MODEL / TRANSLATE_MODEL).
-Default concurrency: 8 workers (override with SCHWARTZ_WORKERS or --workers).
-Default: at most 2 opposition-tension pairs per scenario (SCHWARTZ_MAX_PAIRS).
-
 Usage:
     python scripts/annotate_schwartz_values.py
     python scripts/annotate_schwartz_values.py --input data/scenarios/scenarios_diamonds_zh.json \\
