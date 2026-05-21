@@ -17,6 +17,12 @@ Two evaluation tracks:
 1. **MCQ track** — single-choice behavioural prediction against expert ground truth.
 2. **Consciousness-narrative track** — open-ended integrated emotion / reasoning / value statement, scored against expert annotation (see `experiments/evaluation/README.md`).
 
+## Example
+
+![Case study](assets/case_study.svg)
+
+A concrete walk-through showing how a model, given only a character's raw episodic memories, infers personality on the fly and produces an in-character reaction to a fresh scenario.
+
 ## Data
 
 Released benchmark data is hosted on Hugging Face:
