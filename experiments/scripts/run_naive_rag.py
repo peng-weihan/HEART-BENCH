@@ -2,7 +2,7 @@
 run_naive_rag.py — Naive RAG baseline runner.
 
 For every MCQ in mcq.json:
-- Use the pre-computed phase11 retrieval (cache/retrieval_phase11/scenario_topk.json)
+- Use the pre-computed retrieval (cache/retrieval/scenario_topk.json)
   to get the top-K memory ids for that (character_id, scenario_id).
 - Look each mem_id up in characters.json to recover content_full / timeline.
 - Build a prompt in the same shape as main.py and call the LLM (default gpt-5.4-mini).
@@ -67,7 +67,7 @@ CACHE_DIR = PROJECT_ROOT / "cache"
 CHARACTERS_PATH = DATA_DIR / "characters.json"
 SCENARIOS_PATH = DATA_DIR / "scenarios.json"
 MCQ_PATH = DATA_DIR / "mcq.json"
-RETRIEVAL_PATH = CACHE_DIR / "retrieval_phase11" / "scenario_topk.json"
+RETRIEVAL_PATH = CACHE_DIR / "retrieval" / "scenario_topk.json"
 
 RESULTS_ROOT = PROJECT_ROOT / "experiments" / "results" / "naive_rag"
 RESULTS_ROOT.mkdir(parents=True, exist_ok=True)
@@ -136,7 +136,7 @@ def build_prompt(
     retrieved_memories: list[dict],
     options_text: str | None = None,
 ) -> str:
-    """Mirror of main.py's build_prompt, adapted for phase11 fields and with leaky tags stripped."""
+    """Mirror of main.py's build_prompt, with leaky trait tags stripped from memory ids."""
     mem_str = "\n".join(
         f"  - [{anonymize_mem_id(m.get('id', '?'))}][{m.get('timeline', '?')}] "
         f"{m.get('content_full', m.get('content_summary', ''))}"

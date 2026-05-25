@@ -19,15 +19,15 @@ Thumbs.db
 # Embedding cache (Naive RAG / heart_bench.memory_retrieval)
 cache/embeddings/
 
+# Naive RAG pre-computed scenario top-K retrieval
+cache/retrieval/
+
 # PersonaDB pre-computed retrieval + vector store
 cache/personadb/
 cache/.personadb_store/
 
 # Mem0 driver-side retrieval JSONL consumed by experiments/scripts/run_mem0.py
 cache/mem0/
-
-# Benchmark prep retrieval (legacy phase11 + others)
-cache/retrieval_phase11/
 
 # ─── Mem0 baseline working dir (per-character qdrant/snapshots/logs) ──────────
 experiments/baselines/mem0/.mem0/

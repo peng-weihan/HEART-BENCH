@@ -92,13 +92,16 @@ python experiments/scripts/run_baseline_model_only.py
 python experiments/scripts/run_baseline_recent_memories.py
 
 # Naive RAG over raw episodic memories
-python experiments/scripts/run_naive_rag.py --top_k 30
+# (requires two one-off preprocessing steps; see experiments/baselines/naive_rag/README.md)
+python experiments/baselines/naive_rag/embed_memories.py        # per-character memory embeddings
+python experiments/baselines/naive_rag/retrieve_scenarios.py    # per-scenario top-K retrieval
+python experiments/scripts/run_naive_rag.py --top-k 30
 
 # Intelligent-memory baseline
-python experiments/scripts/run_mem0.py --top_k 150
+python experiments/scripts/run_mem0.py --top-k 150
 
 # Persona-DB baseline
-python experiments/scripts/run_personadb_mcq.py --top_k 30
+python experiments/scripts/run_personadb_mcq.py --top-k 30
 ```
 
 Run all baselines for one or more models:
