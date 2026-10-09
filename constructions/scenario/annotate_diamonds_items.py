@@ -58,7 +58,6 @@ _load_env(ENV_PATH)
 def _resolve_api_base() -> str:
     raw = (
         os.getenv("DIAMONDS_API_BASE")
-        or os.getenv("SCHWARTZ_API_BASE")
         or os.getenv("TRANSLATE_API_BASE")
         or os.getenv("API_BASE")
         or os.getenv("ANNOTATE_API_BASE")
@@ -66,7 +65,7 @@ def _resolve_api_base() -> str:
     )
     if not raw:
         raise SystemExit(
-            "API base is not set. Set one of DIAMONDS_API_BASE / SCHWARTZ_API_BASE / "
+            "API base is not set. Set one of DIAMONDS_API_BASE / "
             "TRANSLATE_API_BASE / API_BASE / ANNOTATE_API_BASE in .env."
         )
     raw = raw.rstrip("/")
@@ -77,7 +76,6 @@ def _resolve_api_base() -> str:
 
 API_KEY = (
     os.getenv("DIAMONDS_API_KEY")
-    or os.getenv("SCHWARTZ_API_KEY")
     or os.getenv("TRANSLATE_API_KEY")
     or os.getenv("ANNOTATE_API_KEY")
     or os.getenv("AIHUBMIX_API_KEY")
@@ -451,7 +449,7 @@ def main() -> None:
 
     if not args.dry_run and not API_KEY:
         print(
-            "ERROR: Set DIAMONDS_API_KEY, SCHWARTZ_API_KEY, ANNOTATE_API_KEY, or API_KEY in .env",
+            "ERROR: Set DIAMONDS_API_KEY, ANNOTATE_API_KEY, or API_KEY in .env",
             file=sys.stderr,
         )
         sys.exit(1)

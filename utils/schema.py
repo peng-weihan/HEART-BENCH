@@ -18,7 +18,6 @@ class Character:
         self.name: str = data.get("name", "")
         self.description: str = data.get("description", "")
         self.big_five: Mapping[str, Any] = data.get("big_five", {})
-        self.value_orientation: Mapping[str, Any] = data.get("value_orientation", {})
         self.self_value_logic: str = data.get("self_value_logic", "")
         self.semantic_memory: Mapping[str, Any] = data.get("semantic_memory", {})
         self.episodic_memory: list = data.get("episodic_memory_set", [])

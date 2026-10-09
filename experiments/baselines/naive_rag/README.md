@@ -198,10 +198,11 @@ Defaults:
 | `--api-key` / `API_KEY` | _(from `.env`)_ | LLM API key |
 | `--api-base` / `API_BASE` | `https://api.openai.com/v1` | LLM endpoint |
 | `--timeout` / `TIMEOUT` | `120` | Per-request HTTP timeout (seconds) |
-| `--temperature` | `0` | LLM sampling temperature |
+| `--reasoning-effort` / `MCQ_REASONING_EFFORT` | `high` | Sends `reasoning_effort`; `omit` excludes it, while `none` explicitly sends `"none"` |
+| `--temperature` / `MCQ_TEMPERATURE` | `0` | Sampling temperature from 0 to 2; `omit` leaves the field out for endpoints that do not accept it |
 | `--workers` | `10` | Concurrent LLM calls |
 | `--limit` | `0` | Process only the first N questions (`0` = all) |
-| `--resume` | _(none)_ | Path to a previous `predictions_top<K>.json`; questions already finished with `ok=true` are skipped |
+| `--resume` | _(none)_ | Previous predictions; successful responses with matching recorded request parameters are reused |
 | `--out-prefix` | _(timestamp)_ | Unused for the canonical filenames below, but kept for legacy callers |
 
 Reads `cache/retrieval/scenario_topk.json`, builds a prompt that
@@ -212,8 +213,17 @@ the LLM, parses `decision_choice` (A/B/C/D), and writes:
 - `experiments/results/naive_rag/<model>/predictions_top<K>.json`
 - `experiments/results/naive_rag/<model>/summary_top<K>.json`
 
+The runner records the actual serialized request controls in `request_parameters`
+for each response and at run level. Omitted controls are absent from that mapping.
+The gateway must support the requested reasoning value; the runner does not silently
+downgrade it or infer provider-specific thinking budgets. See the shared
+[MCQ configuration](../../../README.md#2-configure-the-llm-gateway) for compatibility details.
+
 The runner is resumable; pass `--resume <previous predictions.json>` to
-skip questions that already have `ok=true`. See
+skip successful questions whose recorded model and request parameters match the
+current run, with the same `run_context` setting and retrieval `top_k`. The question
+subset may change through `--limit`. Missing or mismatched metadata is rejected; failed responses
+are retried. See
 `python experiments/scripts/run_naive_rag.py --help` for the full flag
 list.
 

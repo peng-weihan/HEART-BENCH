@@ -384,19 +384,12 @@ def save_annotation(char_id: str, scenario_id: str, stage: str, annotation: dict
 def build_character_summary(char: dict, scenario: dict) -> str:
     """Compress the character record into a structured description used in the LLM prompt."""
     bf = char.get("big_five", {})
-    vo = char.get("value_orientation", {})
-    dominant = vo.get("dominant_values", [])
-    suppressed = vo.get("suppressed_values", [])
-    value_narrative = vo.get("value_narrative", "")
     self_logic = char.get("self_value_logic", "")
-    archetype = char.get("archetype", "")
     description = char.get("description", "")
-    sm = char.get("semantic_memory", {})
 
     lines = [
         f"Character ID: {char['id']}",
         f"Name: {char.get('name', '')}",
-        f"Archetype: {archetype}",
         f"Description: {description}",
         "",
         "## Big Five (0-1 scale)",
@@ -406,60 +399,11 @@ def build_character_summary(char: dict, scenario: dict) -> str:
         f"- Agreeableness: {bf.get('agreeableness', 0.5):.2f}",
         f"- Neuroticism: {bf.get('neuroticism', 0.5):.2f}",
         "",
-        "## Core values",
-        f"Dominant values: {', '.join(dominant)}",
-        f"Suppressed values: {', '.join(suppressed)}",
-        f"Value narrative: {value_narrative}",
-        "",
         "## Self-value logic (decision core)",
         self_logic,
-        "",
-        "## Semantic memory",
-        f"Capabilities: {sm.get('capabilities', '')}",
     ]
 
-    relationships = sm.get("core_social_relationships", [])
-    if relationships:
-        lines.append("Core social relationships:")
-        for r in relationships:
-            lines.append(f"  - {r.get('target', '')}: {r.get('relation', '')}")
-
-    # life_snapshot for the same life stage as the scenario
-    stage = scenario.get("stage", "")
-    snapshot = _get_life_snapshot(char, stage)
-    if snapshot:
-        pe = snapshot.get("personality_expression", {})
-        eb = snapshot.get("emotional_baseline", {})
-        lines += [
-            "",
-            f"## Current life-stage snapshot ({stage} / {snapshot.get('label', '')}, age {snapshot.get('age', '')})",
-            f"Life situation: {snapshot.get('life_situation', '')}",
-            f"Dominant traits: {', '.join(pe.get('dominant_traits', []))}",
-        ]
-        bfm = pe.get("big_five_manifestation", {})
-        if bfm:
-            lines.append("How personality manifests at this stage:")
-            for k, v in bfm.items():
-                lines.append(f"  - {k}: {v}")
-        kr = snapshot.get("key_relationships", [])
-        if kr:
-            lines.append("Key relationships:")
-            for r in kr:
-                lines.append(f"  - {r.get('target', '')}: {r.get('quality', '')}")
-        lines += [
-            f"Emotional baseline: {eb.get('default_mood', '')}  trigger sensitivity: {eb.get('trigger_sensitivity', '')}  recovery speed: {eb.get('recovery_speed', '')}",
-            f"Primary coping: {eb.get('primary_coping', '')}",
-        ]
-
     return "\n".join(lines)
-
-
-def _get_life_snapshot(char: dict, stage: str):
-    """Return the life_snapshot matching `stage`, or None if not found."""
-    for snap in char.get("life_snapshots", []):
-        if snap.get("stage") == stage:
-            return snap
-    return None
 
 
 # ===== Prompt design =====
@@ -467,7 +411,7 @@ def _get_life_snapshot(char: dict, stage: str):
 SYSTEM_PROMPT = """You will fully BECOME the character described below. You are not analysing the character, and you are not simulating the character — you ARE this person, living through this scene right now.
 
 You will receive:
-1. **Who you are**: your personality traits, value system, and current life-stage state.
+1. **Who you are**: your Big Five traits, character description, and core operating logic.
 2. **What you are going through**: the current scenario and trigger event.
 3. **Your memories**: things you have lived through in the past, in chronological order — they surface in your awareness right now as associations, flashbacks, and bodily sensations.
 
@@ -525,23 +469,7 @@ def build_user_prompt(char: dict, scenario: dict,
         scenario.get("trigger_event", {}).get("message_content", ""),
         "",
         f"**Required action**: {scenario.get('trigger_event', {}).get('action_required', scenario.get('action_required', ''))}",
-        "",
-        "## Personality and value dimensions probed by this scene",
     ]
-
-    dims = scenario.get("assessed_dimensions", {})
-    for k, v in dims.get("trait_pressures", {}).items():
-        scen_lines.append(f"- {k}: {v}")
-    for k, v in dims.get("value_conflicts", {}).items():
-        scen_lines.append(f"- {k}: {v}")
-
-    ref = scenario.get("annotation_reference", {})
-    if ref:
-        scen_lines += ["", "## Annotation reference (typical reactions of extreme types, for reference)"]
-        for k, v in ref.get("trait_archetypes", {}).items():
-            scen_lines.append(f"- {k}: {v}")
-        for k, v in ref.get("value_archetypes", {}).items():
-            scen_lines.append(f"- {k}: {v}")
 
     # Activated-memories section
     mem_section = ""

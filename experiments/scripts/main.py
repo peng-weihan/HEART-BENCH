@@ -147,7 +147,6 @@ class Character:
         self.name = data.get('name', '')
         self.description = data.get('description', '')
         self.big_five = data.get('big_five', {})
-        self.value_orientation = data.get('value_orientation', {})
         self.self_value_logic = data.get('self_value_logic', '')
         self.semantic_memory = data.get('semantic_memory', {})
         self.episodic_memory = data.get('episodic_memory_set', [])

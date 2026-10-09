@@ -74,12 +74,23 @@ pip install -r experiments/baselines/personadb/requirements-personadb.txt
 
 ### 2. Configure the LLM gateway
 
-Copy `.env.example` to `.env` and fill in your own credentials. **Do not commit `.env`.** The harness talks to an OpenAI-compatible HTTP gateway, so any provider exposing `/v1/chat/completions` works. Gateway settings are listed in [`.env.example`](.env.example).
+Copy `.env.example` to `.env` and fill in your own credentials. **Do not commit `.env`.** The harness uses an OpenAI-compatible `/v1/chat/completions` endpoint. The endpoint must support the selected model and request parameters. Gateway settings are listed in [`.env.example`](.env.example).
 
 ```bash
 cp .env.example .env
 # then edit API_KEY, API_BASE, MODEL_NAME, EMBEDDING_* …
 ```
+
+The four main MCQ runners (no retrieval, Naive-RAG, Mem0, and PersonaDB) share these generation controls:
+
+| CLI flag | Environment variable | Default | Request behavior |
+|---|---|---|---|
+| `--reasoning-effort` | `MCQ_REASONING_EFFORT` | `high` | Sends `reasoning_effort`; `omit` excludes the field, while `none` explicitly sends `"none"` |
+| `--temperature` | `MCQ_TEMPERATURE` | `0` | Sends a finite number from 0 to 2; `omit` excludes the field and retains the endpoint default |
+
+CLI values override the environment. For a model or endpoint that does not accept temperature with the chosen reasoning setting, pass `--temperature omit` or set `MCQ_TEMPERATURE=omit`. Supported effort values are model-dependent; the accepted spellings are `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, and `max`. The runners send the [Chat Completions `reasoning_effort` field](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create); a third-party gateway must honor or translate it. The code does not infer native provider thinking budgets or treat equal labels as equal computation. Unsupported-parameter errors fail explicitly, without silently lowering the effort or changing the payload on retry. Construction models and the separate open-ended judge retain their own settings.
+
+Each prediction records `request_parameters`, containing the exact non-message fields serialized for its HTTP request. Fields explicitly omitted from the request are absent from this mapping. A response produced without a request, or without recoverable request information after a worker error, records `null`. Prediction files and run summaries also record the run's parameter mapping and a separate `run_context` identifying the evaluation setting and retrieval `top_k`, where applicable. This context is not sent to the API. These records describe submitted settings, not confirmation of a gateway's internal execution. Resume accepts successful responses only when their recorded model, parameters, evaluation setting, and retrieval `top_k` match; legacy files without this metadata require verification before reuse. `--limit` may select a smaller question subset without changing the run context. Failed responses are retried without duplicating old failed rows.
 
 ### 3. Run a baseline
 

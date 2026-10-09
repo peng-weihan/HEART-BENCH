@@ -95,15 +95,14 @@ def extract_traits(name, chunks):
     relevant = [c for c in chunks if name in c][:8]
     text = "\n---\n".join(relevant) if relevant else "\n---\n".join(chunks[:5])
     return llm.call_json(
-        "You are an expert in psychology and literary analysis. From the text, extract the character's Big Five personality traits and Schwartz value orientation.",
+        "You are an expert in psychology and literary analysis. From the text, extract the character's Big Five personality traits, narrative operating logic, and eight specific observable behavioral patterns supported by the text.",
         f"Character: {name}\n\nRelevant text:\n{text}\n\n"
         f"Please return JSON:\n"
         f'{{"big_five": {{"openness": 0.0-1.0, "conscientiousness": 0.0-1.0, '
         f'"extraversion": 0.0-1.0, "agreeableness": 0.0-1.0, "neuroticism": 0.0-1.0}},\n'
         f'"description": "overall description of the character",\n'
-        f'"value_orientation": {{"framework": "schwartz_refined_19", "scores": {{...19 values...}}, '
-        f'"dominant_values": [...], "suppressed_values": [...], '
-        f'"value_narrative": "..."}}}}'
+        f'"self_value_logic": "one sentence describing the character operating logic",\n'
+        f'"core_patterns": ["pattern 1", "pattern 2", "pattern 3", "pattern 4", "pattern 5", "pattern 6", "pattern 7", "pattern 8"]}}'
     )
 
 # ── Memory extraction ──
@@ -144,7 +143,8 @@ def validate_and_assemble(name, traits, memories):
         "name": name,
         "big_five": traits.get("big_five", {}),
         "description": traits.get("description", ""),
-        "value_orientation": traits.get("value_orientation", {}),
+        "self_value_logic": traits.get("self_value_logic", ""),
+        "core_patterns": traits.get("core_patterns", []),
         "episodic_memory_set": memories,
     }
     # Validate big_five

@@ -43,7 +43,6 @@ for MODEL in "${MODELS[@]}"; do
     --model "$MODEL" \
     --workers "$WORKERS" \
     --timeout "$TIMEOUT" \
-    --temperature 0 \
     > "$LOG" 2>&1
   RC=$?
   if [ $RC -ne 0 ]; then

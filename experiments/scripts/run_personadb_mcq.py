@@ -59,6 +59,12 @@ LLM_API_KEY = os.getenv("API_KEY", "")
 LLM_API_BASE = os.getenv("API_BASE", "https://api.openai.com/v1")
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+from utils.http_client import (  # noqa: E402
+    add_mcq_generation_arguments,
+    load_mcq_resume,
+    mcq_request_parameters,
+)
 DATA_DIR = PROJECT_ROOT / "benchmark"
 CACHE_DIR = PROJECT_ROOT / "cache"
 CHARACTERS_PATH = DATA_DIR / "characters.json"
@@ -197,17 +203,19 @@ def call_llm(
     system_prompt: str,
     user_prompt: str,
     timeout: int,
-    temperature: float,
+    temperature: float | None,
     max_retries: int = 5,
+    *,
+    reasoning_effort: str | None = "high",
 ) -> dict:
     url = f"{api_base.rstrip('/')}/chat/completions"
+    request_parameters = mcq_request_parameters(model, temperature, reasoning_effort)
     payload = {
-        "model": model,
+        **request_parameters,
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        "temperature": temperature,
     }
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
 
@@ -241,6 +249,7 @@ def call_llm(
                 parsed = {"raw_response": content, "parse_error": True}
             return {
                 "ok": True,
+                "request_parameters": request_parameters,
                 "raw": content,
                 "parsed": parsed,
                 "usage": resp_json.get("usage") or {},
@@ -253,6 +262,9 @@ def call_llm(
             except Exception:
                 detail = str(e)
             last_err = RuntimeError(f"HTTP {e.code}: {detail[:300]}")
+            # Retry only the listed transient HTTP errors, with unchanged generation controls.
+            if e.code not in (408, 409, 429, 500, 502, 503, 504):
+                break
             if attempt < max_retries:
                 time.sleep(2.0 * (2 ** (attempt - 1)))
                 continue
@@ -264,7 +276,8 @@ def call_llm(
                 continue
             break
 
-    return {"ok": False, "error": str(last_err) if last_err else "unknown", "attempts": attempt}
+    return {"ok": False,
+        "request_parameters": request_parameters, "error": str(last_err) if last_err else "unknown", "attempts": attempt}
 
 
 # ===========================================================================
@@ -355,7 +368,9 @@ def process_one(
     api_base: str,
     model: str,
     timeout: int,
-    temperature: float,
+    temperature: float | None,
+    *,
+    reasoning_effort: str | None = "high",
 ) -> dict:
     qid = q["question_id"]
     cid = q["character_id"]
@@ -370,7 +385,8 @@ def process_one(
     if char is None or scenario is None:
         return {
             "question_id": qid, "character_id": cid, "scenario_id": sid,
-            "ok": False, "error": f"missing char={char is not None} scen={scenario is not None}",
+            "ok": False,
+            "request_parameters": None, "error": f"missing char={char is not None} scen={scenario is not None}",
             "correct_answer": correct, "predicted": None, "is_correct": False,
         }
 
@@ -381,11 +397,13 @@ def process_one(
         api_key=api_key, api_base=api_base, model=model,
         system_prompt=SYSTEM_PROMPT, user_prompt=user_prompt,
         timeout=timeout, temperature=temperature,
+        reasoning_effort=reasoning_effort,
     )
     if not res.get("ok"):
         return {
             "question_id": qid, "character_id": cid, "scenario_id": sid,
             "ok": False, "error": res.get("error"), "attempts": res.get("attempts"),
+            "request_parameters": res.get("request_parameters"),
             "correct_answer": correct, "predicted": None, "is_correct": False,
             "num_retrieved": len(retrieved),
         }
@@ -400,6 +418,7 @@ def process_one(
         "num_retrieved": len(retrieved),
         "latency_s": res.get("latency_s"),
         "attempts": res.get("attempts"),
+        "request_parameters": res.get("request_parameters"),
         "usage": res.get("usage"),
         "parsed": parsed, "raw": raw,
     }
@@ -416,27 +435,29 @@ def main() -> None:
     ap.add_argument("--api-key", default=os.environ.get("API_KEY", LLM_API_KEY))
     ap.add_argument("--api-base", default=os.environ.get("API_BASE", LLM_API_BASE))
     ap.add_argument("--timeout", type=int, default=int(os.environ.get("TIMEOUT", "120")))
-    ap.add_argument("--temperature", type=float, default=0.7)
+    add_mcq_generation_arguments(ap)
     ap.add_argument("--workers", type=int, default=10)
     ap.add_argument("--limit", type=int, default=0, help="0 = all questions")
     ap.add_argument("--resume", default="", help="path to a predictions file; ok=true entries are skipped")
     args = ap.parse_args()
+    run_request_parameters = mcq_request_parameters(args.model, args.temperature, args.reasoning_effort)
+    run_context = {"setting": "personadb", "top_k": args.top_k}
+    print(f"request parameters: {json.dumps(run_request_parameters, sort_keys=True)}")
 
     inputs = load_inputs(top_k=args.top_k)
     questions = inputs["questions"]
     if args.limit > 0:
         questions = questions[: args.limit]
 
-    done_ids: set[str] = set()
+    try:
+        results = load_mcq_resume(
+            args.resume, run_request_parameters, {q["question_id"] for q in questions}, run_context
+        )
+    except (OSError, ValueError) as exc:
+        ap.error(str(exc))
+    done_ids = {r["question_id"] for r in results}
     if args.resume:
-        try:
-            prev = json.loads(Path(args.resume).read_text(encoding="utf-8"))
-            for r in prev.get("predictions", []):
-                if r.get("ok") and r.get("predicted") is not None:
-                    done_ids.add(r["question_id"])
-            print(f"Resume: skipping {len(done_ids)} already-done questions")
-        except Exception as e:
-            print(f"Resume failed: {e}; starting fresh")
+        print(f"resume: skipping {len(done_ids)} responses with matching request parameters")
 
     pending = [q for q in questions if q["question_id"] not in done_ids]
     print(
@@ -450,14 +471,6 @@ def main() -> None:
     pred_path = out_dir / f"predictions_top{args.top_k}.json"
     summary_path = out_dir / f"summary_top{args.top_k}.json"
 
-    results: list[dict] = []
-    if args.resume:
-        try:
-            prev = json.loads(Path(args.resume).read_text(encoding="utf-8"))
-            results.extend(prev.get("predictions", []))
-        except Exception:
-            pass
-
     lock = threading.Lock()
     completed = {"n": 0, "ok": 0, "correct": 0}
     t0 = time.time()
@@ -467,6 +480,7 @@ def main() -> None:
             q, inputs,
             api_key=args.api_key, api_base=args.api_base, model=args.model,
             timeout=args.timeout, temperature=args.temperature,
+            reasoning_effort=args.reasoning_effort,
         )
         with lock:
             completed["n"] += 1
@@ -497,6 +511,7 @@ def main() -> None:
                 r = {
                     "question_id": q["question_id"], "character_id": q["character_id"],
                     "scenario_id": q["scenario_id"], "ok": False,
+                    "request_parameters": None,
                     "error": f"worker exception: {e}", "predicted": None, "is_correct": False,
                 }
             results.append(r)
@@ -504,12 +519,12 @@ def main() -> None:
             if since_save >= 50:
                 since_save = 0
                 pred_path.write_text(
-                    json.dumps({"predictions": results}, ensure_ascii=False),
+                    json.dumps({"run_context": run_context, "request_parameters": run_request_parameters, "predictions": results}, ensure_ascii=False),
                     encoding="utf-8",
                 )
 
     pred_path.write_text(
-        json.dumps({"predictions": results}, ensure_ascii=False), encoding="utf-8"
+        json.dumps({"run_context": run_context, "request_parameters": run_request_parameters, "predictions": results}, ensure_ascii=False), encoding="utf-8"
     )
 
     total = len(results)
@@ -544,7 +559,9 @@ def main() -> None:
         "api_base": args.api_base,
         "top_k": args.top_k,
         "workers": args.workers,
-        "temperature": args.temperature,
+        "temperature": run_request_parameters.get("temperature"),
+        "request_parameters": run_request_parameters,
+        "run_context": run_context,
         "retrieval_source": str(PERSONADB_RETRIEVAL_PATH),
         "total_questions": total,
         "ok": n_ok,

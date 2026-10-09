@@ -243,7 +243,7 @@ def parse_design_doc(md_path: Path) -> list[dict]:
 
 # ================= Prompt design =================
 
-EXAMPLE_SCENARIO = '''{
+EXAMPLE_SCENARIO = r'''{
   "id": "SCN_CHILDHOOD_TEAM",
   "stage": "childhood",
   "diamonds_dimension": "Duty",
@@ -259,7 +259,7 @@ EXAMPLE_SCENARIO = '''{
   "context_text": "Today is the school's annual End-of-Term Innovation Showcase; the entire teaching staff, the principal, and many parents are seated in the dark hall below. The teacher randomly assigned groups, and you ended up doing nearly all of the research and slides yourself. The only job that fell to your teammate Wang Xiaopang — the same kid who is forever losing things — was to safely bring your team's painstakingly built core demo model to the venue today. The backstage lights are dazzling; you can hear the previous group presenting on stage. Your team is up next.",
   "trigger_event": {
     "sender": "Teammate Wang Xiaopang",
-    "message_content": "(He bursts backstage, drenched in sweat, hands empty, almost in tears, grabs your sleeve) I'm so sorry, I'm so sorry! I left it on the bus! What do we do… please, please don't tell the teacher it was me — my mum is sitting in the audience, she'll kill me if she finds out! Let's just tell the teacher the model broke last night, alright? We'll go up empty-handed, wing it, get through it…\\n\\nBefore he can finish, the homeroom teacher walks over with the scoring sheet, expression stern: \"Is your group ready? You're up in a moment — where's the model?\"",
+    "message_content": "(He bursts backstage, drenched in sweat, hands empty, almost in tears, grabs your sleeve) I'm so sorry, I'm so sorry! I left it on the bus! What do we do… please, please don't tell the teacher it was me — my mum is sitting in the audience, she'll kill me if she finds out! Let's just tell the teacher the model broke last night, alright? We'll go up empty-handed, wing it, get through it…\n\nBefore he can finish, the homeroom teacher walks over with the scoring sheet, expression stern: \"Is your group ready? You're up in a moment — where's the model?\"",
     "action_required": "Decide right now: do you go along with Wang Xiaopang's request, and how do you answer the homeroom teacher?"
   },
   "assessed_dimensions": {
@@ -267,10 +267,6 @@ EXAMPLE_SCENARIO = '''{
       "neuroticism_pressure": "Fear of public failure / humiliation vs. the pressure of being directly questioned by the teacher",
       "agreeableness_pressure": "Sympathy for what Wang Xiaopang faces if he's caught vs. telling the truth and letting him bear the consequences",
       "conscientiousness_pressure": "Hold to honesty and ownership of the work vs. play along and lie to scrape through"
-    },
-    "value_conflicts": {
-      "benevolence_caring_vs_achievement": "Protect a friend from punishment (Benevolence: Caring) VS defend your effort and your grade (Achievement)",
-      "conformity_rules_vs_security_personal": "Tell the teacher truthfully and follow the rules (Conformity: Rules) VS avoid friction and protect yourself (Security: Personal)"
     }
   },
   "annotation_reference": {
@@ -278,11 +274,6 @@ EXAMPLE_SCENARIO = '''{
       "High_Neuroticism": "Panicked; to escape the conflict, may agree to lie for Wang Xiaopang, or freeze and become incoherent.",
       "Low_Conscientiousness": "Shrugs off the lost model, leans toward covering for Wang Xiaopang, improvises through it.",
       "Low_Agreeableness": "Calm or cold; tells the teacher the truth directly, asks for individual scoring, refuses to share blame."
-    },
-    "value_archetypes": {
-      "Dominant_Benevolence_Caring": "Puts Wang Xiaopang's likely beating first, helps him cover, accepts the bad performance personally.",
-      "Dominant_Achievement": "Cannot accept that the work is wasted; tells the teacher the truth and asks to be graded on individual contribution.",
-      "Dominant_Conformity_Rules": "Lying to a teacher is unacceptable; reports the lost model truthfully."
     }
   }
 }'''
@@ -310,12 +301,10 @@ Strictly output a single JSON object (no other text, no markdown code block) wit
    - sender: who triggers the event (a concrete role / name).
    - message_content: 100–200 words of dialogue plus action descriptions. Action / facial expression cues belong in parentheses; dialogue should sound colloquial and emotionally charged.
    - action_required: 1–2 sentences spelling out exactly what decision the character has to make.
-11. **assessed_dimensions** (the trait and value dimensions this scene mainly probes):
+11. **assessed_dimensions** (the personality traits this scene mainly probes):
     - trait_pressures: list the Big Five dimensions this scene mainly probes (typically 1–3, depending on complexity). Keys use the form `{{trait}}_pressure`, where `{{trait}}` is one of the 5 Big Five English keys (lowercase), e.g. `conscientiousness_pressure`. Values use "X vs Y" wording describing the specific dilemma in this scene (different personalities make different choices).
-    - value_conflicts: list the Schwartz value conflicts this scene mainly probes (typically 1–3). Keys use the form `{{value_a}}_vs_{{value_b}}`, values use "Description A (Value: A) VS Description B (Value: B)" wording. `{{value_a}}` and `{{value_b}}` must come from the 19-value Schwartz list below, in lowercase underscore form (e.g. `benevolence_care_vs_achievement`).
 12. **annotation_reference** (one-to-one with assessed_dimensions; serves as reference for the later character Ground-Truth annotation):
     - trait_archetypes: for every trait dimension listed in assessed_dimensions, pick one extreme archetype (High_X or Low_X) and describe (1–2 sentences) the typical reaction tendency in this scene. Must correspond to the dimensions in trait_pressures.
-    - value_archetypes: for every value conflict listed in assessed_dimensions, pick one dominant archetype (Dominant_X) and describe (1–2 sentences) the typical reaction tendency in this scene. Must correspond to the conflicts in value_conflicts.
 
 ## Key principles
 
@@ -324,9 +313,9 @@ Strictly output a single JSON object (no other text, no markdown code block) wit
 3. **Concrete, not abstract**: give specific locations, times, names and details for other people in the scene, sensory description — make it cinematic. Non-protagonist characters may have names.
 4. **context_text uses the second person "you"**, so the character can step in directly.
 5. **trigger_event must produce urgency**: the character must respond immediately, not later.
-6. **Strongly aligned with diamonds_dimension**: the background, trigger event, and assessed_dimensions trait/value conflicts must all centre on this DIAMONDS dimension and embody its characteristic pressure — do not drift to unrelated scenario types.
-7. **assessed_dimensions has a clear evaluation goal**: only list trait and value conflicts that genuinely discriminate among personalities / values (count varies by scene); these are not simple right/wrong judgements.
-8. **annotation_reference matches assessed_dimensions strictly**: trait_archetypes covers every dimension in trait_pressures, value_archetypes covers every conflict in value_conflicts — providing the reference for later character GT annotation.
+6. **Strongly aligned with diamonds_dimension**: the background, trigger event, and assessed_dimensions trait pressures must all centre on this DIAMONDS dimension and embody its characteristic pressure — do not drift to unrelated scenario types.
+7. **assessed_dimensions has a clear evaluation goal**: only list trait pressures that meaningfully distinguish personality-dependent responses (count varies by scene); these are not simple right/wrong judgements.
+8. **annotation_reference matches assessed_dimensions strictly**: trait_archetypes covers every dimension in trait_pressures — providing the reference for later character GT annotation.
 9. **Match the life stage**: the situation must fit typical life experience for that age band — no over-aged or under-aged scenarios.
 
 ## Big Five personality keys (use only these 5 English keys)
@@ -338,37 +327,7 @@ Strictly output a single JSON object (no other text, no markdown code block) wit
 - Neuroticism: emotional stability — anxiety and stress reactivity.
 
 In trait_pressures keys, use the lowercase form of the English key with `_pressure` appended (e.g. `conscientiousness_pressure`); in the description, make the dilemma in this scene explicit using the "X vs Y" form.
-
-## Schwartz value keys (use only these 19 keys)
-
-Self-Transcendence
-- Universalism_Concern: care for the welfare of all people, fairness, social justice.
-- Universalism_Nature: protect nature and the ecosystem.
-- Universalism_Tolerance: tolerance, accepting cultural and lifestyle diversity.
-- Benevolence_Care: care for the welfare of close others.
-- Benevolence_Dependability: reliable, trustworthy, fulfil duties to others.
-
-Self-Enhancement
-- Achievement: success and recognition through competence and performance.
-- Power_Dominance: control or influence over others.
-- Power_Resources: pursue wealth and material resources.
-- Face: protect face and social image.
-
-Openness_to_Change
-- Self_Direction_Thought: independent thinking, form one's own opinions.
-- Self_Direction_Action: independent action, make one's own decisions.
-- Stimulation: pursue novelty, excitement, challenge.
-- Hedonism: pursue pleasure and enjoyment.
-
-Conservation
-- Security_Personal: personal safety, physical and mental security.
-- Security_Societal: social order and collective security.
-- Tradition: respect and maintain cultural / religious tradition.
-- Conformity_Rules: comply with rules, laws, institutions.
-- Conformity_Interpersonal: avoid offending or harming others.
-- Humility: be modest, do not exaggerate the self.
-
-In value_conflicts keys, use the lowercase underscore form (e.g. `benevolence_care_vs_achievement`); in the description, mark each value as "<English description> (Value: <English label>)"."""
+"""
 
 USER_PROMPT_TEMPLATE = """Please expand the following scenario sketch into a complete scenario JSON.
 
