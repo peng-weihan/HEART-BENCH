@@ -1,13 +1,13 @@
 # finalize_activated_memories.py — Stage 2: Activated-Memory Refinement
 
-**Source:** `scripts/finalize_activated_memories.py`
-**Purpose:** Read the Stage-1 output (`activated_memories_binary.json`); for each character × scenario, refine the candidate activated memories down to a fixed count (default 50) via a second LLM pass. Output: `activated_memories_final.json`.
+**Source:** `constructions/annotation/finalize_activated_memories.py`
+**Purpose:** Read the Stage-1 output (`activated_memories_binary.json`); for each character × scenario, refine the candidate activated memories to at most the target count (default 50) via a second LLM pass. Output: `activated_memories_final.json`.
 
 ---
 
 ## 1. System Prompt (`LLM_FINALIZE_SYSTEM_PROMPT`)
 
-Template string; before the call, formatted with `.format(target=target)` to inject the desired count.
+Template string; before the call, formatted with `.format(target=target)` to inject the desired count. The prompt requests that count; the pipeline keeps smaller candidate sets, removes duplicate IDs, and caps the output at the target. Character-count hints for reasons are drafting guidance.
 
 ```text
 You are a professional research psychologist specializing in autobiographical memory, personality dynamics, and behavioral decision theory.

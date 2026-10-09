@@ -2,10 +2,11 @@
 
 > Task: upgrade the generation strategy from "all-high-pressure scenarios" to "a complete life of memories"
 > Date: 2026-03-06 | Status: **DRAFT**
+> Historical design discussion; the figures and proposed checks below do not report an audit of the current release.
 
 ## 1. Problem statement
 
-In the current setup all 1,000 memories revolve around the character's core personality patterns, 98% of `emotion_intensity` values fall in 0.5–0.85, and almost every scene is high-conflict / high-emotion. Industry feedback: **a real person's memory store is not made of nothing but high-pressure events** — daily trivia, calm moments, and positive experiences are equally part of the personality.
+In the motivating setup discussed in this draft, all 1,000 memories revolve around the character's core personality patterns, 98% of `emotion_intensity` values fall in 0.5–0.85, and almost every scene is high-conflict / high-emotion. Industry feedback: **a real person's memory store is not made of nothing but high-pressure events** — daily trivia, calm moments, and positive experiences are equally part of the personality.
 
 **Need**: find solid cognitive-science / psychology grounding for "introducing daily / noise memories into the memory set + stratifying emotional intensity".
 

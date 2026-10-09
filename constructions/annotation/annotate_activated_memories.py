@@ -75,6 +75,9 @@ from typing import Any, Literal
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from utils.schema import parse_event_age, require_scenario_age, sanitize_activation_candidates
+
 from openai import OpenAI
 
 from pair_filter import exclusion_set_from_argv, filter_cross_product_pairs
@@ -203,18 +206,27 @@ STAGE1_BUFFER = 1.5  # Stage-1 target candidate count = TARGET_ACTIVATED * STAGE
 
 
 def extract_age(timeline: str) -> int | None:
-    m = re.search(r"age\s*(\d+)", timeline, re.IGNORECASE)
-    return int(m.group(1)) if m else None
+    return parse_event_age(timeline)
 
 
 def group_memories_by_age(memories: list[dict], max_age: int) -> dict[int, list[dict]]:
     """Return memories with age <= max_age, grouped by their timeline age."""
+    max_age = require_scenario_age(max_age)
     groups: dict[int, list[dict]] = defaultdict(list)
     for mem in memories:
         age = extract_age(mem.get("timeline", ""))
         if age is not None and age <= max_age:
             groups[age].append(mem)
     return dict(groups)
+
+
+def validated_activation_records(char: dict, scenario: dict, records: list) -> list[dict]:
+    """Recheck new or resumed evidence against the current character and cutoff."""
+    memory_index = {m["id"]: m for m in char.get("episodic_memory_set", [])}
+    kept, rejected = sanitize_activation_candidates(records, memory_index, scenario.get("age"))
+    if rejected:
+        print(f"    [VALIDATION] {char['id']} × {scenario['id']}: excluded {rejected}")
+    return kept
 
 
 def memories_at_timeline_age(memories: list[dict], age: int) -> list[dict]:
@@ -723,9 +735,12 @@ def annotate_age_batch(
             raw = call_llm(LLM_SYSTEM_PROMPT, user_retry, usage_log_extra=log_retry)
         results = _parse_json_array(raw)
 
-    # Validate: every returned memory_id must belong to this batch
-    valid_ids = {m["id"] for m in memories}
-    results = [r for r in results if r.get("memory_id") in valid_ids]
+    # Validate batch membership, exact event age, and uniqueness before persistence.
+    results, rejected = sanitize_activation_candidates(
+        results, {m["id"]: m for m in memories}, scenario.get("age")
+    )
+    if rejected:
+        print(f"    [VALIDATION] {char['id']} × {scenario['id']} age={age}: excluded {rejected}")
 
     # Mark all as activated=True (already implied by output format)
     for item in results:
@@ -779,7 +794,7 @@ def annotate_one_scenario(char: dict, scenario: dict, workers: int = 4, age_filt
 
     # Compute the suggested activation ratio for stage 1
     stage1_target = TARGET_ACTIVATED * STAGE1_BUFFER
-    ratio = min(0.5, stage1_target / eligible_count)
+    ratio = min(0.5, stage1_target / eligible_count) if eligible_count else 0.0
 
     # Load checkpoint if present
     ckpt = load_ckpt(char["id"], scenario["id"])
@@ -809,7 +824,12 @@ def annotate_one_scenario(char: dict, scenario: dict, workers: int = 4, age_filt
         if not pending_ages:
             print(f"    [SKIP] age={age_filter} not in this scenario or already completed.")
             if existing_data is not None:
-                return existing_data
+                kept = validated_activation_records(char, scenario, existing_data.get("activated_memories", []))
+                return {
+                    **existing_data, "scenario_age": scenario_age,
+                    "eligible_memory_count": eligible_count,
+                    "activated_memories": kept, "activated_count": len(kept),
+                }
             return {
                 "character_id": char["id"],
                 "scenario_id": scenario["id"],
@@ -903,12 +923,13 @@ def annotate_one_scenario(char: dict, scenario: dict, workers: int = 4, age_filt
         else:
             print(f"    [CLEANED] batch_errors: removed age={age_filter}, {len(errors)} remaining")
 
+    activated_records = validated_activation_records(char, scenario, activated_records)
     return {
         "character_id": char["id"],
         "scenario_id": scenario["id"],
         "scenario_age": scenario_age,
         "eligible_memory_count": eligible_count,
-        "stage1_ratio": round(ratio, 3) if age_filter is None else existing_data.get("stage1_ratio", 0),
+        "stage1_ratio": round(ratio, 3) if age_filter is None else (existing_data or {}).get("stage1_ratio", 0),
         "activated_count": len(activated_records),
         "age_batches": len(age_groups),
         "fast_path": False,
@@ -941,6 +962,7 @@ def merge_activation_scenario(
         for r in activated
     ]
 
+    activated_records = validated_activation_records(char, scenario, activated_records)
     return {
         "character_id": char["id"],
         "scenario_id": scenario["id"],

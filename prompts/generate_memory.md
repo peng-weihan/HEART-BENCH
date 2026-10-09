@@ -1,11 +1,11 @@
 # Memory Generation Prompt
 
 Generates the 11,000 episodic memories (1,000 per character) spanning ages 6–50.
-Enforces Rubin's five-dimension coverage, strict temporal perspective lock, age-stratified language, and the ABCD intensity model.
+This manuscript-aligned scaffold requests five operational narrative dimensions inspired by Rubin, strict temporal perspective lock, age-appropriate language, and a mix of ABCD intensity tiers. It is not a verbatim historical generation log. The [construction guidance](../README.md#construction-guidance) explains text-length guidance, Chinese-source metadata checks, and suggested trigger/tag counts.
 
 ---
 
-## System Prompt
+## System Prompt (Abridged Scaffold)
 
 ```
 You are a psychology narrative expert writing episodic memories for virtual characters
@@ -64,14 +64,12 @@ Each memory must strictly maintain "present-moment perspective":
   maintain present-moment perspective
 
 ## Memory Intensity Stratification (ABCD Model)
-- **A-tier (core trauma)** ~25%: high-intensity events directly related to core schemas,
-  emotion_intensity=0.80-0.90
+[numerical intensity hints omitted]
+- **A-tier (core trauma)** ~25%: high-intensity events directly related to core schemas
 - **B-tier (main-thread)** ~35%: medium-high intensity events related to personality
-  traits, emotion_intensity=0.70-0.85
-- **C-tier (daily friction)** ~25%: small conflicts and friction in daily life,
-  emotion_intensity=0.60-0.75
-- **D-tier (noise memory)** ~15%: ordinary daily memories with lower emotional intensity,
-  emotion_intensity=0.55-0.65
+  traits
+- **C-tier (daily friction)** ~25%: small conflicts and friction in daily life
+- **D-tier (noise memory)** ~15%: ordinary daily memories with lower emotional intensity
 
 ## Output Format
 Strictly follow this JSON format; return only JSON, no other text:
@@ -80,7 +78,7 @@ Strictly follow this JSON format; return only JSON, no other text:
   "timeline": "stage (X years old)",
   "context": "15-30 character scene description",
   "content_summary": "20-40 character event summary",
-  "content_full": "~600-900 character first-person narrative",
+  "content_full": "~2000-4500 character first-person narrative (drafting target)",
   "triggers": ["trigger1", "trigger2", "trigger3", "trigger4"],
   "psych_conclusion": "40-80 char psychological conclusion (cite concepts like schemas, defense mechanisms)",
   "behavior_policy": "30-60 char behavioral guideline",
@@ -95,7 +93,7 @@ Strictly follow this JSON format; return only JSON, no other text:
 
 ---
 
-## User Prompt (per-memory instantiation)
+## User Prompt (per-memory scaffold)
 
 ```
 Generate 1 episodic memory for the "{stage_name}" stage ({age_label}).
@@ -109,7 +107,7 @@ Intensity tier: {intensity_hint}
 ...
 
 Requirements:
-- content_full must be 600-900 characters, containing all 5 Rubin dimensions
+- Aim for 2000-4500 characters in content_full, covering the five operational narrative dimensions
 - Strictly maintain present-moment perspective; no forbidden expressions
 - First-person "I" throughout; no character name; no third-person
 - Choose a specific, vivid, unique scene (different location/characters/conflict type)

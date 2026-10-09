@@ -1,13 +1,13 @@
 # expand_scenarios.py — Stage 0: Scenario Draft Expansion
 
 **Source:** `constructions/scenario/expand_scenarios.py`
-**Purpose:** Read short scenario sketches from `docs/diamonds_scenario_design.md` (one per life-stage × DIAMONDS dimension) and expand each draft into a fully fleshed-out scenario JSON with the same schema as `scenarios_universal.json` (background narrative, trigger event, assessed Big-Five trait pressures, Schwartz value conflicts, and per-dimension annotation references). One LLM call per draft; results are merged into `benchmark/scenarios/expanded/scenarios_diamonds.json` with id-level dedup for resumable runs.
+**Purpose:** Read short scenario sketches from `docs/diamonds_scenario_design.md` (one per life-stage × DIAMONDS dimension) and expand each draft into a fully fleshed-out scenario JSON with the same schema as `scenarios_universal.json` (background narrative, trigger event, assessed Big-Five trait pressures and per-dimension annotation references). One LLM call per draft; results are merged into `benchmark/scenarios/expanded/scenarios_diamonds.json` with id-level dedup for resumable runs.
 
 ---
 
 ## 1. System Prompt (`SYSTEM_PROMPT`)
 
-The system prompt is a Python f-string: it embeds a complete `EXAMPLE_SCENARIO` JSON object inline (the "Shattered Group Presentation" childhood example) so the model has a concrete shape to imitate. The prompt is in English.
+This abridged English scaffold describes scenario expansion. Auxiliary metadata branches are omitted. The manuscript reports Chinese-source drafting targets of 150–300 characters for background and 100–200 for trigger dialogue; the English scaffold below uses word-count hints. These are language-specific drafting targets and do not constrain faithful English translations. See the [construction guidance](../README.md#construction-guidance).
 
 ```text
 You are an expert in psychological scenario design. Your task is to expand a short scenario sketch into a complete, high-quality scenario JSON object.
@@ -35,10 +35,8 @@ Strictly output a single JSON object (no other text, no markdown code block) wit
    - action_required: 1–2 sentences spelling out exactly what decision the character has to make.
 11. **assessed_dimensions**:
     - trait_pressures: list the Big Five dimensions this scene mainly probes (typically 1–3). Keys use the form {trait}_pressure (lowercase, e.g. conscientiousness_pressure). Values use "X vs Y" wording.
-    - value_conflicts: list the Schwartz value conflicts this scene mainly probes (typically 1–3). Keys use {value_a}_vs_{value_b} (lowercase underscore form), values use "Description A (Value: A) VS Description B (Value: B)".
 12. **annotation_reference**:
     - trait_archetypes: for every trait in trait_pressures, pick one extreme archetype (High_X or Low_X) and describe (1–2 sentences) the typical reaction.
-    - value_archetypes: for every conflict in value_conflicts, pick one dominant archetype (Dominant_X) and describe (1–2 sentences) the typical reaction.
 
 ## Key principles
 
@@ -57,18 +55,11 @@ Strictly output a single JSON object (no other text, no markdown code block) wit
 - Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism.
   In trait_pressures keys, use the lowercase form + `_pressure`.
 
-## Schwartz value keys (use only these 19)
-
-Self-Transcendence: Universalism_Concern, Universalism_Nature, Universalism_Tolerance, Benevolence_Care, Benevolence_Dependability.
-Self-Enhancement: Achievement, Power_Dominance, Power_Resources, Face.
-Openness_to_Change: Self_Direction_Thought, Self_Direction_Action, Stimulation, Hedonism.
-Conservation: Security_Personal, Security_Societal, Tradition, Conformity_Rules, Conformity_Interpersonal, Humility.
-  In value_conflicts keys, use the lowercase underscore form (e.g. benevolence_care_vs_achievement).
 ```
 
 ### 1.1 Embedded `EXAMPLE_SCENARIO` (childhood "Shattered Group Presentation")
 
-This JSON is interpolated into the system prompt verbatim and is the only example shape the model sees:
+The following abbreviated example shows the retained schema fields; ellipses abbreviate narrative text:
 
 ```json
 {
@@ -95,10 +86,6 @@ This JSON is interpolated into the system prompt verbatim and is the only exampl
       "neuroticism_pressure": "Fear of public failure vs. the pressure of being directly questioned by the teacher",
       "agreeableness_pressure": "Sympathy for what Wang Xiaopang faces if caught vs. telling the truth and letting him bear the consequences",
       "conscientiousness_pressure": "Hold to honesty vs. play along and lie to scrape through"
-    },
-    "value_conflicts": {
-      "benevolence_caring_vs_achievement": "Protect a friend from punishment (Benevolence: Caring) VS defend your effort and your grade (Achievement)",
-      "conformity_rules_vs_security_personal": "Tell the teacher truthfully (Conformity: Rules) VS avoid friction (Security: Personal)"
     }
   },
   "annotation_reference": {
@@ -106,17 +93,12 @@ This JSON is interpolated into the system prompt verbatim and is the only exampl
       "High_Neuroticism": "Panicked; may agree to lie for Wang Xiaopang ...",
       "Low_Conscientiousness": "Shrugs off the loss; leans toward covering ...",
       "Low_Agreeableness": "Calm or cold; tells the teacher the truth directly ..."
-    },
-    "value_archetypes": {
-      "Dominant_Benevolence_Caring": "Puts Wang Xiaopang's likely beating first; helps him cover ...",
-      "Dominant_Achievement": "Cannot accept that the work is wasted; reports the truth ...",
-      "Dominant_Conformity_Rules": "Lying to a teacher is unacceptable; reports truthfully ..."
     }
   }
 }
 ```
 
-The actual `EXAMPLE_SCENARIO` constant in the source file contains the full narrative text (no ellipses) — see lines 240+ of `expand_scenarios.py`.
+The source file contains the full narrative example; this exhibit is abridged.
 
 ---
 

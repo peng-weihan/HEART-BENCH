@@ -1,7 +1,7 @@
 # Character Profile Generation Prompt
 
 Used once per character to establish the psychological blueprint before memory generation.
-Generates the 11 orthogonal Big Five character profiles, each with a self-value logic and eight core behavioral patterns.
+Defines 11 trait-anchored Big Five profiles, each with `self_value_logic` and eight `core_patterns`. The extreme-anchor instruction applies to the ten high/low profiles; the neutral profile uses `.50` on all five dimensions. The suggested non-anchor range is generation guidance. These natural-language fields elaborate the profile; they are not additional scored trait dimensions. See the [construction guidance](../README.md#construction-guidance).
 
 ---
 

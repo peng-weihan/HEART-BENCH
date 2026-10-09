@@ -49,6 +49,9 @@ import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from utils.schema import sanitize_activation_candidates, validate_refined_selection
+
 import annotate_activated_memories as am
 
 from pair_filter import exclusion_set_from_argv
@@ -292,9 +295,15 @@ def dedupe_activated_memories_preserve_order(activated: list) -> tuple[list, int
 def finalize_one_scenario(
     char: dict, scenario: dict, stage1_annotation: dict, target: int, compact: bool = False
 ) -> dict:
+    if not isinstance(target, int) or isinstance(target, bool) or target < 1:
+        raise ValueError("Refinement target must be a positive integer")
     char_memories: dict[str, dict] = {m["id"]: m for m in char.get("episodic_memory_set", [])}
 
-    candidates = stage1_annotation.get("activated_memories", [])
+    candidates, rejected_candidates = sanitize_activation_candidates(
+        stage1_annotation.get("activated_memories", []), char_memories, scenario.get("age")
+    )
+    if rejected_candidates:
+        print(f"    [VALIDATION] {char['id']} × {scenario['id']}: excluded {rejected_candidates}")
     n_candidates = len(candidates)
 
     if n_candidates <= target:
@@ -309,7 +318,7 @@ def finalize_one_scenario(
                 {"memory_id": c["memory_id"], "type": "", "reason": c.get("reason", "")}
                 for c in candidates
             ]
-        activated, _ = dedupe_activated_memories_preserve_order(activated)
+        activated = validate_refined_selection(activated, candidates, target, compact=compact)
         return {
             "character_id": char["id"],
             "scenario_id": scenario["id"],
@@ -318,6 +327,7 @@ def finalize_one_scenario(
             "final_activated_count": len(activated),
             "skipped_finalize": True,
             "compact": compact,
+            "candidate_validation_issues": rejected_candidates,
             "activated_memories": activated,
         }
 
@@ -357,12 +367,14 @@ def finalize_one_scenario(
             f"{type(activated).__name__}. Full raw response saved to: {err_path}"
         )
 
-    if compact and activated and isinstance(activated[0], dict):
-        activated = [m["memory_id"] for m in activated]
-
-    activated, _ = dedupe_activated_memories_preserve_order(activated)
-    if len(activated) > target:
-        activated = activated[:target]
+    try:
+        activated = validate_refined_selection(activated, candidates, target, compact=compact)
+    except ValueError as exc:
+        err_path = _save_finalize_parse_failure_raw(raw, char["id"], scenario["id"])
+        raise RuntimeError(
+            f"Invalid refinement for {char['id']} × {scenario['id']}: {exc}. "
+            f"Full raw response saved to: {err_path}"
+        ) from exc
 
     return {
         "character_id": char["id"],
@@ -372,6 +384,7 @@ def finalize_one_scenario(
         "final_activated_count": len(activated),
         "skipped_finalize": False,
         "compact": compact,
+        "candidate_validation_issues": rejected_candidates,
         "activated_memories": activated,
     }
 

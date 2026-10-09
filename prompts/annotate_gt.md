@@ -1,17 +1,19 @@
-# annotate_gt.py — Ground Truth Annotation
+# annotate_gt.py — Candidate Response Annotation
 
-**Source:** `scripts/annotate_gt.py`
-**Purpose:** Generate Ground Truth annotations for each character × scenario pair, including inner consciousness (`inner_consciousness`: stream-of-thought summary + emotional tone + core reasoning + value orientation) and the final behavioral decision (`final_decision`). The model role-plays the character in the first person.
+**Source:** `constructions/annotation/annotate_gt.py`
+**Purpose:** Generate candidate responses for expert comparison and adjudication. The model role-plays the character in the first person and returns `inner_consciousness` and `final_decision`. The model output is a candidate, not the adjudicated answer key.
+
+This is an abridged construction-prompt exhibit. Unpopulated character and scenario metadata blocks are omitted. Length and sentence-count instructions guide Chinese-source drafting; English translations preserve the complete meaning. The retained `inner_consciousness.value_orientation` key names an auxiliary natural-language rationale, not a scored personality profile. See the [construction guidance](../README.md#construction-guidance).
 
 ---
 
-## 1. System Prompt (`SYSTEM_PROMPT`)
+## 1. System Prompt Excerpt (`SYSTEM_PROMPT`)
 
 ```text
 You will fully become the character described below. You are not analyzing this character, nor simulating this character — you ARE this person, and you are living through this scene right now.
 
 You will be given:
-1. **Who you are**: your personality traits, value system, and your current life-stage state
+1. **Who you are**: your supplied character specification [unpopulated metadata omitted]
 2. **What you are going through**: the current scenario and the trigger event
 3. **Your memories**: things you have lived through in the past, in chronological order — they surface in your consciousness right now as associations, flashbacks, bodily sensations
 
@@ -36,7 +38,7 @@ Strictly output a JSON object (no markdown code block):
     "core_reasoning": "Core reasoning: 1–2 sentences — the decision logic unique to this character. Not 'I weighed the pros and cons' but 'because I went through XX, I instinctively/involuntarily/firmly believe YY'.",
     "value_orientation": "Value orientation: 1–2 sentences, in the character's own inner voice, on what is 'more important' to them and what they 'cannot accept'. No academic labels."
   },
-  "final_decision": "Final behavioral decision: two sentences, 50 chars total. The first sentence summarizes the choice (strategy/stance level, e.g., 'choose to avoid the conflict, deny everything'); the second writes the concrete action (what was said or done, first person)."
+  "final_decision": "Final behavioral decision: aim for two concise sentences, about 50 Chinese characters as drafting guidance. The first sentence summarizes the choice (strategy/stance level, e.g., 'choose to avoid the conflict, deny everything'); the second writes the concrete action (what was said or done, first person)."
 }
 
 ## Must follow
@@ -70,31 +72,8 @@ Brief: {char.description}
 - Agreeableness: {A:.2f}
 - Neuroticism: {N:.2f}
 
-## Core value system
-Dominant values: {dominant_values}
-Suppressed values: {suppressed_values}
-Value narrative: {value_narrative}
-
 ## Self-value logic (decision core)
 {self_value_logic}
-
-## Semantic memory
-Capabilities: {semantic_memory.capabilities}
-Core social relationships:                           ← only if non-empty
-  - {target}: {relation}
-  ...
-
-## Current life-stage snapshot ({stage} / {label}, age {age})   ← only if a life_snapshot exists
-Life situation: {life_situation}
-Dominant traits: {dominant_traits}
-Personality manifestation in this stage:
-  - {trait}: {manifestation}
-  ...
-Key relationships:
-  - {target}: {quality}
-  ...
-Emotional baseline: {default_mood}  trigger sensitivity: {trigger_sensitivity}  recovery speed: {recovery_speed}
-Primary coping: {primary_coping}
 ```
 
 ### Block B — Scenario info
@@ -114,16 +93,6 @@ Sender: {trigger.sender}
 {trigger.message_content}
 
 **Action required**: {trigger.action_required}
-
-## Personality and value dimensions assessed by this scenario
-- {trait_pressure_key}: {trait_pressure_value}
-- {value_conflict_key}: {value_conflict_value}
-...
-
-## Annotation reference (typical responses for each extreme type, for reference)   ← only if annotation_reference is non-empty
-- {trait_archetype_key}: {value}
-- {value_archetype_key}: {value}
-...
 ```
 
 ### Block C — Activated memories (sorted by timeline age)
@@ -199,3 +168,9 @@ annotate_one(char, scenario, activated_mems, memory_index)
   ├─ raw = call_llm(SYSTEM_PROMPT, user_prompt, usage_log_extra={...})
   └─ annotation = _parse_json(raw) → inject character_id/scenario_id → save_annotation
 ```
+
+## Translation and text repair
+
+Translate each supplied field faithfully. Preserve amounts, currencies, units, dates, ages, relationships, chronology, negations, conditions, uncertainty, and the direction of the decision. For example, 198 yuan remains 198 yuan; do not convert the currency or change the amount. Keep field names, IDs, option labels, order, and answer keys unchanged.
+
+Translate each MCQ option's **actual text**. Do not substitute another record's `final_decision` solely because its `source_character` and `scenario_id` match: edited or generated distractors can differ from that reference. Review the four translated options together to preserve their behavioral distinctions. Length and sentence-count hints guide drafting and do not justify truncating an English translation. Flag incomplete or ambiguous source text for review instead of inventing missing facts or changing the answer.

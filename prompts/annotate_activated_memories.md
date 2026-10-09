@@ -1,6 +1,6 @@
 # annotate_activated_memories.py — Stage 1: Binary Memory Activation Screening
 
-**Source:** `scripts/annotate_activated_memories.py`
+**Source:** `constructions/annotation/annotate_activated_memories.py`
 **Purpose:** For each character × scenario pair, take all memories with `age <= scenario.age`, group them by age, and make one LLM call per age-group with a permissive binary activation judgment (activated true/false).
 
 ---

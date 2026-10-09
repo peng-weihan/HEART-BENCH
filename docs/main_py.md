@@ -1,10 +1,12 @@
-# main.py — Technical Notes
+# main.py — Open-Ended Runner Notes
+
+These notes describe the separate open-ended runner in `experiments/scripts/main.py`. The paper's main results concern the MCQ runners. Construction guidance and translation rules are documented in the [construction guidance](../README.md#construction-guidance).
 
 ## Overview
 
 `main.py` is the core entry point of the Agent Personality Benchmark. Its job is to **take a set of fictional characters (only their raw episodic memories are provided) and a set of scenarios, call an LLM to simulate each character's reaction in each scenario, and save the results as a JSON file**.
 
-The benchmark is designed to test whether the LLM can autonomously infer personality traits and value orientation from a person's raw experiences and then act in character in a new situation. To that end, the prompt **deliberately omits** any pre-summarised personality labels (Big Five scores, value scales, personality descriptions) and only provides raw experiences for the LLM to reason from.
+The benchmark is designed to test whether the LLM can autonomously infer personality traits and behavioural tendencies from a person's raw experiences and then act in character in a new situation. To that end, the prompt **deliberately omits** any pre-summarised personality labels (Big Five scores and personality descriptions) and only provides raw experiences for the LLM to reason from.
 
 ## End-to-end flow
 
@@ -53,7 +55,6 @@ A JSON file with a `characters` array. Per-character fields:
 | `big_five` | No | Quantified Big Five scores (O/C/E/A/N). **Loaded but not passed into the prompt** — would leak. |
 | `description` | No | Free-text personality description. **Not passed in** because it summarises the personality. |
 | `self_value_logic` | No | Description of the character's core psychological defence mechanism. **Not passed in** — would leak. |
-| `value_orientation` | No | Schwartz 19-dim value scores + dominant values. **Loaded but not passed in.** |
 | `semantic_memory.capabilities` | **Yes** | Description of the character's abilities (factual). |
 | `semantic_memory.core_social_relationships` | **Yes** | Important social relationships (factual). |
 | `episodic_memory_set[].id` | **Yes** | Unique memory ID, used in citations. |
@@ -67,7 +68,7 @@ A JSON file with a `characters` array. Per-character fields:
 | `episodic_memory_set[].emotion_signature` | No | Emotion signature (primary/secondary emotion + intensity). **Not passed in.** |
 | `episodic_memory_set[].relevance_tags` | No | Topic tags for the memory. **Not passed into the prompt** (may be used for retrieval). |
 
-**Design rule**: only "raw experiences" and "objective facts" are passed into the prompt; all pre-summarised personality / value / behaviour fields are withheld so we can test whether the LLM can infer those from raw experience.
+**Design rule**: only "raw experiences" and "objective facts" are passed into the prompt; all pre-summarised personality / behaviour fields are withheld so we can test whether the LLM can infer those from raw experience.
 
 ### 2. Scenario data — `data/scenarios/scenarios_universal.json`
 
@@ -84,8 +85,8 @@ A JSON file with a `scenarios` array. Per-scenario fields:
 | `trigger_event.sender` | **Yes** | Sender of the triggering event. |
 | `trigger_event.message_content` | **Yes** | Concrete content of the trigger. |
 | `trigger_event.action_required` | **Yes** | Action expected from the character. |
-| `assessed_dimensions` | No | Trait / value dimensions the scenario primarily probes (used for evaluation, not given to the LLM). |
-| `annotation_reference` | No | Typical reactions of different personality / value archetypes (Ground-Truth annotation reference, used in evaluation). |
+| `assessed_dimensions` | No | Trait dimensions the scenario primarily probes (used for evaluation, not given to the LLM). |
+| `annotation_reference` | No | Typical reactions of different personality archetypes (Ground-Truth annotation reference, used in evaluation). |
 
 ### 3. Environment configuration — `.env`
 

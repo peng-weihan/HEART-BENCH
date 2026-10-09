@@ -58,6 +58,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from utils.schema import parse_event_age, require_activation_references
+
 from openai import OpenAI
 
 from pair_filter import apply_argv_pair_filter
@@ -542,22 +545,23 @@ def build_user_prompt(char: dict, scenario: dict,
 
     # Activated-memories section
     mem_section = ""
-    if activated_mems and memory_index:
+    if activated_mems:
         cid = char["id"]
-        char_mem_idx = memory_index.get(cid, {})
-        # Sort chronologically (age extracted from timeline)
-        def _mem_age(am):
-            mem = char_mem_idx.get(am.get("memory_id", ""), {})
-            m = re.search(r"age\s*(\d+)", mem.get("timeline", ""), re.IGNORECASE)
-            return int(m.group(1)) if m else 999
-        sorted_mems = sorted(activated_mems, key=_mem_age)
+        char_mem_idx = (memory_index or {}).get(cid, {})
+        try:
+            validated_mems = require_activation_references(
+                activated_mems, char_mem_idx, scenario.get("age")
+            )
+        except ValueError as exc:
+            raise ValueError(f"{cid} × {scenario['id']}: {exc}") from exc
+        sorted_mems = sorted(
+            validated_mems, key=lambda item: parse_event_age(char_mem_idx[item["memory_id"]]["timeline"])
+        )
         mem_lines = ["# Your memories", "",
                      f"Below are things you have lived through, in chronological order, {len(sorted_mems)} entries total:", ""]
         for am in sorted_mems:
             mid = am.get("memory_id", "")
-            mem = char_mem_idx.get(mid)
-            if not mem:
-                continue
+            mem = char_mem_idx[mid]
             mem_lines.append(f"### {mid} ({mem.get('timeline', '')})")
             content = mem.get('content_full')
             if not content:

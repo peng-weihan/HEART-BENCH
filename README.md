@@ -1,6 +1,6 @@
 # HEART-BENCH
 
-**HEART-BENCH** is a benchmark for evaluating whether LLM-based agents can act in a **human-like** way. Given only a fictional character's *raw episodic memories* — no Big-Five scores, no value-scale labels, no curated personality descriptions — can a model infer that character's personality and produce in-character reactions to new situations?
+**HEART-BENCH** evaluates memory-grounded persona consistency in controlled synthetic settings. Given a fictional character's episodic experiences, can a model infer that character's personality and choose a consistent response to a new situation? In the main memory-augmented evaluation, the predefined Big Five profile is withheld and `content_full` supplies source memory content to each backend.
 
 ## Overview
 
@@ -8,20 +8,17 @@
 
 The benchmark is built around three principles:
 
-- **Raw memories only.** Models receive episodic memories as written experiences. Any personality summary they use must be inferred, not read off a label.
+- **Narrative memory input.** Naive-RAG retrieves original narratives; Mem0 and PersonaDB retrieve their processed representations. Predefined personality profiles and stored construction annotations are withheld in the main evaluation.
 - **Situation-balanced scenarios.** Test scenarios are designed under the **DIAMONDS** situation taxonomy so that characters are probed across a controlled spread of situational dimensions.
-- **Multi-baseline memory evaluation.** The same model is run under several memory configurations — no memory, naive RAG, an intelligent-memory baseline, and a persona-DB baseline — so that "human-likeness" can be separated from raw retrieval quality.
+- **Multi-baseline memory evaluation.** The same model is evaluated with no retrieval, Naive-RAG, Mem0, and PersonaDB to compare agreement with the benchmark references across memory configurations.
 
-Two evaluation tracks:
-
-1. **MCQ track** — single-choice behavioural prediction against expert ground truth.
-2. **Consciousness-narrative track** — open-ended integrated emotion / reasoning / value statement, scored against expert annotation (see `experiments/evaluation/README.md`).
+The paper reports the **MCQ track**: single-choice behavioural prediction against expert-adjudicated reference responses. The repository also contains a separate open-ended narrative runner and evaluator (see [`experiments/evaluation/README.md`](experiments/evaluation/README.md)).
 
 ## Example
 
 ![Case study](assets/case_study.svg)
 
-A concrete walk-through showing how a model, given only a character's raw episodic memories, infers personality on the fly and produces an in-character reaction to a fresh scenario.
+A concrete walk-through of using retrieved episodic memories to select a response consistent with the target character and scenario.
 
 ## Data
 
@@ -29,20 +26,24 @@ Released benchmark data is hosted on Hugging Face:
 
 **🤗 [https://huggingface.co/datasets/HEART-BENCH/HEART-BENCH](https://huggingface.co/datasets/HEART-BENCH/HEART-BENCH)**
 
-A mirror of the released artefacts is also kept under `benchmark/` in this repository:
+The repository dataset snapshot is stored under `benchmark/`:
 
 | File | Description |
 |---|---|
-| `characters.json` | Fictional characters with raw episodic memories only |
+| `characters.json` | Character profiles and episodic memories, including construction annotations; evaluation selects its input fields |
 | `scenarios.json` | DIAMONDS-balanced situational scenarios |
-| `mcq.json` | One multiple-choice question per character × scenario cell |
+| `mcq.json` | One multiple-choice question per retained character × scenario pair |
 | `ground_truth.json` | Expert-annotated reference behaviour and rationale |
 | `activated_memories_step1.json` / `_step2.json` | Two-step memory-activation annotations |
+
+Existing results under `experiments/results/` were not regenerated for these text corrections.
+
+The activation JSON files preserve construction-stage snapshots. MCQ evaluation obtains memories through the selected retrieval backend.
 
 ## Repository layout
 
 ```
-benchmark/        Released benchmark artefacts (mirror of the HF dataset)
+benchmark/        Dataset snapshot
 constructions/    Construction-time pipelines (character / scenario / annotation)
 prompts/          Prompt templates used during construction & annotation
 experiments/
@@ -67,13 +68,13 @@ pip install -r requirements.txt
 Per-baseline extras (install only what you need):
 
 ```bash
-pip install -r experiments/baselines/mem0/requirements.txt
-pip install -r experiments/baselines/personadb/requirements.txt
+pip install -r experiments/baselines/mem0/requirements-mem0.txt
+pip install -r experiments/baselines/personadb/requirements-personadb.txt
 ```
 
 ### 2. Configure the LLM gateway
 
-Copy `.env.example` to `.env` and fill in your own credentials. **Do not commit `.env`.** The harness talks to an OpenAI-compatible HTTP gateway, so any provider exposing `/v1/chat/completions` works. See [`docs/llm_http_gateway.md`](docs/llm_http_gateway.md) for the expected contract.
+Copy `.env.example` to `.env` and fill in your own credentials. **Do not commit `.env`.** The harness talks to an OpenAI-compatible HTTP gateway, so any provider exposing `/v1/chat/completions` works. Gateway settings are listed in [`.env.example`](.env.example).
 
 ```bash
 cp .env.example .env
@@ -85,7 +86,7 @@ cp .env.example .env
 All runners are under `experiments/scripts/`. Each runner is checkpointed and resumable, and writes its outputs under `experiments/results/<baseline>/<model>/`.
 
 ```bash
-# No-memory baseline (model sees only the scenario)
+# No-retrieval baseline
 python experiments/scripts/run_baseline_model_only.py
 
 # Recent-memories baseline (most recent K episodic memories, no retrieval)
@@ -119,23 +120,28 @@ python experiments/evaluation/evaluate_results.py \
 
 The evaluator reports both behavioural and consciousness human-likeness scores, plus a combined score. See [`experiments/evaluation/README.md`](experiments/evaluation/README.md) for the full metric definitions.
 
-## Reproducing the result tables
+## Running experiments
 
-`experiments/results/RESULTS.md` reports the headline numbers across models × memory baselines. To reproduce:
+`experiments/results/RESULTS.md` contains reported results across models and memory baselines. To generate new outputs:
 
 1. Run every baseline for the target model (the `run_baseline_all_models.sh` wrapper drives this).
 2. Run the evaluator on each output file.
 3. Aggregate with the evaluator's summary mode.
 
-Note on determinism: temperature is non-zero by default; reported numbers reflect the call counts documented per table in `RESULTS.md`.
+Set model, decoding parameters, data version, and memory configuration explicitly for each run. A new run is not a verification of the reported tables unless those inputs match the corresponding experiment.
 
 ## Documentation
+
+### Construction guidance
+
+Text lengths, about four trigger/tag entries, and the two-sentence / approximately 50-character response format guide drafting. The narrative target is 2,000–4,500 characters; narrative-length review flags text exceeding 10,000 characters. The short-field review thresholds—60 characters for `context` and 100 for `content_summary`—apply to Chinese source metadata. English translations preserve the complete meaning without truncation to Chinese character limits.
+
+The ABCD descriptions and approximate 25% / 35% / 25% / 15% sampling mix guide episode selection; recorded emotional intensity uses `[0, 1]`. Prompt exhibits identify abridgements. See [candidate-response and translation instructions](prompts/annotate_gt.md#translation-and-text-repair) for preserving quantities, negations, and each option's actual behavior.
 
 Additional design notes live under `docs/`:
 
 - [`main_py.md`](docs/main_py.md) — what the core run-loop does and why
 - [`diamonds_scenario_design.md`](docs/diamonds_scenario_design.md) — situational coverage rationale
-- [`llm_http_gateway.md`](docs/llm_http_gateway.md) — gateway contract the harness expects
 - [`mem0_benchmark.md`](docs/mem0_benchmark.md) — intelligent-memory baseline notes
 - [`vibe_research_memory_ecological_validity.md`](docs/vibe_research_memory_ecological_validity.md) — ecological-validity discussion
 
