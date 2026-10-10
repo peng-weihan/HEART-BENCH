@@ -89,7 +89,7 @@ SYSTEM_PROMPT = (
 
 
 def build_basic_info(char: dict) -> str:
-    """Same as run_naive_rag.py: only character ID + occupation, to avoid answer leak."""
+    """Expose ID and occupation, as in Naive-RAG; withhold name and the detailed profile."""
     return "\n".join([
         f"- Character ID: {char.get('id', 'N/A')}",
         f"- Occupation: {char.get('occupation', 'N/A')}",

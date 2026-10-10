@@ -3,6 +3,10 @@
 Used once per character to establish the psychological blueprint before memory generation.
 Defines 11 trait-anchored Big Five profiles, each with `self_value_logic` and eight `core_patterns`. The extreme-anchor instruction applies to the ten high/low profiles; the neutral profile uses `.50` on all five dimensions. The suggested non-anchor range is generation guidance. These natural-language fields elaborate the profile; they are not additional scored trait dimensions. See the [construction guidance](../README.md#construction-guidance).
 
+The complete character specification combines basic information (ID and occupation) with the personality-and-value profile (Big Five scores, description, `self_value_logic`, and `core_patterns`). For the ten high/low archetypes, the occupation instruction deliberately favors a role compatible with the defining trait. Human review checks that role against the complete configuration. The all-neutral character uses its separately specified midpoint configuration.
+
+Occupation remains visible as basic information during evaluation and can provide persona cues. The profile fields are withheld in the main settings; response selection uses the visible information together with retrieved memories when available.
+
 ---
 
 ## System Prompt

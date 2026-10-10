@@ -109,7 +109,7 @@ SYSTEM_PROMPT = (
 
 
 def build_basic_info(char: dict) -> str:
-    """Neutral identity info: only character ID + occupation (matches naive_rag, prevents leakage)."""
+    """Expose ID and occupation; withhold name and the detailed profile, as in Naive-RAG."""
     parts = [
         f"- Character ID: {char.get('id', 'N/A')}",
         f"- Occupation: {char.get('occupation', 'N/A')}",

@@ -4,9 +4,9 @@ These notes describe the separate open-ended runner in `experiments/scripts/main
 
 ## Overview
 
-`main.py` is the core entry point of the Agent Personality Benchmark. Its job is to **take a set of fictional characters (only their raw episodic memories are provided) and a set of scenarios, call an LLM to simulate each character's reaction in each scenario, and save the results as a JSON file**.
+`experiments/scripts/main.py` is the separate open-ended runner. It builds prompts from retrieved episodic narratives, available capability and relationship facts, and the current scenario, then saves the generated responses as JSON.
 
-The benchmark is designed to test whether the LLM can autonomously infer personality traits and behavioural tendencies from a person's raw experiences and then act in character in a new situation. To that end, the prompt **deliberately omits** any pre-summarised personality labels (Big Five scores and personality descriptions) and only provides raw experiences for the LLM to reason from.
+The runner asks the LLM to infer behavioural tendencies from the supplied experiences and facts. Its prompt omits predefined Big Five scores and personality descriptions. The main MCQ runners separately provide character ID and occupation in every condition; No-Retrieval omits the memory block. Occupation can itself supply persona cues.
 
 ## End-to-end flow
 
@@ -68,7 +68,7 @@ A JSON file with a `characters` array. Per-character fields:
 | `episodic_memory_set[].emotion_signature` | No | Emotion signature (primary/secondary emotion + intensity). **Not passed in.** |
 | `episodic_memory_set[].relevance_tags` | No | Topic tags for the memory. **Not passed into the prompt** (may be used for retrieval). |
 
-**Design rule**: only "raw experiences" and "objective facts" are passed into the prompt; all pre-summarised personality / behaviour fields are withheld so we can test whether the LLM can infer those from raw experience.
+**Input scope**: the open-ended prompt includes retrieved narratives with memory IDs and timelines, optional capability and relationship facts, and scenario information. The predefined personality description, Big Five scores, self-value logic, and behavioral patterns are withheld.
 
 ### 2. Scenario data — `data/scenarios/scenarios_universal.json`
 

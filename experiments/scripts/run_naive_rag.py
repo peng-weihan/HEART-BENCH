@@ -107,7 +107,7 @@ SYSTEM_PROMPT = (
 
 
 def build_basic_info(char: dict) -> str:
-    """Neutral identity info: only character ID and occupation.
+    """Basic character information: ID and occupation, which can supply persona cues.
     Deliberately NOT included:
       - name (the value looks like 'Character A (high-neuroticism freelance creator)';
         the parenthetical encodes Big Five dimension + high/low → answer leak)

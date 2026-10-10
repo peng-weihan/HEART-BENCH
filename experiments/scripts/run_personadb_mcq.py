@@ -104,7 +104,7 @@ SYSTEM_PROMPT = (
 
 
 def build_basic_info(char: dict) -> str:
-    """Only character ID + occupation, to prevent answer leakage."""
+    """Expose ID and occupation; withhold name and the detailed profile."""
     return "\n".join([
         f"- Character ID: {char.get('id', 'N/A')}",
         f"- Occupation: {char.get('occupation', 'N/A')}",

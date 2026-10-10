@@ -145,6 +145,10 @@ Set model, decoding parameters, data version, and memory configuration explicitl
 
 ### Construction guidance
 
+A character consists of a complete construction specification and an autobiographical history. The specification combines ID and occupation with the Big Five vector, description, `self_value_logic`, and eight `core_patterns`. For high/low archetypes, the defining trait guides occupation selection; reviewers check coherence across all fields before the specification is fixed for memory generation. The neutral character is a configured all-0.50 reference with its own authored description.
+
+All four main MCQ settings provide the same basic information (ID and occupation). Occupation can supply persona cues; the detailed personality-and-value profile stays hidden, and the memory-augmented settings add retrieved experiences.
+
 Text lengths, about four trigger/tag entries, and the two-sentence / approximately 50-character response format guide drafting. The narrative target is 2,000–4,500 characters; narrative-length review flags text exceeding 10,000 characters. The short-field review thresholds—60 characters for `context` and 100 for `content_summary`—apply to Chinese source metadata. English translations preserve the complete meaning without truncation to Chinese character limits.
 
 The ABCD descriptions and approximate 25% / 35% / 25% / 15% sampling mix guide episode selection; recorded emotional intensity uses `[0, 1]`. Prompt exhibits identify abridgements. See [candidate-response and translation instructions](prompts/annotate_gt.md#translation-and-text-repair) for preserving quantities, negations, and each option's actual behavior.

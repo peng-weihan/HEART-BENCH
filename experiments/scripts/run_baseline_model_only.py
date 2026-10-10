@@ -1,18 +1,10 @@
 """
-run_baseline_model_only.py — Baseline: the model's "factory persona".
+run_baseline_model_only.py — No-Retrieval MCQ baseline.
 
-Runs the same MCQ as run_naive_rag.py, but provides **no character profile and
-no memory fragments** — the model only sees the scenario, the trigger event, and
-the four options, then chooses. The resulting accuracy reflects how often the
-model's own default preferences / implicit persona happen to align with one of
-the characters.
-
-Design notes (vs run_naive_rag.py):
-  - Removed: build_basic_info / social relationships / retrieved_memories / retrieval file
-  - Kept   : scenario.setting / context_text / trigger_event / options_text
-  - SYSTEM_PROMPT keeps the "you play a person" framing, but explicitly tells the
-    model "we will not give you any information about this person", so it falls
-    back to its default reaction.
+Uses the same basic character information (ID and occupation), scenario, and
+answer options as the memory-augmented MCQ conditions. The predefined personality
+profile and memory fragments are withheld. The task is to select the response
+most consistent with the target character using the supplied information.
 
 Output: experiments/results/baseline_model_only/<model>/predictions_baseline.json
                                                           summary_baseline.json
@@ -62,6 +54,7 @@ from utils.http_client import (  # noqa: E402
     mcq_request_parameters,
 )
 DATA_DIR = PROJECT_ROOT / "benchmark"
+CHARACTERS_PATH = DATA_DIR / "characters.json"
 SCENARIOS_PATH = DATA_DIR / "scenarios.json"
 MCQ_PATH = DATA_DIR / "mcq.json"
 
@@ -70,15 +63,16 @@ RESULTS_ROOT.mkdir(parents=True, exist_ok=True)
 
 
 # ===========================================================================
-# Prompt — anonymised role-play frame
+# Prompt — basic character information, scenario, and options
 # ===========================================================================
 SYSTEM_PROMPT = (
-    "You are a role-play simulator. This time we will NOT give you any information "
-    "about the person — no personality profile, no past experiences, no social "
-    "relationships. You will only see the situation they are currently in and a "
-    "list of possible behavioural decision options.\n\n"
-    "Reason from the scenario itself: in this situation, what would a real person "
-    "most likely do? Then pick the most reasonable option from the four given.\n\n"
+    "You are a role-play simulator. You will receive a person's basic information "
+    "(character ID and occupation), the situation they are currently facing, and "
+    "possible behavioural decision options. The detailed personality profile and "
+    "past experiences are not supplied.\n\n"
+    "Using the supplied information, consider this person's thinking habits, "
+    "emotional patterns, and behavioural tendencies, then select the option that "
+    "best matches this character in the current situation.\n\n"
     "Output strictly the following JSON (no other text, no markdown code block):\n"
     "{\n"
     '  "system_1_impulse": {\n'
@@ -91,17 +85,31 @@ SYSTEM_PROMPT = (
     "  },\n"
     '  "inner_consciousness": "Combine system_1 and system_2 to give the inner reasons for the final decision (100-150 words, first person)",\n'
     '  "final_decision": "The final behavioural decision (first person, including action descriptions)",\n'
-    '  "decision_choice": "The letter (A/B/C/D) of the most reasonable option among those given"\n'
+    '  "decision_choice": "The letter (A/B/C/D) of the option that best matches this character"\n'
     "}"
 )
 
 
-def build_prompt(scenario: dict, options_text: str) -> str:
-    """User prompt for the anonymous baseline: only scenario + options, no character info or memories."""
+def build_basic_info(char: dict) -> str:
+    """Expose ID and occupation; withhold name and the detailed profile."""
+    return "\n".join([
+        f"- Character ID: {char.get('id', 'N/A')}",
+        f"- Occupation: {char.get('occupation', 'N/A')}",
+    ])
+
+
+def build_prompt(char: dict, scenario: dict, options_text: str) -> str:
+    """Use basic character information, scenario, and options without a memory block."""
     setting = scenario.get("setting") or {}
     trigger = scenario.get("trigger_event") or {}
 
-    return f"""## Current Situation
+    return f"""## Background
+{build_basic_info(char)}
+
+## Key Social Relationships
+  N/A
+
+## Current Situation
 Scene: {scenario.get('name', 'Unknown')}
 Location: {setting.get('location', 'Unknown')} | Time: {setting.get('time', 'Unknown')} | Atmosphere: {setting.get('atmosphere', 'Unknown')}
 
@@ -113,15 +121,15 @@ Message: {trigger.get('message_content', 'Unknown')}
 Action required: {trigger.get('action_required', 'Unknown')}
 
 ## Task
-Given the situation above, think about what a real person would most likely do, then pick the most reasonable option from the list below.
+Using the supplied character information and scenario, understand this person's thinking patterns, emotional tendencies, and behavioural habits, then simulate the real reaction they would have in the current situation.
 
 Requirements:
-1. System 1 (intuitive impulse): the first reaction (note: you have no character background — judge from the scenario alone).
-2. System 2 (rational analysis): cool reasoning.
-3. Final Decision: the final choice.
+1. System 1 (intuitive impulse): the person's first reaction.
+2. System 2 (rational analysis): how the person would analyse and reason after calming down.
+3. Final Decision: two parts — inner_consciousness is the inner monologue 'I plan to do/say ...' (the last layer of consciousness before outward behaviour, fusing emotional tone, core reasons, and value orientation); response_text is what the person actually says/sends.
 
 ## Behavioural Decision Options
-Pick the most reasonable one and output its letter in the decision_choice field:
+Below are possible behavioural decisions different people might take in this scenario. Pick the one that best matches you (in this character's role) and output the corresponding letter in the decision_choice field:
 
 {options_text}"""
 
@@ -266,6 +274,8 @@ def extract_decision(parsed: dict, raw: str) -> str | None:
 # Main
 # ===========================================================================
 def load_inputs() -> dict[str, Any]:
+    char_data = json.loads(CHARACTERS_PATH.read_text(encoding="utf-8"))
+    characters = {char["id"]: char for char in char_data["characters"]}
     scen_data = json.loads(SCENARIOS_PATH.read_text(encoding="utf-8"))
     scenarios = {}
     for stage, lst in scen_data["scenarios"].items():
@@ -274,7 +284,7 @@ def load_inputs() -> dict[str, Any]:
 
     mcq_data = json.loads(MCQ_PATH.read_text(encoding="utf-8"))
     questions = mcq_data["questions"]
-    return {"scenarios": scenarios, "questions": questions}
+    return {"characters": characters, "scenarios": scenarios, "questions": questions}
 
 
 def process_one(
@@ -294,22 +304,23 @@ def process_one(
     correct = q.get("correct_answer")
     options = q["options"]
 
+    char = inputs["characters"].get(cid)
     scenario = inputs["scenarios"].get(sid)
-    if scenario is None:
+    if char is None or scenario is None:
         return {
             "question_id": qid,
             "character_id": cid,
             "scenario_id": sid,
             "ok": False,
             "request_parameters": None,
-            "error": f"missing scenario {sid}",
+            "error": f"missing char or scenario (char={char is not None}, scenario={scenario is not None})",
             "correct_answer": correct,
             "predicted": None,
             "is_correct": False,
         }
 
     options_text = build_options_text(options)
-    user_prompt = build_prompt(scenario, options_text)
+    user_prompt = build_prompt(char, scenario, options_text)
 
     res = call_llm(
         api_key=api_key,
@@ -369,7 +380,7 @@ def main() -> None:
     ap.add_argument("--resume", default="", help="path to a predictions file; ok=true entries are skipped")
     args = ap.parse_args()
     run_request_parameters = mcq_request_parameters(args.model, args.temperature, args.reasoning_effort)
-    run_context = {"setting": "no_retrieval"}
+    run_context = {"setting": "no_retrieval", "prompt_protocol": "character-basic-info-v1"}
     print(f"request parameters: {json.dumps(run_request_parameters, sort_keys=True)}")
 
     inputs = load_inputs()
