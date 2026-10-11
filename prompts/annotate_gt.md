@@ -61,9 +61,8 @@ Four blocks concatenated: character info → scenario info → activated memorie
 
 ```text
 Character ID: {char.id}
-Character name: {char.name}
-Archetype: {char.archetype}
-Brief: {char.description}
+Name: {char.name}
+Description: {char.description}
 
 ## Big Five (0–1 scale)
 - Openness: {O:.2f}

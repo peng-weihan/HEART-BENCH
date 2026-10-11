@@ -112,8 +112,7 @@ def build_basic_info(char: dict) -> str:
       - name (the value looks like 'Character A (high-neuroticism freelance creator)';
         the parenthetical encodes Big Five dimension + high/low → answer leak)
       - description / self_value_logic / core_patterns / big_five
-        (these fields are basically the 'answer profile' — they would let the model
-        pick the option without the memories → answer leak)
+        (these specify the construction-time persona and are withheld in the main evaluation)
     """
     parts = [
         f"- Character ID: {char.get('id', 'N/A')}",

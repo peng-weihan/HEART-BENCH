@@ -1,4 +1,4 @@
-# Vibe Research: Memory Ecological Validity — Theoretical Support for Noise Memories and Intensity Stratification
+# Vibe Research: Memory Diversity — Design Motivation for Everyday Memories and Intensity Stratification
 
 > Task: upgrade the generation strategy from "all-high-pressure scenarios" to "a complete life of memories"
 > Date: 2026-03-06 | Status: **DRAFT**
@@ -22,8 +22,7 @@ In the motivating setup discussed in this draft, all 1,000 memories revolve arou
 **Takeaways:**
 - Autobiographical memory is organised in three layers: Lifetime Periods → General Events → Event-Specific Knowledge (ESK).
 - The General Events layer contains a large amount of **everyday events** (repeated events, routine activities), not only self-defining moments.
-- Within ESK, high-emotion-intensity memories are a minority; most entries are perceptual-level details of routine activities.
-- **A memory set made entirely of high-intensity items does not match the SMS storage distribution.**
+- **Design implication**: include routine events to broaden coverage beyond high-conflict episodes.
 
 ### 2.2 Pillemer (1998) — Momentous Events vs Personal Event Memories
 
@@ -51,7 +50,7 @@ In the motivating setup discussed in this draft, all 1,000 memories revolve arou
 | **Directive** | Guides future behaviour, problem-solving | Daily-experience memories (Layer C/D) |
 
 - Missing daily memories = missing the memory base for Social and Directive functions.
-- **A character whose memory only carries the Self function cannot hold a natural conversation in social scenes.**
+- These functions motivate including social and practical episodes alongside self-defining events.
 
 ---
 
@@ -64,10 +63,9 @@ In the motivating setup discussed in this draft, all 1,000 memories revolve arou
 - Tugade, M.M., Fredrickson, B.L., & Barrett, L.F. (2004). Psychological resilience and positive emotional granularity. *Journal of Personality*, 72, 1161-1190.
 
 **Takeaways:**
-- Mentally healthy people exhibit rich **emotional granularity**.
+- **Emotional granularity** concerns differentiation among emotional experiences.
 - Even people high on N (neuroticism) are not anxious / sad every minute of every day.
-- The emotion distribution in a memory set should reflect this granularity: a continuum from calm to intense.
-- **If a character's memories only show emotion intensities of 0.5–0.85, that person effectively has no emotional granularity — which is itself pathological.**
+- Varying intensity from calm to intense broadens the synthetic episode set. Intensity scores alone do not measure emotional granularity or establish a clinical condition.
 
 ### 3.2 Broaden-and-Build Theory (Fredrickson, 2001)
 
@@ -76,31 +74,23 @@ In the motivating setup discussed in this draft, all 1,000 memories revolve arou
 
 **Takeaways:**
 - Positive emotions (joy, interest, contentment, serenity) broaden the cognitive-behavioural repertoire and accumulate psychological resources.
-- Even a high-N character needs positive memories to explain:
-  - how they keep up basic daily functioning;
-  - where their creativity comes from (e.g. CHAR_01 is a content creator);
-  - how they form and maintain social relationships.
-- **A character with no positive memories is — in psychological terms — already in a serious clinical state (severe depression), not "high-N personality".**
+- Positive episodes for the high-N archetype can cover daily activities, creative work (e.g. CHAR_01 is a content creator), and social relationships.
+- **Design implication**: include positive and low-intensity episodes for high-N archetypes to diversify their synthetic histories.
 
 ### 3.3 Berntsen & Rubin (2002) — emotional valence distribution of autobiographical memory
 
 **Key reference:**
 - Berntsen, D. & Rubin, D.C. (2002). Emotionally charged autobiographical memories across the life span: The recall of happy, sad, traumatic, and involuntary memories. *Psychology and Aging*, 17, 636-652.
 
-**Empirical emotion distribution for normal adults' memories:**
-- ~50% positive / neutral memories (everyday pleasant moments, calm or routine events)
-- ~30% medium-intensity memories (some emotion but not extreme)
-- ~20% high-intensity memories (major conflicts, turning points, trauma, joy)
-
-**Application**: this provides direct empirical support for our four-tier proportion.
+**Design interpretation:** This reference motivates attention to emotional valence and retrieval context. Valence, intensity, and thematic relevance are distinct properties. The four-tier proportions below are author-chosen sampling targets, not estimates of a population distribution.
 
 ---
 
 ## 4. Memory stratification scheme
 
-Building on the theory above, we adopt a four-tier memory distribution:
+This historical proposal uses the following four-tier sampling targets. The numerical hints describe the proposed design; they are not acceptance thresholds for the released memories.
 
-| Tier | Share | Count | emotion_intensity | Theoretical source | Description |
+| Tier | Share | Count | emotion_intensity | Related concept | Description |
 |------|-------|-------|-------------------|--------------------|-------------|
 | **A. Core thread** | 25% | 250 | 0.70-0.90 | Singer (1993) Self-Defining Memories | High conflict; directly expresses life_threads |
 | **B. Thread-related** | 35% | 350 | 0.45-0.70 | Conway (2005) Working Self | Micro-expressions of personality in everyday life |
@@ -113,7 +103,7 @@ Building on the theory above, we adopt a four-tier memory distribution:
 
 ### English
 
-> To achieve ecological validity in the episodic memory dataset, we adopt a four-tier memory stratification based on established findings in autobiographical memory research. Following Berntsen and Rubin (2002), who demonstrated that normal adults' autobiographical memories span a broad emotional intensity spectrum (with approximately 50% being positive or neutral events), we distribute memories across core personality-thread memories (25%, high intensity), personality-related daily memories (35%, moderate intensity), positive/neutral daily memories (25%, low-to-moderate intensity), and noise memories unrelated to core personality themes (15%, low intensity). This design is further motivated by Fredrickson's (2001) Broaden-and-Build theory, which posits that positive emotions serve essential functions in building psychological resources, and by Pillemer's (1998) distinction between momentous events and personal event memories that constitute the "background texture" of autobiographical memory. The inclusion of Social and Directive function memories (Bluck et al., 2005) alongside Self-function memories ensures the character's memory system supports naturalistic social interaction, not merely identity maintenance.
+> To diversify synthetic autobiographical histories, we use an authored mixture of personality-related episodes and everyday experiences. Research on autobiographical memory, positive emotion, and the social and directive functions of remembering motivates this breadth (Pillemer, 1998; Fredrickson, 2001; Berntsen and Rubin, 2002; Bluck et al., 2005). The sampling proportions are generation heuristics. The resulting histories provide varied contexts in which each constructed persona can be expressed; their ecological validity remains an empirical question.
 
 ---
 
