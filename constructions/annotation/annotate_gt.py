@@ -8,9 +8,7 @@ GT annotation contents:
      behavioural decision (emotional_tone + core_reasoning + value_orientation).
   2. final_decision: the inner monologue + the externalised behaviour.
 
-NOTE: the LLM-facing system / user prompt strings later in this file are
-intentionally in Chinese — they steer the LLM that operates on the Chinese
-narrative dataset and must keep matching it.
+The model-facing prompts operate on English character, memory, and scenario text.
 
 Usage:
     python scripts/annotate_gt.py                                # full run
@@ -37,8 +35,9 @@ dump path is included in the raised exception (handy for repair / resume).
 
 Memory source: `data/annotations/<ANNOTATE_REFINE_MODEL slug>/activated_memories_final.json`
 (same as finalize). Override path: `GT_ACTIVATED_MEMORIES_PATH`. Character /
-scenario data defaults match the lite pipeline: `GT_CHARACTERS_PATH`,
-`GT_SCENARIOS_PATH` (default phase11_lite + scenarios_diamonds_zh_8x24_lite).
+scenario data default to the English release files `benchmark/characters.json`
+and `benchmark/scenarios.json`; override with `GT_CHARACTERS_PATH` and
+`GT_SCENARIOS_PATH`.
 
 GT model example: `ANNOTATE_GT_MODEL=gemini-3.1-pro-preview` (**3.1** with a
 **dot** in the middle; the gateway routes by this exact string). The output
@@ -113,13 +112,13 @@ def _model_slug(model):
 SCENARIOS_PATH = Path(
     os.getenv(
         "GT_SCENARIOS_PATH",
-        str(PROJECT_ROOT / "benchmark" / "scenarios" / "scenarios_diamonds_zh_8x24_lite.json"),
+        str(PROJECT_ROOT / "benchmark" / "scenarios.json"),
     )
 )
 CHARACTERS_PATH = Path(
     os.getenv(
         "GT_CHARACTERS_PATH",
-        str(PROJECT_ROOT / "benchmark" / "characters" / "characters_phase11.json"),
+        str(PROJECT_ROOT / "benchmark" / "characters.json"),
     )
 )
 _activated_override = os.getenv("GT_ACTIVATED_MEMORIES_PATH", "").strip()

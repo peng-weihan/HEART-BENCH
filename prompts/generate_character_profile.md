@@ -24,7 +24,7 @@ Generate a complete character profile for a virtual human in a personality resea
 ## Output Format (JSON)
 {
   "char_key": "CHAR_XX",
-  "name": "Chinese name",
+  "name": "English character label",
   "occupation": "specific job title",
   "big_five": {"O": 0.X, "C": 0.X, "E": 0.X, "A": 0.X, "N": 0.X},
   "big_five_str": "O=0.X, C=0.X, E=0.X, A=0.X, N=0.X",

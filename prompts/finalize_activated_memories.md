@@ -48,7 +48,7 @@ Full mode (default):
     {
       "memory_id": "MEM_XX_XXXX",
       "type": "BS|AM|CB|ER|DL|NI",
-      "reason": "20–30 chars"
+      "reason": "20–30 words"
     }
   ]
 }

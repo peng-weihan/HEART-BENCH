@@ -2,6 +2,8 @@
 
 **HEART-BENCH** evaluates memory-grounded persona consistency in controlled synthetic settings. Given a fictional character's episodic experiences, can a model infer that character's personality and choose a consistent response to a new situation? In the main memory-augmented evaluation, the predefined Big Five profile is withheld and `content_full` supplies source memory content to each backend.
 
+The benchmark is constructed and evaluated in English. Character specifications, autobiographical memories, scenarios, candidate responses, and model-facing prompts use English.
+
 ## Overview
 
 ![Pipeline overview](assets/pipeline.svg)
@@ -149,9 +151,9 @@ A character consists of a complete construction specification and an autobiograp
 
 All four main MCQ settings provide the same basic information (ID and occupation). Occupation can supply persona cues; the descriptive label and detailed personality-and-value profile stay hidden, and the memory-augmented settings add retrieved experiences.
 
-Text lengths, about four trigger/tag entries, and the two-sentence / approximately 50-character response format guide drafting. The narrative target is 2,000–4,500 characters; narrative-length review flags text exceeding 10,000 characters. The short-field review thresholds—60 characters for `context` and 100 for `content_summary`—apply to Chinese source metadata. English translations preserve the complete meaning without truncation to Chinese character limits.
+Text lengths, about four trigger/tag entries, and the two-sentence / approximately 50-word response format guide English drafting. Short-field lengths and response lengths use word counts; the narrative target is 2,000–4,500 characters, and narrative-length review flags text exceeding 10,000 characters. Metadata review checks that `context` and `content_summary` remain concise and that detailed narration stays in `content_full`.
 
-The ABCD descriptions and approximate 25% / 35% / 25% / 15% sampling mix guide episode selection; recorded emotional intensity uses `[0, 1]`. Prompt exhibits identify abridgements. See [candidate-response and translation instructions](prompts/annotate_gt.md#translation-and-text-repair) for preserving quantities, negations, and each option's actual behavior.
+The ABCD descriptions and approximate 25% / 35% / 25% / 15% sampling mix guide episode selection; recorded emotional intensity uses `[0, 1]`. Prompt exhibits identify abridgements. See [candidate-response and text-review instructions](prompts/annotate_gt.md#text-review-and-repair) for preserving quantities, negations, and each option's actual behavior.
 
 Additional design notes live under `docs/`:
 

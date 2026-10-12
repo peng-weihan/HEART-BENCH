@@ -5,8 +5,8 @@ the official-sounding item lists (1–7 Likert per dimension).
 Usage:
     python scripts/annotate_diamonds_items.py --dry-run
     python scripts/annotate_diamonds_items.py --limit 2 --workers 4
-    python scripts/annotate_diamonds_items.py --input data/scenarios/scenarios_diamonds_zh.json \\
-        --output data/scenarios/scenarios_diamonds_zh_diamonds_items.json
+    python scripts/annotate_diamonds_items.py --input benchmark/scenarios.json \\
+        --output benchmark/scenarios_diamonds_items.json
 """
 
 from __future__ import annotations
@@ -195,7 +195,7 @@ Output ONLY valid JSON with exactly these keys:
 Rules:
 - Every dimension key must appear exactly once under "dimensions" with "score" and "rationale".
 - "score" must be an integer from 1 through 7 inclusive.
-- In rationale and annotation_note: do NOT use the raw ASCII double-quote character (") inside strings—it breaks JSON. Use 「」 for Chinese quotes, or rephrase.
+- In rationale and annotation_note: do NOT use the raw ASCII double-quote character (") inside strings—it breaks JSON. Use single quotation marks for quoted speech, or rephrase.
 - Do not output markdown fences or any text outside the JSON object.
 """
 
@@ -428,12 +428,12 @@ def main() -> None:
     parser.add_argument(
         "--input",
         type=Path,
-        default=PROJECT_ROOT / "benchmark" / "scenarios" / "scenarios_diamonds_zh_8x24_lite.json",
+        default=PROJECT_ROOT / "benchmark" / "scenarios.json",
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=PROJECT_ROOT / "benchmark" / "scenarios" / "scenarios_diamonds_zh_8x24_lite_diamonds_items.json",
+        default=PROJECT_ROOT / "benchmark" / "scenarios_diamonds_items.json",
     )
     parser.add_argument("--limit", type=int, default=0, help="Only process first N scenarios (0 = all).")
     parser.add_argument("--workers", type=int, default=int(os.getenv("DIAMONDS_WORKERS", "8")))

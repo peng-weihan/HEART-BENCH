@@ -134,7 +134,7 @@ Retrieval logic:
   joined with newlines.
 - **Candidate pool**: memories with `mem.age <= scenario.age` only.
   `mem.age` is parsed from the `timeline` string (`"Childhood (age 6)"`
-  → `6`; Chinese `"6岁"` form also supported). Memories whose age cannot
+  → `6`). Memories whose age cannot
   be parsed are excluded — they cannot be safely placed on the timeline.
 - **Similarity**: cosine via L2-normalized dot product.
 - **Ranking**: sorted by score desc, `rank` starts at 1.

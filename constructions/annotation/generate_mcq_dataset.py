@@ -12,9 +12,7 @@ Selection strategy:
 3. Ensure the options are sufficiently different from one another.
 4. Take personality-trait contrast into account (e.g. High vs Low Neuroticism).
 
-NOTE: the LLM-facing prompt strings later in this file are intentionally in
-Chinese — they steer the LLM that operates on the Chinese narrative dataset
-and must keep matching it.
+The model-facing prompts operate on English character, memory, and scenario text.
 """
 
 from openai import OpenAI
@@ -68,7 +66,7 @@ def load_character_profiles():
     return character_traits
 
 def simple_tokenize(text):
-    """Simple Chinese tokenisation."""
+    """Whitespace tokenisation of English text, with adjacent-token bigrams."""
     if not text:
         return []
 

@@ -27,7 +27,7 @@ for line in snap.read_text().splitlines():
     print("=" * 78)
     print(f"mem_id    : {mid}   ({cid})")
     print(f"timeline  : {orig['timeline']}")
-    print(f"--- ORIGINAL content_summary (Chinese, what we sent to mem0) ---")
+    print(f"--- ORIGINAL content_summary (English) ---")
     print(orig["content_summary"])
     print(f"--- STORED in qdrant (LLM-extracted fact, what gets searched) ---")
     print(stored_text)

@@ -10,7 +10,7 @@ Dependency: run annotate_activated_memories.py first (stage 1).
 
 Stage-1 JSON path = `data/annotations/<ANNOTATE_SCREEN_MODEL slug>/activated_memories_binary.json`.
 Stage-2 output    = `data/annotations/<ANNOTATE_REFINE_MODEL slug>/activated_memories_final.json`
-                    (character data lives in `characters_phase9.json`).
+                    (character data lives in `benchmark/characters.json`).
 
 Each successful finalize LLM call appends one JSONL line to
 `finalize_llm_usage.jsonl` in the same directory by default (usage stats,
@@ -23,9 +23,7 @@ If the model output cannot be parsed into a JSON object containing
 `finalize_parse_failures/` next to the output JSON, and a `RuntimeError` is
 raised (the dump path is included in the error message).
 
-NOTE: the LLM system prompt and user-prompt builder below are intentionally
-in Chinese — they steer the LLM that operates on the Chinese narrative
-dataset and must keep matching it.
+The model-facing prompts operate on English character, memory, and scenario text.
 
 Usage:
     python scripts/finalize_activated_memories.py

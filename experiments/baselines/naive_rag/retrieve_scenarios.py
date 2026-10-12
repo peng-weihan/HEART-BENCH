@@ -118,8 +118,7 @@ BATCH_SIZE = 16
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-# Match both English ("age 6", "Age 12") and Chinese ("6岁") forms so the
-# parser stays robust if the timeline field is ever localized again.
+# Parse English age labels while retaining backward-compatible input handling.
 _AGE_RE = re.compile(r"(?:age\s*|Age\s*)?(\d{1,3})\s*(?:岁)?", re.IGNORECASE)
 _AGE_RE_EN = re.compile(r"age\s*(\d{1,3})", re.IGNORECASE)
 _AGE_RE_ZH = re.compile(r"(\d{1,3})\s*岁")
@@ -131,7 +130,6 @@ def parse_mem_age(timeline: str) -> int | None:
     Examples handled:
       "Childhood (age 6)"  -> 6
       "Adolescence (Age 14)" -> 14
-      "童年(6岁)" -> 6
     """
     if not timeline:
         return None

@@ -184,7 +184,7 @@ def expand_one_scenario(draft: dict, user_prompt: str) -> dict:
 
 # ================= Parse design doc =================
 
-# The design doc uses Roman numerals as stage headers (after the English rewrite).
+# The English design document uses Roman numerals as stage headers.
 STAGE_MAP = {
     "I. School Age":              "school_age",
     "II. Adolescence":            "adolescence",

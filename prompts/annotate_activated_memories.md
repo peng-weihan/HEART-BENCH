@@ -65,11 +65,11 @@ Strictly output a JSON array (no markdown code block), containing ONLY the activ
 [
   {
     "memory_id": "MEM_XX_XXXX",
-    "reason": "20–30 chars, indicating which mechanism activated it (e.g., structural similarity, emotional resonance)."
+    "reason": "20–30 words, indicating which mechanism activated it (e.g., structural similarity, emotional resonance)."
   }
 ]
 
-JSON syntax (mandatory): string values may only use ASCII double quotes `"` as delimiters; unescaped ASCII `"` is FORBIDDEN inside the `reason` string, otherwise parsing will fail. To quote others' words or add emphasis inside `reason`, use Chinese corner brackets 「」『』, never embed `"` inside.
+JSON syntax (mandatory): string values may only use ASCII double quotes `"` as delimiters; unescaped ASCII `"` is FORBIDDEN inside the `reason` string, otherwise parsing will fail. To quote others' words or add emphasis inside `reason`, use single quotation marks or curly quotes, and escape any embedded ASCII double quotes.
 
 If no memory in this batch is activated, output an empty array [].
 
@@ -152,7 +152,7 @@ Judge whether each memory above is activated in this scenario, and output a JSON
 When the first response fails `json.loads`, this is appended to the original user prompt and the call is retried once:
 
 ```text
-[Last output could not be parsed by json.loads.] A common cause is unescaped ASCII double quotes `"` inside `reason`. Please **re-output the complete** JSON array (no markdown code block); inside `reason`, quote speech or add emphasis using Chinese corner brackets 「」『』 only — never embed `"` inside the string.
+[Last output could not be parsed by json.loads.] A common cause is unescaped ASCII double quotes `"` inside `reason`. Please **re-output the complete** JSON array (no markdown code block); inside `reason`, use single quotation marks for quoted speech, or escape embedded ASCII double quotes.
 ```
 
 ---

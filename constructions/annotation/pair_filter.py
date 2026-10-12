@@ -184,12 +184,12 @@ def _stats_main():
     parser.add_argument(
         "--characters",
         type=Path,
-        default=PROJECT_ROOT / "benchmark" / "characters" / "characters_phase11.json",
+        default=PROJECT_ROOT / "benchmark" / "characters.json",
     )
     parser.add_argument(
         "--scenarios",
         type=Path,
-        default=PROJECT_ROOT / "benchmark" / "scenarios" / "scenarios_diamonds_zh_8x24_lite.json",
+        default=PROJECT_ROOT / "benchmark" / "scenarios.json",
     )
     args = parser.parse_args()
 

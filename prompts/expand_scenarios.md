@@ -7,7 +7,7 @@
 
 ## 1. System Prompt (`SYSTEM_PROMPT`)
 
-This abridged English scaffold describes scenario expansion. Auxiliary metadata branches are omitted. The manuscript reports Chinese-source drafting targets of 150–300 characters for background and 100–200 for trigger dialogue; the English scaffold below uses word-count hints. These are language-specific drafting targets and do not constrain faithful English translations. See the [construction guidance](../README.md#construction-guidance).
+This abridged English scaffold describes scenario expansion. Auxiliary metadata branches are omitted. Background narratives and trigger dialogue are drafted in English, with word-count guidance of 150–300 and 100–200 respectively. These ranges guide generation. See the [construction guidance](../README.md#construction-guidance).
 
 ```text
 You are an expert in psychological scenario design. Your task is to expand a short scenario sketch into a complete, high-quality scenario JSON object.

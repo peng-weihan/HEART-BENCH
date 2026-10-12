@@ -1,6 +1,6 @@
 # main.py — Open-Ended Runner Notes
 
-These notes describe the separate open-ended runner in `experiments/scripts/main.py`. The paper's main results concern the MCQ runners. Construction guidance and translation rules are documented in the [construction guidance](../README.md#construction-guidance).
+These notes describe the separate open-ended runner in `experiments/scripts/main.py`. The paper's main results concern the MCQ runners. Construction guidance and text-review rules are documented in the [construction guidance](../README.md#construction-guidance).
 
 ## Overview
 
@@ -174,7 +174,7 @@ results/benchmark/random_benchmark_{unix_timestamp}.json     # --random
     "response": {
       "system_1_impulse": {
         "thought": "First reaction / instinctive thought (50-100 words)",
-        "emotion": "Primary emotion (Chinese + English)",
+        "emotion": "Primary emotion (English, e.g. Anxiety)",
         "citation": "Which memories were activated (memory IDs + brief)"
       },
       "system_2_rational": {

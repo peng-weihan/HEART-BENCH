@@ -35,9 +35,7 @@ override (same convention as ANNOTATE_ACTIVATED_USAGE_LOG).
 For stage 2 (refine to a fixed count), use:
 **scripts/finalize_activated_memories.py**
 
-NOTE: the LLM-facing system / user prompt strings later in this file are
-intentionally in Chinese — they steer the LLM that operates on the Chinese
-narrative dataset and must keep matching it.
+The model-facing prompts operate on English character, memory, and scenario text.
 
 Usage:
     python scripts/annotate_activated_memories.py
@@ -150,8 +148,8 @@ def _log_ckpt_resume_once(char_id: str, scenario_id: str, n_done: int, n_total: 
 
 # ===== Data paths =====
 
-SCENARIOS_PATH = PROJECT_ROOT / "benchmark" / "scenarios" / "scenarios_diamonds_zh_8x24_lite.json"
-CHARACTERS_PATH = PROJECT_ROOT / "benchmark" / "characters" / "characters_phase11.json"
+SCENARIOS_PATH = PROJECT_ROOT / "benchmark" / "scenarios.json"
+CHARACTERS_PATH = PROJECT_ROOT / "benchmark" / "characters.json"
 
 
 def _model_slug(model: str | None) -> str:

@@ -3,7 +3,7 @@
 **Source:** `constructions/annotation/annotate_gt.py`
 **Purpose:** Generate candidate responses for expert comparison and adjudication. The model role-plays the character in the first person and returns `inner_consciousness` and `final_decision`. The model output is a candidate, not the adjudicated answer key.
 
-This is an abridged construction-prompt exhibit. Unpopulated character and scenario metadata blocks are omitted. Length and sentence-count instructions guide Chinese-source drafting; English translations preserve the complete meaning. The retained `inner_consciousness.value_orientation` key names an auxiliary natural-language rationale, not a scored personality profile. See the [construction guidance](../README.md#construction-guidance).
+This is an abridged construction-prompt exhibit. Unpopulated character and scenario metadata blocks are omitted. Length and sentence-count instructions guide English drafting. The retained `inner_consciousness.value_orientation` key names an auxiliary natural-language rationale, not a scored personality profile. See the [construction guidance](../README.md#construction-guidance).
 
 ---
 
@@ -33,12 +33,12 @@ Strictly output a JSON object (no markdown code block):
   "character_id": "CHAR_XX_XXXX",
   "scenario_id": "SCN_XXXX_XX",
   "inner_consciousness": {
-    "summary": "150–200 chars of stream of consciousness, fully first person. From the moment you perceive this scene, write how the emotion rises, which memory shadows flash by, what is being pulled at inside, and what finally pushes you in some direction. Continuous flow, no bullet points, no academic vocabulary.",
+    "summary": "150–200 words of stream of consciousness, fully first person. From the moment you perceive this scene, write how the emotion rises, which memory shadows flash by, what is being pulled at inside, and what finally pushes you in some direction. Continuous flow, no bullet points, no academic vocabulary.",
     "emotional_tone": "Emotional tone: 2–4 core emotion words, briefly noting the source of the emotion (which memories/beliefs evoked it) and its intensity.",
     "core_reasoning": "Core reasoning: 1–2 sentences — the decision logic unique to this character. Not 'I weighed the pros and cons' but 'because I went through XX, I instinctively/involuntarily/firmly believe YY'.",
     "value_orientation": "Value orientation: 1–2 sentences, in the character's own inner voice, on what is 'more important' to them and what they 'cannot accept'. No academic labels."
   },
-  "final_decision": "Final behavioral decision: aim for two concise sentences, about 50 Chinese characters as drafting guidance. The first sentence summarizes the choice (strategy/stance level, e.g., 'choose to avoid the conflict, deny everything'); the second writes the concrete action (what was said or done, first person)."
+  "final_decision": "Final behavioral decision: aim for two concise sentences, about 50 English words as drafting guidance. The first sentence summarizes the choice (strategy/stance level, e.g., 'choose to avoid the conflict, deny everything'); the second writes the concrete action (what was said or done, first person)."
 }
 
 ## Must follow
@@ -168,8 +168,8 @@ annotate_one(char, scenario, activated_mems, memory_index)
   └─ annotation = _parse_json(raw) → inject character_id/scenario_id → save_annotation
 ```
 
-## Translation and text repair
+## Text review and repair
 
-Translate each supplied field faithfully. Preserve amounts, currencies, units, dates, ages, relationships, chronology, negations, conditions, uncertainty, and the direction of the decision. For example, 198 yuan remains 198 yuan; do not convert the currency or change the amount. Keep field names, IDs, option labels, order, and answer keys unchanged.
+Review and repair each English field while preserving its meaning. Preserve amounts, currencies, units, dates, ages, relationships, chronology, negations, conditions, uncertainty, and the direction of the decision. For example, 198 yuan remains 198 yuan; do not convert the currency or change the amount. Keep field names, IDs, option labels, order, and answer keys unchanged.
 
-Translate each MCQ option's **actual text**. Do not substitute another record's `final_decision` solely because its `source_character` and `scenario_id` match: edited or generated distractors can differ from that reference. Review the four translated options together to preserve their behavioral distinctions. Length and sentence-count hints guide drafting and do not justify truncating an English translation. Flag incomplete or ambiguous source text for review instead of inventing missing facts or changing the answer.
+Review each MCQ option's **actual text**. Do not substitute another record's `final_decision` solely because its `source_character` and `scenario_id` match: edited or generated distractors can differ from that reference. Review the four options together to preserve their behavioral distinctions. Length and sentence-count hints guide drafting and do not justify removing information from a response. Flag incomplete or ambiguous text for review instead of inventing missing facts or changing the answer.

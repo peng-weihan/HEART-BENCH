@@ -62,7 +62,7 @@ from restore_snapshot import restore  # noqa: E402
 SCENARIO_FILE = Path(
     os.environ.get(
         "DIAMONDS_SCENARIO_FILE",
-        "/path/to/scenarios_diamonds_zh_8x24_lite.json",
+        str(Path(__file__).resolve().parents[3] / "benchmark" / "scenarios.json"),
     )
 )
 DEFAULT_OUT = ROOT / ".mem0" / "retrieval" / "all.jsonl"

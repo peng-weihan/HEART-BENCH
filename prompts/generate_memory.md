@@ -1,7 +1,7 @@
 # Memory Generation Prompt
 
 Generates the 11,000 episodic memories (1,000 per character) spanning ages 6–50.
-This manuscript-aligned scaffold requests five operational narrative dimensions inspired by Rubin, strict temporal perspective lock, age-appropriate language, and a mix of ABCD intensity tiers. It is not a verbatim historical generation log. The [construction guidance](../README.md#construction-guidance) explains text-length guidance, Chinese-source metadata checks, and suggested trigger/tag counts.
+This manuscript-aligned scaffold requests five operational narrative dimensions inspired by Rubin, strict temporal perspective lock, age-appropriate language, and a mix of ABCD intensity tiers. It is not a verbatim historical generation log. The [construction guidance](../README.md#construction-guidance) explains English drafting guidance, metadata review, and suggested trigger/tag counts.
 
 ---
 
@@ -76,12 +76,12 @@ Strictly follow this JSON format; return only JSON, no other text:
 {
   "id": "memory ID",
   "timeline": "stage (X years old)",
-  "context": "15-30 character scene description",
-  "content_summary": "20-40 character event summary",
+  "context": "15-30 word scene description",
+  "content_summary": "20-40 word event summary",
   "content_full": "~2000-4500 character first-person narrative (drafting target)",
   "triggers": ["trigger1", "trigger2", "trigger3", "trigger4"],
-  "psych_conclusion": "40-80 char psychological conclusion (cite concepts like schemas, defense mechanisms)",
-  "behavior_policy": "30-60 char behavioral guideline",
+  "psych_conclusion": "40-80 word psychological conclusion (cite concepts like schemas, defense mechanisms)",
+  "behavior_policy": "30-60 word behavioral guideline",
   "emotion_signature": {
     "primary": "primary emotion (English)",
     "secondary": "secondary emotion (English)",
